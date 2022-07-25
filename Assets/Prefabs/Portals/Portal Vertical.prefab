@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 7621493147246062089}
   - component: {fileID: 7621493147246062090}
   m_Layer: 0
-  m_Name: Portal Right
+  m_Name: Portal Vertical
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -109,7 +109,7 @@ Transform:
   m_GameObject: {fileID: 7621493147246062092}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 10, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 9161050450238230088}
   - {fileID: 7050470082628447445}
@@ -140,7 +140,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 1.5, y: 2}
   m_EdgeRadius: 0
 --- !u!114 &7621493147246062090
 MonoBehaviour:
@@ -154,8 +154,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e494f6b6a452ead4a8fd70d00b425a2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camMaxChange: {x: 20, y: 0}
-  camMinChange: {x: 20, y: 0}
+  camMaxChange: {x: 19, y: 0}
+  camMinChange: {x: 19, y: 0}
   playerChange: {x: 3, y: 0, z: 0}
 --- !u!1 &8215806081437429343
 GameObject:

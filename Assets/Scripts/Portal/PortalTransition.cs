@@ -32,9 +32,23 @@ public class PortalTransition : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            cameraFollow.setNewBoundary(camMinChange, camMaxChange);
+            Rigidbody2D rigidbody = collision.gameObject.GetComponent<Rigidbody2D>();
+            if ((collision.gameObject.transform.position.x < transform.position.x && playerChange.y == 0) ||
+                (collision.gameObject.transform.position.y < transform.position.y && playerChange.x == 0))
+            {
+                cameraFollow.setNewBoundary(camMinChange, camMaxChange);
+                collision.transform.position += playerChange;
+            }
+            else if (((collision.gameObject.transform.position.x > transform.position.x && playerChange.y == 0) ||
+                (collision.gameObject.transform.position.y > transform.position.y && playerChange.x == 0)))
+            {
+                cameraFollow.setNewBoundary(-camMinChange, -camMaxChange);
+                collision.transform.position -= playerChange;
+            }
+            else
+            {
 
-            collision.transform.position += playerChange;
+            }
         }
     }
 }
