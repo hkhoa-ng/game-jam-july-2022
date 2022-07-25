@@ -59,7 +59,7 @@ public class EnemyFollowsPlayer : MonoBehaviour
         rb.velocity = moveDir * moveSpeed;
 
         // Rotate the sprite accordingly to move direction (left-right)
-        if (rb.velocity.x < 0) {
+        if (rb.velocity.x > 0) {
             spriteRenderer.flipX = true;
         } else {
             spriteRenderer.flipX = false;

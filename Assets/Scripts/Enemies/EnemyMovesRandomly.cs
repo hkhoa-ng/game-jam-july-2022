@@ -9,9 +9,11 @@ public class EnemyMovesRandomly : MonoBehaviour
     private Rigidbody2D rb;
     private Vector3 lastVelocity;
     public float health = 50f;
+    private SpriteRenderer spriteRenderer;
     // public ParticleSystem explosion;
     private void Awake() {
         // GameEvents.onPlayerDieDestroyObjects += SelfDestruct;
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
     private void OnDisable() {
         
@@ -30,6 +32,13 @@ public class EnemyMovesRandomly : MonoBehaviour
     }
     private void FixedUpdate() {
         lastVelocity = rb.velocity;
+
+        // Rotate the sprite accordingly to move direction (left-right)
+        if (rb.velocity.x > 0) {
+            spriteRenderer.flipX = true;
+        } else {
+            spriteRenderer.flipX = false;
+        }
     }
     private void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject.CompareTag("Walls")) {
