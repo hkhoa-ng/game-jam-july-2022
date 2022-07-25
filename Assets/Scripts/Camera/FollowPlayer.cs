@@ -36,4 +36,7 @@ public class FollowPlayer : MonoBehaviour
         minX += camMinChange.x;
         minY += camMinChange.y;
     }
+
+    
+
 }

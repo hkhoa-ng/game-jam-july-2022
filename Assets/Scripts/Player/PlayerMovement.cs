@@ -7,9 +7,18 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed = 5f;
     private Rigidbody2D rigidBody;
     public Camera cam;
+    private SpriteRenderer playerSprite;
+    public SpriteRenderer gunSprite;
 
-    Vector2 direction;
-    Vector2 mousePos;
+    private Vector2 direction;
+    private Vector2 mousePos;
+    public Transform gun;
+
+    public float angle;
+
+    void Awake() {
+        playerSprite = GetComponent<SpriteRenderer>();
+    }
     
     // Start is called before the first frame update
     void Start()
@@ -31,8 +40,17 @@ public class PlayerMovement : MonoBehaviour
     {
         rigidBody.MovePosition(rigidBody.position + direction * moveSpeed * Time.fixedDeltaTime);
 
+        // Gun aiming
         Vector2 lookDir = mousePos - rigidBody.position;
-        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
-        rigidBody.rotation = angle;
+        angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
+        gun.eulerAngles = new Vector3(0, 0, angle);
+        // Rotate the player's sprite
+        if (angle > 90 || angle < -90) {
+            playerSprite.flipX = true;
+            gunSprite.flipY = true;
+        } else {
+            playerSprite.flipX = false;
+            gunSprite.flipY = false;
+        }
     }
 }
