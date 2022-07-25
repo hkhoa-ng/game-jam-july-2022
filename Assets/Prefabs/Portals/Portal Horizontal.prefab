@@ -222,7 +222,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 1}
+  m_Size: {x: 2, y: 1.5}
   m_EdgeRadius: 0
 --- !u!114 &7804458636604832841
 MonoBehaviour:
@@ -236,6 +236,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e494f6b6a452ead4a8fd70d00b425a2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camMaxChange: {x: 0, y: 20}
-  camMinChange: {x: 0, y: 20}
+  camMaxChange: {x: 0, y: 19}
+  camMinChange: {x: 0, y: 19}
   playerChange: {x: 0, y: 3, z: 0}
