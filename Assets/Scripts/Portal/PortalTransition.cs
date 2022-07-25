@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PortalTransition : MonoBehaviour
 {
-    private bool isActive;
-    private SpriteRenderer spriteRenderer;
+    public bool isActive;
+    public GameObject sprite;
 
     // New Boundary offsets
     private FollowPlayer cameraFollow;
@@ -18,6 +18,7 @@ public class PortalTransition : MonoBehaviour
     {
         cameraFollow = Camera.main.GetComponent<FollowPlayer>();
         isActive = false;
+        sprite.SetActive(true);
     }
 
     // Update is called once per frame
@@ -25,12 +26,17 @@ public class PortalTransition : MonoBehaviour
     {
         if (isActive)
         {
+            sprite.SetActive(false);
+        }
+        else
+        {
+            sprite.SetActive(true);
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") && isActive)
         {
             Rigidbody2D rigidbody = collision.gameObject.GetComponent<Rigidbody2D>();
             if ((collision.gameObject.transform.position.x < transform.position.x && playerChange.y == 0) ||
