@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 1657113415593929489}
   - component: {fileID: 1657113415593929488}
   - component: {fileID: 1657113415593929493}
-  - component: {fileID: 1657113415593929492}
   - component: {fileID: 1657113415593929495}
   - component: {fileID: -7809319743869557615}
   - component: {fileID: -510987870077863343}
+  - component: {fileID: -6660999549393258803}
   m_Layer: 6
   m_Name: Mushroom
   m_TagString: Enemy
@@ -128,32 +128,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &1657113415593929492
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1657113415593929491}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.14}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.83, y: 0.59}
-  m_EdgeRadius: 0
 --- !u!114 &1657113415593929495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,3 +170,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 3
   explosion: {fileID: 2679455985777518719, guid: 329ec9d3481c12a4bb2eb41e6db3a84b, type: 3}
+--- !u!70 &-6660999549393258803
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1657113415593929491}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.026298156, y: -0.15035273}
+  m_Size: {x: 0.7223044, y: 0.69929796}
+  m_Direction: 1
