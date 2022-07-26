@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 4003897596806903821}
   - component: {fileID: 4003897596806903820}
   - component: {fileID: 4003897596806903823}
+  - component: {fileID: 7984830508380533178}
+  - component: {fileID: 8383994157403660543}
   m_Layer: 6
   m_Name: Radish
   m_TagString: Enemy
@@ -166,3 +168,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 3
   health: 50
+--- !u!114 &7984830508380533178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4003897596806903819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60659495275a3b74ba39cb92f9657785, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyBulletPrefab: {fileID: 3617740694813921467, guid: 4f2fbd908fca0e4418f95d1d55e4186d, type: 3}
+  bulletSpeed: 10
+  shootInterval: 3
+--- !u!114 &8383994157403660543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4003897596806903819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15709d20caa4f054e889891be8735763, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
+  explosion: {fileID: 2679455985777518719, guid: 329ec9d3481c12a4bb2eb41e6db3a84b, type: 3}

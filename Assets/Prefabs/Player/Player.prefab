@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3152183613072618608}
   - component: {fileID: 3152183613072618607}
   - component: {fileID: 3152183613072618612}
+  - component: {fileID: 7116764227402562322}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -150,7 +151,6 @@ MonoBehaviour:
   cam: {fileID: 0}
   gunSprite: {fileID: 3152183613984074684}
   gun: {fileID: 3152183613465430116}
-  angle: 0
 --- !u!114 &3152183613072618612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,6 +165,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 3152183613700233542}
   bulletPrefab: {fileID: 3901008482034631164, guid: b0edd094db32a7245bcda77ac626a793, type: 3}
+  projectileForce: 10
+--- !u!95 &7116764227402562322
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3152183613072618606}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f120072182312be4d9f867286068fe52, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3152183613465430115
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,7 +271,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3152183613984074682}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.865, y: -0.128, z: 0}
+  m_LocalPosition: {x: 0.835, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3152183613700233542}

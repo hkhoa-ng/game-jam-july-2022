@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 1978994070486630222}
   - component: {fileID: 1978994070486630209}
   - component: {fileID: 1978994070486630208}
+  - component: {fileID: 5830931922315185889}
+  - component: {fileID: -3087671830610443237}
   m_Layer: 6
   m_Name: Apple
   m_TagString: Enemy
@@ -157,3 +159,31 @@ MonoBehaviour:
   moveSpeed: 3
   health: 200
   spriteRenderer: {fileID: 0}
+--- !u!114 &5830931922315185889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1978994070486630212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15709d20caa4f054e889891be8735763, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
+  explosion: {fileID: 2679455985777518719, guid: 329ec9d3481c12a4bb2eb41e6db3a84b, type: 3}
+--- !u!114 &-3087671830610443237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1978994070486630212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82573ff450234c34bb8b834b9c2d426a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyExplosionPrefab: {fileID: 5226678693580649413, guid: e3406d71f0832cd4cbbdf0f1e30a8cf3, type: 3}
+  distanceTillExplode: 2.5

@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 1657113415593929493}
   - component: {fileID: 1657113415593929492}
   - component: {fileID: 1657113415593929495}
+  - component: {fileID: -7809319743869557615}
+  - component: {fileID: -510987870077863343}
   m_Layer: 6
   m_Name: Mushroom
   m_TagString: Enemy
@@ -166,3 +168,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 3
   health: 50
+--- !u!114 &-7809319743869557615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1657113415593929491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66c5d7ed65a769645b35b7bb396d9f5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poisonSmokePrefab: {fileID: 8332774554655478880, guid: 52b2ab9ee614b0b469e51c959c576b1d, type: 3}
+  smokeSpawnInterval: 4
+--- !u!114 &-510987870077863343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1657113415593929491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15709d20caa4f054e889891be8735763, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
+  explosion: {fileID: 2679455985777518719, guid: 329ec9d3481c12a4bb2eb41e6db3a84b, type: 3}

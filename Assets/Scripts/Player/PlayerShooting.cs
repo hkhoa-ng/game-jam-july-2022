@@ -8,7 +8,7 @@ public class PlayerShooting : MonoBehaviour
     [SerializeField] private GameObject bulletPrefab;
     
 
-    private float projectileForce = 10f;
+    public float projectileForce = 10f;
 
     // Start is called before the first frame update
     void Start()
