@@ -119,6 +119,7 @@ public class GameManager : MonoBehaviour
 
         // Trigger start Room event
         rooms[startIndex].isEntered = true;
+        OpenDoors(startIndex);
     }
 
     // Update is called once per frame
@@ -146,7 +147,7 @@ public class GameManager : MonoBehaviour
     // Check if spawn position is currently occupied or not
     private bool CheckValidSpawn(Vector3 spawnPos)
     {
-        return Physics.CheckSphere(spawnPos, 1);
+        return !Physics.CheckSphere(spawnPos, 1);
     }
 
     IEnumerator SpawnEnemies(int numOfEnemies)
