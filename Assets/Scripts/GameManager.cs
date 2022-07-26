@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public Room[] rooms = new Room[16];
 
     [SerializeField] private int startIndex;
-    [SerializeField] private int currentIndex;
+    public int currentIndex;
     [SerializeField] private int endIndex;
     [SerializeField] private int mainPathLength;
 
@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     private FollowPlayer cameraFollow;
 
     
-
+    
 
 
     // Start is called before the first frame update
@@ -79,7 +79,7 @@ public class GameManager : MonoBehaviour
         cameraFollow.setNewBoundary(newBoundary , newBoundary);
         currentIndex = startIndex;
 
-        // Initialise the rest of the grid
+        // Initialise the rest of the rooms
         for (int i = 0; i < 16; i++)
         {
             if (!rooms[i].isInitialised)
@@ -108,11 +108,38 @@ public class GameManager : MonoBehaviour
                 rooms[i].isInitialised = true;
             }
         }
+
+        // Trigger start Room event
+        rooms[startIndex].isEntered = true;
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void OnRoomEnter(int roomIndex)
+    {
+        if (rooms[roomIndex].isEntered)
+        {
+
+            if (rooms[roomIndex].portalLeft != null)
+            {
+                rooms[roomIndex].portalLeft.GetComponent<PortalTransition>().isActive = true;
+            }
+            if (rooms[roomIndex].portalRight != null)
+            {
+                rooms[roomIndex].portalRight.GetComponent<PortalTransition>().isActive = true;
+            }
+            if (rooms[roomIndex].portalBottom != null)
+            {
+                rooms[roomIndex].portalBottom.GetComponent<PortalTransition>().isActive = true;
+            }
+            if (rooms[roomIndex].portalTop != null)
+            {
+                rooms[roomIndex].portalTop.GetComponent<PortalTransition>().isActive = true;
+            }
+        }
     }
 }
