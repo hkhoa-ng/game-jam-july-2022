@@ -5,6 +5,7 @@ using UnityEngine;
 public class PortalTransition : MonoBehaviour
 {
     public bool isActive;
+    public bool isOpenable;
     public GameObject sprite;
 
     // New Boundary offsets
@@ -22,6 +23,7 @@ public class PortalTransition : MonoBehaviour
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         cameraFollow = Camera.main.GetComponent<FollowPlayer>();
         isActive = false;
+        isOpenable = false;
         sprite.SetActive(true);
     }
 
