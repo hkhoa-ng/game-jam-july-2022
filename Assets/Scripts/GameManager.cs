@@ -4,22 +4,26 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject[] grid;
+    public GameObject[] roomGameObjects;
     public Room[] rooms = new Room[16];
 
     [SerializeField] private int startIndex;
-    [SerializeField]private int currentIndex;
-    private int endIndex;
-    [SerializeField]private int mainPathLength;
+    [SerializeField] private int currentIndex;
+    [SerializeField] private int endIndex;
+    [SerializeField] private int mainPathLength;
 
-    private int minPathLength = 5;
-    private int maxPathLength = 10;
+    private int minPathLength = 8;
+    private int maxPathLength = 16;
 
     // 0: Left, 1: Right, 2: Up, 3: Down 
     private int direction;
 
     public GameObject player;
     private FollowPlayer cameraFollow;
+
+    
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -33,7 +37,7 @@ public class GameManager : MonoBehaviour
 
         for (int i = 0; i < 16; i++)
         {
-            rooms[i] = grid[i].GetComponent<Room>();
+            rooms[i] = roomGameObjects[i].GetComponent<Room>();
         }
 
         // Initialise main path
@@ -66,13 +70,44 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                i--;
             }
+            if (i == mainPathLength - 1) endIndex = currentIndex;
         }
-        player.transform.position = grid[startIndex].transform.position;
+        player.transform.position = roomGameObjects[startIndex].transform.position;
+        Camera.main.transform.position = roomGameObjects[startIndex].transform.position + new Vector3(0, 0, -10);
         Vector2 newBoundary = (new Vector2(19 * (startIndex % 4), 0)) +  new Vector2(0, -19) * (startIndex / 4);
         cameraFollow.setNewBoundary(newBoundary , newBoundary);
+        currentIndex = startIndex;
 
+        // Initialise the rest of the grid
+        for (int i = 0; i < 16; i++)
+        {
+            if (!rooms[i].isInitialised)
+            {
+                int rand;
+                rand = Random.Range(0,5);
+                if (rand == 4 && rooms[i].portalLeft != null)
+                {
+                    rooms[i].portalLeft.GetComponent<PortalTransition>().isActive = true;
+                }
+                rand = Random.Range(0, 5);
+                if (rand == 4 && rooms[i].portalRight != null)
+                {
+                    rooms[i].portalRight.GetComponent<PortalTransition>().isActive = true;
+                }
+                rand = Random.Range(0, 5);
+                if (rand == 4 && rooms[i].portalTop != null)
+                {
+                    rooms[i].portalTop.GetComponent<PortalTransition>().isActive = true;
+                }
+                rand = Random.Range(0, 5);
+                if (rand == 4 && rooms[i].portalBottom != null)
+                {
+                    rooms[i].portalBottom.GetComponent<PortalTransition>().isActive = true;
+                }
+                rooms[i].isInitialised = true;
+            }
+        }
     }
 
     // Update is called once per frame
