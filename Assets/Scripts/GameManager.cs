@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject player;
     private FollowPlayer cameraFollow;
+    Color healthyColor = new Color(44f/255f, 57f/255f, 42f/255f);
+    Color junkColor = new Color(55f/255f, 42f/255f, 57f/255f);
 
     // Track the current world (true: Vegetable World, false: Snack World)
     private bool isHealthy;
@@ -28,7 +30,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] healthyEnemiesPrefabs;
     public GameObject[] junkEnemiesPrefabs;
     private int minEnemies = 4;
-    private int maxEnemies = 12;
+    private int maxEnemies = 8;
     private float secondsBetweenSpawn = 2;
 
 
@@ -83,7 +85,7 @@ public class GameManager : MonoBehaviour
         }
         player.transform.position = roomGameObjects[startIndex].transform.position;
         Camera.main.transform.position = roomGameObjects[startIndex].transform.position + new Vector3(0, 0, -10);
-        Vector2 newBoundary = (new Vector2(19 * (startIndex % 4), 0)) +  new Vector2(0, -19) * (startIndex / 4);
+        Vector2 newBoundary = (new Vector2((58f/3f) * (startIndex % 4), 0)) +  new Vector2(0, -(58f / 3f)) * (startIndex / 4);
         cameraFollow.setNewBoundary(newBoundary , newBoundary);
         currentIndex = startIndex;
 
@@ -131,6 +133,14 @@ public class GameManager : MonoBehaviour
     public void OnRoomEnter(int roomIndex)
     {
         isHealthy = !isHealthy;
+        if (isHealthy)
+        {
+            Camera.main.backgroundColor = healthyColor;
+        }
+        else
+        {
+            Camera.main.backgroundColor = junkColor;
+        }
         if (rooms[roomIndex].isEntered)
         {
             OpenDoors(roomIndex);
@@ -147,7 +157,7 @@ public class GameManager : MonoBehaviour
     // Check if spawn position is currently occupied or not
     private bool CheckValidSpawn(Vector3 spawnPos)
     {
-        return !Physics.CheckSphere(spawnPos, 1);
+        return !Physics.CheckSphere(spawnPos, 2);
     }
 
     IEnumerator SpawnEnemies(int numOfEnemies)
@@ -159,7 +169,7 @@ public class GameManager : MonoBehaviour
         while (numOfEnemies > 0)
         {
             yield return new WaitForSecondsRealtime(secondsBetweenSpawn);
-            int enemiesThisWave = Random.Range(2, 5);
+            int enemiesThisWave = Random.Range(1, 4);
             for (int i = 0; i < enemiesThisWave; i++)
             {
                 // Generate spawn Position

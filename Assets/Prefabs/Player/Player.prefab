@@ -165,7 +165,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 3152183613700233542}
   bulletPrefab: {fileID: 3901008482034631164, guid: b0edd094db32a7245bcda77ac626a793, type: 3}
-  muzzleFlash: {fileID: 2973471281314218030}
   projectileForce: 10
 --- !u!95 &7116764227402562322
 Animator:
@@ -213,7 +212,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 2973471281314218028}
   - {fileID: 3152183613984074683}
   m_Father: {fileID: 3152183613072618611}
   m_RootOrder: 0
@@ -242,7 +240,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3152183613700233541}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.28, y: 0, z: 0}
+  m_LocalPosition: {x: 0.28, y: 0.11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3152183613984074683}
@@ -278,7 +276,7 @@ Transform:
   m_Children:
   - {fileID: 3152183613700233542}
   m_Father: {fileID: 3152183613465430116}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3152183613984074684
 SpriteRenderer:
@@ -331,70 +329,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &3505000641263016017
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 3152183613465430116}
-    m_Modifications:
-    - target: {fileID: 1866645164495263869, guid: f0443d7aeb283d04ba2b8a67e9c623b8, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1866645164495263869, guid: f0443d7aeb283d04ba2b8a67e9c623b8, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.274
-      objectReference: {fileID: 0}
-    - target: {fileID: 1866645164495263869, guid: f0443d7aeb283d04ba2b8a67e9c623b8, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1866645164495263869, guid: f0443d7aeb283d04ba2b8a67e9c623b8, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1866645164495263869, guid: f0443d7aeb283d04ba2b8a67e9c623b8, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1866645164495263869, guid: f0443d7aeb283d04ba2b8a67e9c623b8, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1866645164495263869, guid: f0443d7aeb283d04ba2b8a67e9c623b8, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1866645164495263869, guid: f0443d7aeb283d04ba2b8a67e9c623b8, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1866645164495263869, guid: f0443d7aeb283d04ba2b8a67e9c623b8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 1866645164495263869, guid: f0443d7aeb283d04ba2b8a67e9c623b8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1866645164495263869, guid: f0443d7aeb283d04ba2b8a67e9c623b8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1866645164495263874, guid: f0443d7aeb283d04ba2b8a67e9c623b8, type: 3}
-      propertyPath: m_Name
-      value: Muzzle Flash
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f0443d7aeb283d04ba2b8a67e9c623b8, type: 3}
---- !u!4 &2973471281314218028 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1866645164495263869, guid: f0443d7aeb283d04ba2b8a67e9c623b8, type: 3}
-  m_PrefabInstance: {fileID: 3505000641263016017}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &2973471281314218030 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 1866645164495263871, guid: f0443d7aeb283d04ba2b8a67e9c623b8, type: 3}
-  m_PrefabInstance: {fileID: 3505000641263016017}
-  m_PrefabAsset: {fileID: 0}

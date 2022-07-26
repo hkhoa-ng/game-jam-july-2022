@@ -19,12 +19,12 @@ TagManager:
   - Enemy
   - Player
   - Wall
-  - 
+  - Bullet
   - Ignore Collision
   - Oil
   - EnemyBullet
   - PoisonSmoke
-  - PlayerBullet
+  - 
   - 
   - 
   - 
