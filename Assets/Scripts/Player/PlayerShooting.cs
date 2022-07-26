@@ -6,8 +6,9 @@ public class PlayerShooting : MonoBehaviour
 {
     [SerializeField] private Transform firePoint;
     [SerializeField] private GameObject bulletPrefab;
+    
 
-    private float projectileForce = 10f;
+    public float projectileForce = 10f;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,6 @@ public class PlayerShooting : MonoBehaviour
     {
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D bulletRigidBody = bullet.GetComponent<Rigidbody2D>();
-        bulletRigidBody.AddForce(firePoint.up * projectileForce, ForceMode2D.Impulse);
+        bulletRigidBody.AddForce(firePoint.right * projectileForce, ForceMode2D.Impulse);
     }
 }
