@@ -13,7 +13,9 @@ GameObject:
   - component: {fileID: 3323294563495467697}
   - component: {fileID: 3323294563495467710}
   - component: {fileID: 3323294563495467709}
-  - component: {fileID: 3323294563495467708}
+  - component: {fileID: -838266647175128877}
+  - component: {fileID: -4487429041158801594}
+  - component: {fileID: 9000256024955341598}
   m_Layer: 6
   m_Name: Donut
   m_TagString: Enemy
@@ -142,7 +144,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &3323294563495467708
+--- !u!114 &-838266647175128877
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -151,9 +153,37 @@ MonoBehaviour:
   m_GameObject: {fileID: 3323294563495467696}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afd35674cfd47d34ea64db152fa03285, type: 3}
+  m_Script: {fileID: 11500000, guid: 60659495275a3b74ba39cb92f9657785, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyBulletPrefab: {fileID: 1519230182389404387, guid: 3302f407be6769a4ebf08aba309ed4fa, type: 3}
+  bulletSpeed: 10
+  shootInterval: 3
+--- !u!114 &-4487429041158801594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3323294563495467696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7579a4a2824364e4d9a3a258d03c3c02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 3
-  health: 200
-  spriteRenderer: {fileID: 0}
+  health: 50
+--- !u!114 &9000256024955341598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3323294563495467696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15709d20caa4f054e889891be8735763, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
+  explosion: {fileID: 2679455985777518719, guid: 329ec9d3481c12a4bb2eb41e6db3a84b, type: 3}
