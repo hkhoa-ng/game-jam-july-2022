@@ -141,5 +141,24 @@ public class GameManager : MonoBehaviour
                 rooms[roomIndex].portalTop.GetComponent<PortalTransition>().isActive = true;
             }
         }
+        else
+        {
+            if (rooms[roomIndex].portalLeft != null)
+            {
+                rooms[roomIndex].portalLeft.GetComponent<PortalTransition>().isActive = false;
+            }
+            if (rooms[roomIndex].portalRight != null)
+            {
+                rooms[roomIndex].portalRight.GetComponent<PortalTransition>().isActive = false;
+            }
+            if (rooms[roomIndex].portalBottom != null)
+            {
+                rooms[roomIndex].portalBottom.GetComponent<PortalTransition>().isActive = false;
+            }
+            if (rooms[roomIndex].portalTop != null)
+            {
+                rooms[roomIndex].portalTop.GetComponent<PortalTransition>().isActive = false;
+            }
+        }
     }
 }
