@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 553091947137024119}
   - component: {fileID: 6417579781174687120}
   - component: {fileID: -6036841920964264141}
-  m_Layer: 6
+  m_Layer: 13
   m_Name: EnemyExplosion
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -4878,7 +4878,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e10ed4d612b59454e931df42a36c5d93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTime: 1
+  lifeTime: 0.5
 --- !u!58 &-6036841920964264141
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4906,7 +4906,7 @@ GameObject:
   - component: {fileID: 8303510689426168861}
   - component: {fileID: 7850070960101206602}
   - component: {fileID: 1360860951446047160}
-  m_Layer: 6
+  m_Layer: 13
   m_Name: Spark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9769,7 +9769,7 @@ GameObject:
   - component: {fileID: 2017832594442800156}
   - component: {fileID: 334510113773139972}
   - component: {fileID: 7138389084038158145}
-  m_Layer: 6
+  m_Layer: 13
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
