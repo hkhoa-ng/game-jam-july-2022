@@ -10,6 +10,8 @@ public class Room : MonoBehaviour
     public GameObject portalRight;
     public bool isInitialised;
 
+    public GameObject[] obstacles = new GameObject[4];
+    public bool isOpenable;
     public bool isEntered;
     
     // Start is called before the first frame update

@@ -238,6 +238,12 @@ MonoBehaviour:
   portalLeft: {fileID: 616062112}
   portalRight: {fileID: 0}
   isInitialised: 0
+  obstacles:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  isOpenable: 0
   isEntered: 0
 --- !u!1 &37652773
 GameObject:
@@ -344,6 +350,12 @@ MonoBehaviour:
   portalLeft: {fileID: 970253176}
   portalRight: {fileID: 0}
   isInitialised: 0
+  obstacles:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  isOpenable: 0
   isEntered: 0
 --- !u!1 &147798973
 GameObject:
@@ -393,6 +405,12 @@ MonoBehaviour:
   portalLeft: {fileID: 0}
   portalRight: {fileID: 1092188501}
   isInitialised: 0
+  obstacles:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  isOpenable: 0
   isEntered: 0
 --- !u!1 &274761497
 GameObject:
@@ -442,6 +460,12 @@ MonoBehaviour:
   portalLeft: {fileID: 1292688085}
   portalRight: {fileID: 1218101277}
   isInitialised: 0
+  obstacles:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  isOpenable: 0
   isEntered: 0
 --- !u!1001 &301506484
 PrefabInstance:
@@ -558,6 +582,12 @@ MonoBehaviour:
   portalLeft: {fileID: 1218101277}
   portalRight: {fileID: 0}
   isInitialised: 0
+  obstacles:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  isOpenable: 0
   isEntered: 0
 --- !u!1001 &467434284
 PrefabInstance:
@@ -674,6 +704,12 @@ MonoBehaviour:
   portalLeft: {fileID: 773759979}
   portalRight: {fileID: 6359316}
   isInitialised: 0
+  obstacles:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  isOpenable: 0
   isEntered: 0
 --- !u!1 &501976089
 GameObject:
@@ -723,6 +759,12 @@ MonoBehaviour:
   portalLeft: {fileID: 0}
   portalRight: {fileID: 1046019164}
   isInitialised: 0
+  obstacles:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  isOpenable: 0
   isEntered: 0
 --- !u!1001 &508135666
 PrefabInstance:
@@ -839,6 +881,12 @@ MonoBehaviour:
   portalLeft: {fileID: 1092188501}
   portalRight: {fileID: 1292688085}
   isInitialised: 0
+  obstacles:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  isOpenable: 0
   isEntered: 0
 --- !u!1 &539868384
 GameObject:
@@ -8198,6 +8246,12 @@ MonoBehaviour:
   portalLeft: {fileID: 6359316}
   portalRight: {fileID: 0}
   isInitialised: 0
+  obstacles:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  isOpenable: 0
   isEntered: 0
 --- !u!1001 &668755759
 PrefabInstance:
@@ -8427,6 +8481,12 @@ MonoBehaviour:
   portalLeft: {fileID: 1160614090039184646}
   portalRight: {fileID: 508135668}
   isInitialised: 0
+  obstacles:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  isOpenable: 0
   isEntered: 0
 --- !u!1001 &773759977
 PrefabInstance:
@@ -8543,6 +8603,12 @@ MonoBehaviour:
   portalLeft: {fileID: 0}
   portalRight: {fileID: 1286349662}
   isInitialised: 0
+  obstacles:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  isOpenable: 0
   isEntered: 0
 --- !u!1 &823622541
 GameObject:
@@ -9050,6 +9116,12 @@ MonoBehaviour:
   portalLeft: {fileID: 0}
   portalRight: {fileID: 1160614090039184646}
   isInitialised: 0
+  obstacles:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  isOpenable: 0
   isEntered: 0
 --- !u!1001 &1218101275
 PrefabInstance:
@@ -9424,6 +9496,12 @@ MonoBehaviour:
   portalLeft: {fileID: 1046019164}
   portalRight: {fileID: 773759979}
   isInitialised: 0
+  obstacles:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  isOpenable: 0
   isEntered: 0
 --- !u!1 &1323791736
 GameObject:
@@ -9473,6 +9551,12 @@ MonoBehaviour:
   portalLeft: {fileID: 738209118}
   portalRight: {fileID: 970253176}
   isInitialised: 0
+  obstacles:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  isOpenable: 0
   isEntered: 0
 --- !u!1 &1384345470
 GameObject:
@@ -9542,6 +9626,14 @@ MonoBehaviour:
   endIndex: 0
   mainPathLength: 0
   player: {fileID: 589897166}
+  healthyEnemiesPrefabs:
+  - {fileID: 1978994070486630212, guid: e8b80b8524df1f344b8570283908d40d, type: 3}
+  - {fileID: 1657113415593929491, guid: 0917ca3cf5600af4a9a2ad49760bcac2, type: 3}
+  - {fileID: 4003897596806903819, guid: 6fb723e6c11e7864bbbf3f8129a60e72, type: 3}
+  junkEnemiesPrefabs:
+  - {fileID: 7506672003005204441, guid: dd87236f6286f7f4692fe46964e9fb28, type: 3}
+  - {fileID: 3908852741839873596, guid: 719387ea4ca4a654097b1d90a3d95dde, type: 3}
+  - {fileID: 3323294563495467696, guid: 17e331c66d98dae479aeaf527bec5c3a, type: 3}
 --- !u!4 &1384345472
 Transform:
   m_ObjectHideFlags: 0
@@ -9604,6 +9696,12 @@ MonoBehaviour:
   portalLeft: {fileID: 1286349662}
   portalRight: {fileID: 738209118}
   isInitialised: 0
+  obstacles:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  isOpenable: 0
   isEntered: 0
 --- !u!1 &1428849786
 GameObject:
@@ -9972,6 +10070,12 @@ MonoBehaviour:
   portalLeft: {fileID: 508135668}
   portalRight: {fileID: 616062112}
   isInitialised: 0
+  obstacles:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  isOpenable: 0
   isEntered: 0
 --- !u!1 &1972980579
 GameObject:
