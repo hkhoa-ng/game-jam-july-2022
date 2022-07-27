@@ -32,6 +32,7 @@ public class BossAI : MonoBehaviour
     public float alertTime = 1f;
     public int chargeNum = 4;
 
+    public Vector3 spawnPos;
     public float minSpawnX;
     public float maxSpawnX;
     public float minSpawnY;
@@ -55,6 +56,7 @@ public class BossAI : MonoBehaviour
     }
 
     private void Awake() {
+        spawnPos = transform.position;
         animator = GetComponent<Animator>();
         playerPos = GameObject.FindGameObjectWithTag("Player").transform;
         startPos = this.gameObject.transform;
@@ -233,7 +235,7 @@ public class BossAI : MonoBehaviour
             transform.position = Vector2.MoveTowards(transform.position, playerPos.position, chaseSpeed * Time.deltaTime);
         }
         if (currentState == BOSS_IDLE) {
-            transform.position = Vector2.MoveTowards(transform.position, new Vector3(0, 3, 0), chaseSpeed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, spawnPos +  new Vector3(0, 3, 0), chaseSpeed * Time.deltaTime);
         }
         if (health <= 0) {
             Destroy(gameObject);
@@ -258,6 +260,11 @@ public class BossAI : MonoBehaviour
                 Instantiate(explosion, transform.position, Quaternion.identity);
                 Destroy(gameObject);
             }
+        }
+
+        if (collision.gameObject.CompareTag("Player"))
+        {
+
         }
     }
 }

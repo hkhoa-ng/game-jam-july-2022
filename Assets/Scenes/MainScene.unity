@@ -130,9 +130,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 925492612}
     m_Modifications:
+    - target: {fileID: 1555121316127812855, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2768461613665944761, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4240332658876834973, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4794585621120866316, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4794585621120866316, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7122260702337262015, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7621493147246062090, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
       propertyPath: sprite
@@ -186,6 +206,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Portal Vertical (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 7621493147246062092, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8782937673301706115, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
 --- !u!4 &6359315 stripped
@@ -213,7 +241,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9653441}
   - component: {fileID: 9653442}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Room (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -268,7 +296,7 @@ GameObject:
   m_Component:
   - component: {fileID: 87167741}
   - component: {fileID: 87167742}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Room (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -323,7 +351,7 @@ GameObject:
   m_Component:
   - component: {fileID: 147798974}
   - component: {fileID: 147798975}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Room (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -378,7 +406,7 @@ GameObject:
   m_Component:
   - component: {fileID: 274761498}
   - component: {fileID: 274761499}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Room (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -430,9 +458,33 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 610266005}
     m_Modifications:
+    - target: {fileID: 492651305594392414, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 943676135972836374, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2979737647181463010, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3762619625305944850, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5266249354359400644, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5266249354359400644, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5558912543635815770, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7019296548777094640, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
       propertyPath: m_RootOrder
@@ -486,6 +538,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Portal Horizontal (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8862417485405612041, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
 --- !u!4 &301506485 stripped
@@ -513,7 +569,7 @@ GameObject:
   m_Component:
   - component: {fileID: 335824054}
   - component: {fileID: 335824055}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Room (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -569,7 +625,7 @@ GameObject:
   - component: {fileID: 367531184}
   - component: {fileID: 367531186}
   - component: {fileID: 367531185}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71944,7 +72000,7 @@ GameObject:
   - component: {fileID: 375987873}
   - component: {fileID: 375987872}
   - component: {fileID: 375987871}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Walls
   m_TagString: Walls
   m_Icon: {fileID: 0}
@@ -91281,13 +91337,37 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 610266005}
     m_Modifications:
+    - target: {fileID: 492651305594392414, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 943676135972836374, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 943676135972836374, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2979737647181463010, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3762619625305944850, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5266249354359400644, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5266249354359400644, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5558912543635815770, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7019296548777094640, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
       propertyPath: m_RootOrder
@@ -91341,6 +91421,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Portal Horizontal (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8862417485405612041, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
 --- !u!4 &467434285 stripped
@@ -91368,7 +91452,7 @@ GameObject:
   m_Component:
   - component: {fileID: 498998734}
   - component: {fileID: 498998735}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Room (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91423,7 +91507,7 @@ GameObject:
   m_Component:
   - component: {fileID: 501976090}
   - component: {fileID: 501976091}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Room (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91475,6 +91559,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 925492612}
     m_Modifications:
+    - target: {fileID: 1555121316127812855, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2768461613665944761, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4240332658876834973, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4794585621120866316, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7122260702337262015, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7621493147246062090, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
       propertyPath: sprite
       value: 
@@ -91527,6 +91631,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Portal Vertical (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7621493147246062092, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8782937673301706115, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8782937673301706115, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -91558,7 +91670,7 @@ GameObject:
   m_Component:
   - component: {fileID: 532275000}
   - component: {fileID: 532275001}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Room (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91615,9 +91727,33 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 610266005}
     m_Modifications:
+    - target: {fileID: 492651305594392414, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 943676135972836374, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2979737647181463010, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3762619625305944850, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5266249354359400644, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5266249354359400644, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5558912543635815770, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7019296548777094640, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
       propertyPath: m_RootOrder
@@ -91671,6 +91807,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Portal Horizontal (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 8862417485405612041, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
 --- !u!4 &592674561 stripped
@@ -91698,7 +91838,7 @@ GameObject:
   m_Component:
   - component: {fileID: 593919028}
   - component: {fileID: 593919029}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collider2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91754,7 +91894,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 610266005}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Horizontal Portals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91794,9 +91934,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 925492612}
     m_Modifications:
+    - target: {fileID: 1555121316127812855, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2768461613665944761, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4240332658876834973, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4794585621120866316, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4794585621120866316, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7122260702337262015, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7621493147246062089, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
       propertyPath: m_Size.x
@@ -91854,6 +92014,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Portal Vertical (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7621493147246062092, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8782937673301706115, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
 --- !u!4 &616062111 stripped
@@ -91881,7 +92049,7 @@ GameObject:
   m_Component:
   - component: {fileID: 657914021}
   - component: {fileID: 657914022}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Room (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91933,9 +92101,33 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 610266005}
     m_Modifications:
+    - target: {fileID: 492651305594392414, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 943676135972836374, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2979737647181463010, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3762619625305944850, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5266249354359400644, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5266249354359400644, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5558912543635815770, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7019296548777094640, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
       propertyPath: m_RootOrder
@@ -91989,6 +92181,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Portal Horizontal
       objectReference: {fileID: 0}
+    - target: {fileID: 8862417485405612041, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
 --- !u!4 &668755760 stripped
@@ -92015,7 +92211,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 707406411}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rooms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92059,9 +92255,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 925492612}
     m_Modifications:
+    - target: {fileID: 1555121316127812855, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2768461613665944761, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4240332658876834973, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4794585621120866316, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4794585621120866316, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7122260702337262015, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7621493147246062090, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
       propertyPath: sprite
@@ -92115,6 +92331,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Portal Vertical (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 7621493147246062092, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8782937673301706115, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
 --- !u!4 &738209117 stripped
@@ -92142,7 +92366,7 @@ GameObject:
   m_Component:
   - component: {fileID: 749723018}
   - component: {fileID: 749723019}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Room (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92194,6 +92418,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 925492612}
     m_Modifications:
+    - target: {fileID: 1555121316127812855, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2768461613665944761, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4240332658876834973, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4794585621120866316, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7122260702337262015, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7621493147246062090, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
       propertyPath: sprite
       value: 
@@ -92246,6 +92490,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Portal Vertical (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 7621493147246062092, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8782937673301706115, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8782937673301706115, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -92277,7 +92529,7 @@ GameObject:
   m_Component:
   - component: {fileID: 812585619}
   - component: {fileID: 812585620}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Room (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92331,7 +92583,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 835010529}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: -----------ENVIRONMENT-------------
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92353,8 +92605,8 @@ Transform:
   - {fileID: 925492612}
   - {fileID: 610266005}
   - {fileID: 707406411}
-  m_Father: {fileID: 1972980580}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &925442471
 PrefabInstance:
@@ -92363,9 +92615,33 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 610266005}
     m_Modifications:
+    - target: {fileID: 492651305594392414, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 943676135972836374, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 943676135972836374, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2979737647181463010, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3762619625305944850, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5266249354359400644, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5558912543635815770, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7019296548777094640, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
       propertyPath: m_RootOrder
@@ -92423,6 +92699,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Portal Horizontal (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8862417485405612041, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
 --- !u!4 &925442472 stripped
@@ -92449,7 +92729,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 925492612}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Vertical Portals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92489,6 +92769,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 925492612}
     m_Modifications:
+    - target: {fileID: 1555121316127812855, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2768461613665944761, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4240332658876834973, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4794585621120866316, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7122260702337262015, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7621493147246062090, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
       propertyPath: sprite
       value: 
@@ -92541,6 +92841,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Portal Vertical (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 7621493147246062092, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8782937673301706115, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8782937673301706115, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -92569,9 +92877,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 925492612}
     m_Modifications:
+    - target: {fileID: 1555121316127812855, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2768461613665944761, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4240332658876834973, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4794585621120866316, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4794585621120866316, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7122260702337262015, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7621493147246062090, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
       propertyPath: sprite
@@ -92625,6 +92953,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Portal Vertical (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 7621493147246062092, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8782937673301706115, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
 --- !u!4 &1046019163 stripped
@@ -92652,7 +92988,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1089022107}
   - component: {fileID: 1089022108}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collider2 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92706,6 +93042,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 925492612}
     m_Modifications:
+    - target: {fileID: 1555121316127812855, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2768461613665944761, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4240332658876834973, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4794585621120866316, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7122260702337262015, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7621493147246062090, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
       propertyPath: sprite
       value: 
@@ -92758,6 +93114,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Portal Vertical (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7621493147246062092, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8782937673301706115, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8782937673301706115, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -92789,7 +93153,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1127049060}
   - component: {fileID: 1127049061}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Room
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92841,6 +93205,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 925492612}
     m_Modifications:
+    - target: {fileID: 1555121316127812855, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2768461613665944761, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4240332658876834973, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4794585621120866316, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7122260702337262015, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7621493147246062090, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
       propertyPath: sprite
       value: 
@@ -92893,6 +93277,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Portal Vertical (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 7621493147246062092, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8782937673301706115, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8782937673301706115, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -92921,9 +93313,33 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 610266005}
     m_Modifications:
+    - target: {fileID: 492651305594392414, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 943676135972836374, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 943676135972836374, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2979737647181463010, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3762619625305944850, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5266249354359400644, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5558912543635815770, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7019296548777094640, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
       propertyPath: m_RootOrder
@@ -92977,6 +93393,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Portal Horizontal (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 8862417485405612041, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
 --- !u!4 &1260059636 stripped
@@ -93001,6 +93421,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 925492612}
     m_Modifications:
+    - target: {fileID: 1555121316127812855, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2768461613665944761, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4240332658876834973, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4794585621120866316, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7122260702337262015, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7621493147246062090, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
       propertyPath: sprite
       value: 
@@ -93053,6 +93493,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Portal Vertical (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 7621493147246062092, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8782937673301706115, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8782937673301706115, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -93081,9 +93529,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 925492612}
     m_Modifications:
+    - target: {fileID: 1555121316127812855, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2768461613665944761, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4240332658876834973, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4794585621120866316, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4794585621120866316, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7122260702337262015, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7621493147246062090, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
       propertyPath: sprite
@@ -93137,6 +93605,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Portal Vertical (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 7621493147246062092, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8782937673301706115, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
 --- !u!4 &1292688084 stripped
@@ -93164,7 +93640,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1310088860}
   - component: {fileID: 1310088861}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Room (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93219,7 +93695,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1323791737}
   - component: {fileID: 1323791738}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Room (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93360,7 +93836,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1395636040
 GameObject:
@@ -93372,7 +93848,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1395636041}
   - component: {fileID: 1395636042}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collider (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93429,7 +93905,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1402212370}
   - component: {fileID: 1402212371}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93486,7 +93962,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1403769766}
   - component: {fileID: 1403769767}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Room (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93642,13 +94118,37 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 610266005}
     m_Modifications:
+    - target: {fileID: 492651305594392414, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 943676135972836374, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 943676135972836374, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2979737647181463010, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3762619625305944850, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5266249354359400644, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5266249354359400644, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5558912543635815770, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7019296548777094640, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
       propertyPath: m_RootOrder
@@ -93702,6 +94202,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Portal Horizontal (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 8862417485405612041, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
 --- !u!4 &1809608489 stripped
@@ -93726,9 +94230,33 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 610266005}
     m_Modifications:
+    - target: {fileID: 492651305594392414, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 943676135972836374, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 943676135972836374, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2979737647181463010, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3762619625305944850, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5266249354359400644, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5558912543635815770, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7019296548777094640, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
       propertyPath: m_RootOrder
@@ -93782,6 +94310,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Portal Horizontal (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 8862417485405612041, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
 --- !u!4 &1914226421 stripped
@@ -93809,7 +94341,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1955398158}
   - component: {fileID: 1955398159}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Room (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93880,10 +94412,9 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 835010529}
+  m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1997989622
 GameObject:
@@ -93895,7 +94426,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1997989623}
   - component: {fileID: 1997989624}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collider2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93953,7 +94484,7 @@ GameObject:
   - component: {fileID: 2004126474}
   - component: {fileID: 2004126473}
   - component: {fileID: 2004126472}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Grid
   m_TagString: Walls
   m_Icon: {fileID: 0}
@@ -94025,7 +94556,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2020942194}
   - component: {fileID: 2020942195}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collider (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94079,9 +94610,33 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 610266005}
     m_Modifications:
+    - target: {fileID: 492651305594392414, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 943676135972836374, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2979737647181463010, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3762619625305944850, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5266249354359400644, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5266249354359400644, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5558912543635815770, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7019296548777094640, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
       propertyPath: m_RootOrder
@@ -94135,6 +94690,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Portal Horizontal (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 8862417485405612041, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
 --- !u!4 &2045509063 stripped
@@ -94159,9 +94718,33 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 610266005}
     m_Modifications:
+    - target: {fileID: 492651305594392414, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 943676135972836374, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2979737647181463010, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3762619625305944850, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5266249354359400644, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5266249354359400644, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5558912543635815770, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7019296548777094640, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
       propertyPath: m_RootOrder
@@ -94215,6 +94798,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Portal Horizontal (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 8862417485405612041, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
 --- !u!4 &2052036960 stripped
@@ -94239,9 +94826,33 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 610266005}
     m_Modifications:
+    - target: {fileID: 492651305594392414, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 943676135972836374, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 943676135972836374, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2979737647181463010, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3762619625305944850, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5266249354359400644, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5558912543635815770, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7019296548777094640, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
       propertyPath: m_RootOrder
@@ -94295,6 +94906,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Portal Horizontal (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 8862417485405612041, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
 --- !u!1 &2114468469 stripped
@@ -94319,9 +94934,33 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 610266005}
     m_Modifications:
+    - target: {fileID: 492651305594392414, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 943676135972836374, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 943676135972836374, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2979737647181463010, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3762619625305944850, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5266249354359400644, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5558912543635815770, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7019296548777094640, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
       propertyPath: m_RootOrder
@@ -94375,6 +95014,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Portal Horizontal (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8862417485405612041, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d521e5ce039532244aaecf8ab0d735be, type: 3}
 --- !u!4 &2137979280 stripped
@@ -94399,9 +95042,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 925492612}
     m_Modifications:
+    - target: {fileID: 1555121316127812855, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2768461613665944761, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4240332658876834973, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4794585621120866316, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4794585621120866316, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7122260702337262015, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7621493147246062090, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
       propertyPath: sprite
@@ -94455,6 +95118,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Portal Vertical
       objectReference: {fileID: 0}
+    - target: {fileID: 7621493147246062092, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8782937673301706115, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8782937673301706115, guid: 1bdb9147102f2db4793699c715cb4d1b, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -94486,6 +95157,10 @@ PrefabInstance:
     - target: {fileID: 3152183613072618606, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3152183613072618606, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3152183613072618607, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}
       propertyPath: cam
@@ -94534,6 +95209,18 @@ PrefabInstance:
     - target: {fileID: 3152183613072618611, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3152183613465430115, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3152183613700233541, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3152183613984074682, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}

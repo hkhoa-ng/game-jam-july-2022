@@ -131,6 +131,7 @@ public class GameManager : MonoBehaviour
         rooms[startIndex].isEntered = true;
         OpenDoors(startIndex);
         isHealthy = ((startIndex % 4) % 2) != ((startIndex / 4) % 2);
+        endIndex = startIndex + 1;
     }
 
     // Update is called once per frame
