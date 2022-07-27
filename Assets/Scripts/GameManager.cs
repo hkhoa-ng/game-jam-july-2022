@@ -12,8 +12,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int endIndex;
     [SerializeField] private int mainPathLength;
 
-    private int minPathLength = 8;
-    private int maxPathLength = 16;
+    private int minPathLength = 6;
+    private int maxPathLength = 10;
 
     // 0: Left, 1: Right, 2: Up, 3: Down 
     private int direction;
@@ -103,23 +103,23 @@ public class GameManager : MonoBehaviour
             if (!rooms[i].isInitialised)
             {
                 int rand; 
-                rand = Random.Range(0,5); // Chance of open is 20%
-                if (rand == 4 && rooms[i].portalLeft != null)
+                rand = Random.Range(0,6); // Chance of open is 1/6
+                if (rand == 0 && rooms[i].portalLeft != null)
                 {
                     rooms[i].portalLeft.GetComponent<PortalTransition>().isOpenable = true;
                 }
-                rand = Random.Range(0, 5);
-                if (rand == 4 && rooms[i].portalRight != null)
+                rand = Random.Range(0, 6);
+                if (rand == 0 && rooms[i].portalRight != null)
                 {
                     rooms[i].portalRight.GetComponent<PortalTransition>().isOpenable = true;
                 }
-                rand = Random.Range(0, 5);
-                if (rand == 4 && rooms[i].portalTop != null)
+                rand = Random.Range(0, 6);
+                if (rand == 0 && rooms[i].portalTop != null)
                 {
                     rooms[i].portalTop.GetComponent<PortalTransition>().isOpenable = true;
                 }
-                rand = Random.Range(0, 5);
-                if (rand == 4 && rooms[i].portalBottom != null)
+                rand = Random.Range(0, 6);
+                if (rand == 0 && rooms[i].portalBottom != null)
                 {
                     rooms[i].portalBottom.GetComponent<PortalTransition>().isOpenable = true;
                 }
@@ -131,7 +131,6 @@ public class GameManager : MonoBehaviour
         rooms[startIndex].isEntered = true;
         OpenDoors(startIndex);
         isHealthy = ((startIndex % 4) % 2) != ((startIndex / 4) % 2);
-        endIndex = startIndex + 1;
     }
 
     // Update is called once per frame
@@ -172,6 +171,7 @@ public class GameManager : MonoBehaviour
                 alert.GetComponent<SpawnEnemyFromAlert>().enemyPrefab = bossPrefab;
                 alert.GetComponent<SpawnEnemyFromAlert>().spawnPos = bossSpawnPos;
                 alert.GetComponent<SpawnEnemyFromAlert>().spawnTimer = alertTime;
+                hasSpawned = true;
                 StartCoroutine(CheckBossRoom());
             }
         }
