@@ -9,6 +9,7 @@ TagManager:
   - Walls
   - EnemyBullet
   - PlayerBullet
+  - Boss
   layers:
   - Default
   - TransparentFX
@@ -19,12 +20,12 @@ TagManager:
   - Enemy
   - Player
   - Wall
-  - 
+  - Bullet
   - Ignore Collision
   - Oil
   - EnemyBullet
   - PoisonSmoke
-  - PlayerBullet
+  - 
   - 
   - 
   - 

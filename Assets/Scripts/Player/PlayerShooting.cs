@@ -6,7 +6,6 @@ public class PlayerShooting : MonoBehaviour
 {
     [SerializeField] private Transform firePoint;
     [SerializeField] private GameObject bulletPrefab;
-    public ParticleSystem muzzleFlash;
     
 
     public float projectileForce = 10f;
@@ -23,7 +22,6 @@ public class PlayerShooting : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             Shoot();
-            muzzleFlash.Play();
         }
     }
     
