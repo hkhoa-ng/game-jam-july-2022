@@ -82,7 +82,7 @@ public class BossAI : MonoBehaviour
         if (chosenState == "circle") {
             int numToShoot = shootCirclePatternNum;
             ChangeAnimationState(BOSS_SHOOT);
-            Invoke(nameof(IdleState), shootDuration);
+            Invoke(nameof(IdleState), shootDuration * 2.2f);
             while (numToShoot > 0) {
                 ShootingCircles(numToShoot);
                 numToShoot--;
@@ -131,7 +131,7 @@ public class BossAI : MonoBehaviour
     }
     
     private void ShootingCircles(int delay) {
-        Invoke(nameof(SpawnBulletCircle), delay * 1.2f);
+        Invoke(nameof(SpawnBulletCircle), delay * 2.5f);
     }
 
     private void ShootingSpiral(int delay) {
@@ -144,13 +144,13 @@ public class BossAI : MonoBehaviour
 
         for (int i = 0; i < 3; i++) {
             float mainAngles = spiralAngle + i * 120f;
-            for (int j = 0; j < 2; j++) {
+            for (int j = 0; j < 1; j++) {
                 float angle = mainAngles + j * 15f;
                 GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
                 Rigidbody2D bulletRB = bullet.GetComponent<Rigidbody2D>();
                 bulletRB.rotation = angle;
                 Vector2 bulletShootDir = new Vector2(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad));
-                bulletRB.AddForce(bulletShootDir * bulletSpeed, ForceMode2D.Impulse);
+                bulletRB.AddForce(bulletShootDir * bulletSpeed * 1.5f, ForceMode2D.Impulse);
             }
         }
         spiralAngle += 10;
@@ -158,25 +158,25 @@ public class BossAI : MonoBehaviour
 
     private void SpawnBulletAtPlayer() {
         Vector3 targetDir = playerPos.position - transform.position;
-        float offset = Random.Range(-3, 3);
+        float offset = Random.Range(-1, 1);
         Vector2 bulletShootDir = new Vector2(targetDir.x + offset, targetDir.y + offset).normalized;
         float angle = Mathf.Atan2(bulletShootDir.y, bulletShootDir.x) * Mathf.Rad2Deg;
         GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
         Rigidbody2D bulletRB = bullet.GetComponent<Rigidbody2D>();
         bulletRB.rotation = angle;
-        bulletRB.AddForce(bulletShootDir * bulletSpeed * 3.3f, ForceMode2D.Impulse);
+        bulletRB.AddForce(bulletShootDir * bulletSpeed * 5f, ForceMode2D.Impulse);
     }
 
     private void SpawnBulletCircle() {
-        Vector2 shootDir = Random.insideUnitCircle.normalized;
-        float mainAngle = Mathf.Atan2(shootDir.y, shootDir.x) * Mathf.Rad2Deg;
-        float perpendicularAngle = mainAngle + 90f;
+        // Vector2 shootDir = Random.insideUnitCircle.normalized;
+        // float mainAngle = Mathf.Atan2(shootDir.y, shootDir.x) * Mathf.Rad2Deg;
+        // float perpendicularAngle = mainAngle + 90f;
 
-        float randomAngle = Random.Range(-20, 20);
+        float randomAngle = Random.Range(-45, 45);
 
         for (int i = 0; i < 42; i++) {
             float angle = -20 + randomAngle - i * 8.75f;
-            if (i > 10 || i < 9) {
+            if (i > 11 || i < 9) {
                 GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
                 Rigidbody2D bulletRB = bullet.GetComponent<Rigidbody2D>();
                 bulletRB.rotation = angle;
@@ -233,7 +233,7 @@ public class BossAI : MonoBehaviour
             transform.position = Vector2.MoveTowards(transform.position, playerPos.position, chaseSpeed * Time.deltaTime);
         }
         if (currentState == BOSS_IDLE) {
-            transform.position = Vector2.MoveTowards(transform.position, new Vector3(0, 3, 0), chaseSpeed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, new Vector3(0, 0, 0), chaseSpeed * Time.deltaTime);
         }
         if (health <= 0) {
             Destroy(gameObject);
