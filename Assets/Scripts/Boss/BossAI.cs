@@ -222,7 +222,7 @@ public class BossAI : MonoBehaviour
 
     private void Update() {
         if (currentState == BOSS_CHASE) {
-            Vector3 targetDir = playerPos.position - animator.transform.position;
+            Vector3 targetDir = playerPos.position - transform.position;
             Vector2 moveDir = new Vector2(targetDir.x, targetDir.y).normalized;
 
             // Rotate the sprite accordingly to move direction (left-right)
@@ -235,7 +235,7 @@ public class BossAI : MonoBehaviour
             transform.position = Vector2.MoveTowards(transform.position, playerPos.position, chaseSpeed * Time.deltaTime);
         }
         if (currentState == BOSS_IDLE) {
-            transform.position = Vector2.MoveTowards(transform.position, new Vector3(0, 0, 0), chaseSpeed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, spawnPos, chaseSpeed * Time.deltaTime);
         }
         if (health <= 0) {
             Destroy(gameObject);
