@@ -45,7 +45,8 @@ public class BossAI : MonoBehaviour
 
     private Vector3 chargeTarget;
 
-    public float health = 3000f;
+    public float maxhealth = 100f;
+    private float health;
 
     private void ChangeAnimationState(string newState) {
         if (currentState == newState) return;
@@ -58,6 +59,7 @@ public class BossAI : MonoBehaviour
         playerPos = GameObject.FindGameObjectWithTag("Player").transform;
         startPos = this.gameObject.transform;
         spriteRenderer = animator.GetComponent<SpriteRenderer>();
+        health = maxhealth;
 
         Invoke(nameof(IdleState), 1f);
     }
@@ -240,6 +242,22 @@ public class BossAI : MonoBehaviour
         if (currentState == BOSS_CHARGE) { 
             var step = chargeSpeed * Time.deltaTime; 
             transform.position = Vector3.MoveTowards(transform.position, chargeTarget, step);
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision) 
+    {
+        if (collision.gameObject.CompareTag("PlayerBullet"))
+        {
+            if (health > 0)
+            {
+                health--;
+            }
+            if (health <= 0)
+            {
+                Instantiate(explosion, transform.position, Quaternion.identity);
+                Destroy(gameObject);
+            }
         }
     }
 }

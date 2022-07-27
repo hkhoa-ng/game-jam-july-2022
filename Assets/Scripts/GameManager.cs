@@ -34,6 +34,10 @@ public class GameManager : MonoBehaviour
     public int numOfRemainingEnemies;
     public float secondsBetweenSpawn = 2;
 
+    // Boss Prefab
+    public GameObject bossPrefab;
+
+    // Spawn Manager variables
     public GameObject alertPrefab;
     private GameObject enemyToSpawn;
     private Vector3 positionToSpawnEnemy;
@@ -153,9 +157,20 @@ public class GameManager : MonoBehaviour
         else
         {
             CloseDoors(roomIndex);
-
-            numOfEnemies = Random.Range(minEnemies, maxEnemies);
-            StartCoroutine(SpawnEnemies(numOfEnemies));
+            if (roomIndex != endIndex)
+            {
+                numOfEnemies = Random.Range(minEnemies, maxEnemies);
+                StartCoroutine(SpawnEnemies(numOfEnemies));
+            }
+            else
+            {
+                Vector3 bossSpawnPos = rooms[roomIndex].transform.position;
+                GameObject alert = Instantiate(alertPrefab, bossSpawnPos, Quaternion.identity);
+                alert.GetComponent<SpawnEnemyFromAlert>().enemyPrefab = bossPrefab;
+                alert.GetComponent<SpawnEnemyFromAlert>().spawnPos = bossSpawnPos;
+                alert.GetComponent<SpawnEnemyFromAlert>().spawnTimer = alertTime;
+                StartCoroutine(CheckBossRoom());
+            }
         }
     }
 
@@ -205,6 +220,21 @@ public class GameManager : MonoBehaviour
             numOfEnemies -= enemiesThisWave;
         }
         StartCoroutine(CheckRoom());
+    }
+
+    IEnumerator CheckBossRoom()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(1);
+            numOfRemainingEnemies = GameObject.FindGameObjectsWithTag("Boss").Length;
+            if (numOfRemainingEnemies == 0)
+            {
+                OpenDoors(currentIndex);
+                rooms[currentIndex].isEntered = true;
+                yield break;
+            }
+        }
     }
 
     IEnumerator CheckRoom()

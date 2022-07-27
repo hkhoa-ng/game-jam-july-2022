@@ -403,6 +403,7 @@ GameObject:
   - component: {fileID: 7019296548777094640}
   - component: {fileID: 2021224835548258763}
   - component: {fileID: 7804458636604832841}
+  - component: {fileID: 5786056553598438537}
   m_Layer: 0
   m_Name: Portal Horizontal
   m_TagString: Untagged
@@ -467,6 +468,25 @@ MonoBehaviour:
   isActive: 0
   isOpenable: 0
   sprite: {fileID: 492651305594392414}
-  camMaxChange: {x: 0, y: 16}
-  camMinChange: {x: 0, y: 16}
   playerChange: {x: 0, y: 5, z: 0}
+--- !u!50 &5786056553598438537
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8862417485405612041}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
