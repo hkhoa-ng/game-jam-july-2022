@@ -9900,6 +9900,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1745808069}
   - component: {fileID: 1745808068}
+  - component: {fileID: 1745808070}
+  - component: {fileID: 1745808071}
   m_Layer: 0
   m_Name: Cake Boss
   m_TagString: Untagged
@@ -9966,12 +9968,64 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1745808067}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.51, y: 4.07, z: 0}
+  m_LocalPosition: {x: 0.16, y: 6.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1745808070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745808067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77e3f3cd147a2dc4b8e228950f015b3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idleDuration: 2
+  shootDuration: 7
+  chaseDuration: 5
+  summonDuration: 2
+  chaseSpeed: 4
+  enemiesSpawnNum: 3
+  shootNum: 5
+  alertTime: 1
+  minSpawnX: 0
+  maxSpawnX: 0
+  minSpawnY: 0
+  maxSpawnY: 0
+  bulletPrefab: {fileID: 1519230182389404387, guid: 3302f407be6769a4ebf08aba309ed4fa, type: 3}
+  bulletSpeed: 3
+  alertPrefab: {fileID: 3103733707578093243, guid: c675e560c76d5e34498abfe5fcdef65f, type: 3}
+  explosion: {fileID: 2679455985777518719, guid: 329ec9d3481c12a4bb2eb41e6db3a84b, type: 3}
+  enemyPrefabs:
+  - {fileID: 7506672003005204441, guid: dd87236f6286f7f4692fe46964e9fb28, type: 3}
+  - {fileID: 3908852741839873596, guid: 719387ea4ca4a654097b1d90a3d95dde, type: 3}
+  - {fileID: 3323294563495467696, guid: 17e331c66d98dae479aeaf527bec5c3a, type: 3}
+  health: 3000
+--- !u!95 &1745808071
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745808067}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1809608488
 PrefabInstance:
   m_ObjectHideFlags: 0
