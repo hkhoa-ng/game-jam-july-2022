@@ -9990,10 +9990,13 @@ MonoBehaviour:
   shootDuration: 7
   chaseDuration: 5
   summonDuration: 2
+  chargeDuration: 8
   chaseSpeed: 4
+  chargeSpeed: 13
   enemiesSpawnNum: 3
   shootNum: 5
   alertTime: 1
+  chargeNum: 5
   minSpawnX: 0
   maxSpawnX: 0
   minSpawnY: 0

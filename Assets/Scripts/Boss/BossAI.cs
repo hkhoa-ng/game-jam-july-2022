@@ -8,7 +8,8 @@ public class BossAI : MonoBehaviour
     const string BOSS_SHOOT = "BossShoot";
     const string BOSS_CHASE = "BossChase";
     const string BOSS_SUMMON = "BossSummon";
-    private string[] attackStates = {"shoot", "chase", "summon"};
+    const string BOSS_CHARGE = "BossCharge";
+    private string[] attackStates = {"shoot", "chase", "summon", "charge"};
 
     private Animator animator;
     private SpriteRenderer spriteRenderer;
@@ -21,10 +22,13 @@ public class BossAI : MonoBehaviour
     public float shootDuration = 2f;
     public float chaseDuration = 5f;
     public float summonDuration = 2f;
+    public float chargeDuration = 10f;
     public float chaseSpeed = 4f;
+    public float chargeSpeed = 10f;
     public int enemiesSpawnNum = 3;
     public int shootNum = 5;
     public float alertTime = 1f;
+    public int chargeNum = 4;
 
     public float minSpawnX;
     public float maxSpawnX;
@@ -36,6 +40,8 @@ public class BossAI : MonoBehaviour
     public GameObject alertPrefab;
     public ParticleSystem explosion;
     public GameObject[] enemyPrefabs;
+
+    private Vector3 chargeTarget;
 
     public float health = 3000f;
 
@@ -84,6 +90,15 @@ public class BossAI : MonoBehaviour
             while (enemiesToSummon > 0) {
                 Summoning(enemiesToSummon);
                 enemiesToSummon--;
+            }
+        }
+        if (chosenState == "charge") {
+            int charges = chargeNum;
+            ChangeAnimationState(BOSS_CHARGE);
+            Invoke(nameof(IdleState), chargeDuration);
+            while (charges > 0) {
+                Charging(charges);
+                charges--;
             }
         }
         attackIndex++;
@@ -157,6 +172,15 @@ public class BossAI : MonoBehaviour
         Invoke(nameof(SpawnAlert), delay * 1.5f);
     }
 
+    private void Charging(int delay) {
+        Invoke(nameof(ChargeTowardsPlayer), delay * 1.2f);
+    }
+
+    private void ChargeTowardsPlayer() {
+        // Vector3 chargeDir = playerPos.position - transform.position;
+        chargeTarget = playerPos.position + (playerPos.position - transform.position).normalized * 2f;
+    }
+
     private void SpawnAlert() {
         Vector3 spawnPos = new Vector3(Random.Range(minSpawnX, maxSpawnX), Random.Range(minSpawnY, maxSpawnY), 0);
         while (!CheckValidSpawn(spawnPos))
@@ -191,6 +215,10 @@ public class BossAI : MonoBehaviour
         if (health <= 0) {
             Destroy(gameObject);
             Instantiate(explosion, transform.position, Quaternion.identity);
+        }
+        if (currentState == BOSS_CHARGE) { 
+            var step = chargeSpeed * Time.deltaTime; 
+            transform.position = Vector3.MoveTowards(transform.position, chargeTarget, step);
         }
     }
 }
