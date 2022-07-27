@@ -27,9 +27,16 @@ public class GameManager : MonoBehaviour
     // Enemies Prefabs
     public GameObject[] healthyEnemiesPrefabs;
     public GameObject[] junkEnemiesPrefabs;
-    private int minEnemies = 4;
-    private int maxEnemies = 12;
-    private float secondsBetweenSpawn = 2;
+    public int minEnemies = 4;
+    public int maxEnemies = 12;
+    public int numOfEnemies;
+    public int numOfRemainingEnemies;
+    public float secondsBetweenSpawn = 2;
+
+    public GameObject alertPrefab;
+    private GameObject enemyToSpawn;
+    private Vector3 positionToSpawnEnemy;
+    public float alertTime = 0.5f;
 
 
     // Start is called before the first frame update
@@ -139,7 +146,7 @@ public class GameManager : MonoBehaviour
         {
             CloseDoors(roomIndex);
 
-            int numOfEnemies = Random.Range(minEnemies, maxEnemies);
+            numOfEnemies = Random.Range(minEnemies, maxEnemies);
             StartCoroutine(SpawnEnemies(numOfEnemies));
         }
     }
@@ -180,7 +187,12 @@ public class GameManager : MonoBehaviour
                     enemies = junkEnemiesPrefabs;
                 }
                 int randomIndex = Random.Range(0, enemies.Length);
-                Instantiate(enemies[randomIndex], spawnPos, Quaternion.identity);
+                // Instantiate(enemies[randomIndex], spawnPos, Quaternion.identity);
+                // SpawnAnEnemy(enemies[randomIndex], spawnPos, Quaternion.identity);
+                GameObject alert = Instantiate(alertPrefab, spawnPos, Quaternion.identity);
+                alert.GetComponent<SpawnEnemyFromAlert>().enemyPrefab = enemies[randomIndex];
+                alert.GetComponent<SpawnEnemyFromAlert>().spawnPos = spawnPos;
+                alert.GetComponent<SpawnEnemyFromAlert>().spawnTimer = alertTime;
             }
             numOfEnemies -= enemiesThisWave;
         }
@@ -192,7 +204,8 @@ public class GameManager : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(1);
-            if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
+            numOfRemainingEnemies = GameObject.FindGameObjectsWithTag("Enemy").Length;
+            if (numOfRemainingEnemies == 0)
             {
                 OpenDoors(currentIndex);
                 rooms[currentIndex].isEntered = true;
