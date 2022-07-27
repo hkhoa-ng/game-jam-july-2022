@@ -6,10 +6,12 @@ public class GunSystem : MonoBehaviour
 {
     //Gun stats
     public int damage;
-    public float timeBetweenShooting, spread, range, reloadTime, timeBetweenShots, projectileForce;
+    public float timeBetweenShooting, spread, reloadTime, timeBetweenBulletInAShot, projectileForce;
     public int magazineSize, bulletsPerTap;
     public bool allowButtonHold;
-    int bulletsLeft, bulletsShot;
+    public int bulletsLeft, bulletsShot;
+    public SpriteRenderer gunSprite;
+    private Camera cam;
 
     //bools 
     bool shooting, readyToShoot, reloading;
@@ -27,9 +29,21 @@ public class GunSystem : MonoBehaviour
     {
         bulletsLeft = magazineSize;
         readyToShoot = true;
+        cam = Camera.main;
     }
     private void Update()
     {
+        // Gun aiming
+        Vector2 mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 lookDir = mousePos - (new Vector2(transform.position.x, transform.position.y));
+        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
+
+        // Rotate the gun's sprite
+        if (angle > 90 || angle < -90) {
+            gunSprite.flipY = true;
+        } else {
+            gunSprite.flipY = false;
+        }
         MyInput();
     }
     private void MyInput()
@@ -37,21 +51,30 @@ public class GunSystem : MonoBehaviour
         if (allowButtonHold) shooting = Input.GetKey(KeyCode.Mouse0);
         else shooting = Input.GetKeyDown(KeyCode.Mouse0);
 
-        if (Input.GetKeyDown(KeyCode.R) && bulletsLeft < magazineSize && !reloading) Reload();
+        if ((Input.GetKeyDown(KeyCode.R) && bulletsLeft < magazineSize && !reloading) || (bulletsLeft == 0 && !reloading)) Reload();
 
         //Shoot
         if (readyToShoot && shooting && !reloading && bulletsLeft > 0){
             bulletsShot = bulletsPerTap;
             Shoot();
+            muzzleFlash.Play();
         }
     }
     private void Shoot()
     {
         readyToShoot = false;
+        Vector3 shotDir = firePoint.right;
+        float aimAngle = Mathf.Atan2(shotDir.y, shotDir.x) * Mathf.Rad2Deg;
+        float shotAngle = aimAngle + Random.Range(-spread, spread);
 
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D bulletRigidBody = bullet.GetComponent<Rigidbody2D>();
-        bulletRigidBody.AddForce(firePoint.right * projectileForce, ForceMode2D.Impulse);
+        // bulletRigidBody.AddForce((firePoint.right + spreadValue) * projectileForce, ForceMode2D.Impulse);
+
+        // Edit this
+        bulletRigidBody.rotation = shotAngle;
+        Vector2 bulletShootDir = new Vector2(Mathf.Cos(shotAngle * Mathf.Deg2Rad), Mathf.Sin(shotAngle * Mathf.Deg2Rad));
+        bulletRigidBody.AddForce(bulletShootDir * projectileForce * 1.5f, ForceMode2D.Impulse);
 
 
         bulletsLeft--;
@@ -60,7 +83,7 @@ public class GunSystem : MonoBehaviour
         Invoke("ResetShot", timeBetweenShooting);
 
         if(bulletsShot > 0 && bulletsLeft > 0)
-        Invoke("Shoot", timeBetweenShots);
+        Invoke("Shoot", timeBetweenBulletInAShot);
     }
     private void ResetShot()
     {
