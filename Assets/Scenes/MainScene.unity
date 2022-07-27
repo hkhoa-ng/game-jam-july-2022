@@ -9987,14 +9987,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   idleDuration: 2
-  shootDuration: 7
-  chaseDuration: 5
-  summonDuration: 2
+  shootDuration: 8
+  chaseDuration: 6
+  summonDuration: 3
   chargeDuration: 8
   chaseSpeed: 4
   chargeSpeed: 13
   enemiesSpawnNum: 3
-  shootNum: 5
+  shootCirclePatternNum: 5
+  shootWaveNum: 30
   alertTime: 1
   chargeNum: 5
   minSpawnX: 0
