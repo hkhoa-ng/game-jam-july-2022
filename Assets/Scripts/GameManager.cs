@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
     public int numOfEnemies;
     public int numOfRemainingEnemies;
     public float secondsBetweenSpawn = 2;
+    private bool hasSpawned;
 
     // Boss Prefab
     public GameObject bossPrefab;
@@ -156,6 +157,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            hasSpawned = false;
             CloseDoors(roomIndex);
             if (roomIndex != endIndex)
             {
@@ -218,17 +220,20 @@ public class GameManager : MonoBehaviour
                 alert.GetComponent<SpawnEnemyFromAlert>().spawnTimer = alertTime;
             }
             numOfEnemies -= enemiesThisWave;
+            yield return new WaitForSeconds(alertTime);
+            hasSpawned = true;
         }
         StartCoroutine(CheckRoom());
     }
 
     IEnumerator CheckBossRoom()
     {
+        yield return new WaitForSeconds(alertTime);
         while (true)
         {
             yield return new WaitForSeconds(1);
             numOfRemainingEnemies = GameObject.FindGameObjectsWithTag("Boss").Length;
-            if (numOfRemainingEnemies == 0)
+            if (numOfRemainingEnemies == 0 && hasSpawned)
             {
                 OpenDoors(currentIndex);
                 rooms[currentIndex].isEntered = true;
@@ -243,7 +248,7 @@ public class GameManager : MonoBehaviour
         {
             yield return new WaitForSeconds(1);
             numOfRemainingEnemies = GameObject.FindGameObjectsWithTag("Enemy").Length;
-            if (numOfRemainingEnemies == 0)
+            if (numOfRemainingEnemies == 0 && hasSpawned)
             {
                 OpenDoors(currentIndex);
                 rooms[currentIndex].isEntered = true;
