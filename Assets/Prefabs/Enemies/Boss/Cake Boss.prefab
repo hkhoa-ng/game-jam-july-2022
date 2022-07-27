@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6248587437085847340}
   - component: {fileID: 6248587437085847341}
   - component: {fileID: 6282366053842339994}
-  m_Layer: 14
+  m_Layer: 6
   m_Name: Cake Boss
   m_TagString: Boss
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 11
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 917a2ac7554456449af7595694cfb989, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -97,32 +97,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77e3f3cd147a2dc4b8e228950f015b3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idleDuration: 2
+  idleDuration: 1
   shootDuration: 8
   chaseDuration: 6
   summonDuration: 3
   chargeDuration: 8
-  chaseSpeed: 4
-  chargeSpeed: 13
+  chaseSpeed: 3.5
+  chargeSpeed: 10
   enemiesSpawnNum: 3
   shootCirclePatternNum: 5
   shootWaveNum: 30
   alertTime: 1
   chargeNum: 5
-  spawnPos: {x: 0, y: 0, z: 0}
-  minSpawnX: 0
-  maxSpawnX: 0
-  minSpawnY: 0
-  maxSpawnY: 0
+  minSpawnX: -5
+  maxSpawnX: 5
+  minSpawnY: -5
+  maxSpawnY: 5
   bulletPrefab: {fileID: 1519230182389404387, guid: 3302f407be6769a4ebf08aba309ed4fa, type: 3}
-  bulletSpeed: 3
+  bulletSpeed: 1.5
   alertPrefab: {fileID: 3103733707578093243, guid: c675e560c76d5e34498abfe5fcdef65f, type: 3}
   explosion: {fileID: 2679455985777518719, guid: 329ec9d3481c12a4bb2eb41e6db3a84b, type: 3}
   enemyPrefabs:
   - {fileID: 7506672003005204441, guid: dd87236f6286f7f4692fe46964e9fb28, type: 3}
   - {fileID: 3908852741839873596, guid: 719387ea4ca4a654097b1d90a3d95dde, type: 3}
   - {fileID: 3323294563495467696, guid: 17e331c66d98dae479aeaf527bec5c3a, type: 3}
-  maxhealth: 100
+  maxhealth: 200
 --- !u!95 &6248587437085847341
 Animator:
   serializedVersion: 3
