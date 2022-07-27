@@ -9,9 +9,6 @@ public class PortalTransition : MonoBehaviour
     public GameObject sprite;
 
     // New Boundary offsets
-    private FollowPlayer cameraFollow;
-    [SerializeField] private Vector2 camMaxChange;
-    [SerializeField] private Vector2 camMinChange;
     [SerializeField] private Vector3 playerChange;
 
     // GameManager
@@ -21,7 +18,6 @@ public class PortalTransition : MonoBehaviour
     void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        cameraFollow = Camera.main.GetComponent<FollowPlayer>();
         isActive = false;
         isOpenable = false;
         sprite.SetActive(true);
@@ -48,7 +44,6 @@ public class PortalTransition : MonoBehaviour
             if ((collision.gameObject.transform.position.x < transform.position.x && playerChange.y == 0) ||
                 (collision.gameObject.transform.position.y < transform.position.y && playerChange.x == 0))
             {
-                cameraFollow.setNewBoundary(camMinChange, camMaxChange);
                 collision.transform.position += playerChange;
                 // Trigger room event
                 if (playerChange.x == 0)
@@ -65,7 +60,6 @@ public class PortalTransition : MonoBehaviour
             else if (((collision.gameObject.transform.position.x > transform.position.x && playerChange.y == 0) ||
                 (collision.gameObject.transform.position.y > transform.position.y && playerChange.x == 0)))
             {
-                cameraFollow.setNewBoundary(-camMinChange, -camMaxChange);
                 collision.transform.position -= playerChange;
                 // Trigger Room event
                 if (playerChange.x == 0)

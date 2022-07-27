@@ -29,14 +29,6 @@ public class FollowPlayer : MonoBehaviour
         transform.position = Vector3.Lerp(transform.position, targetPos, smoothFactor);
     }
 
-    public void setNewBoundary(Vector2 camMinChange, Vector2 camMaxChange)
-    {
-        maxX += camMaxChange.x;
-        maxY += camMaxChange.y;
-        minX += camMinChange.x;
-        minY += camMinChange.y;
-    }
-
     
 
 }

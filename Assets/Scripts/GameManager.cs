@@ -19,7 +19,6 @@ public class GameManager : MonoBehaviour
     private int direction;
 
     public GameObject player;
-    private FollowPlayer cameraFollow;
     Color healthyColor = new Color(44f/255f, 57f/255f, 42f/255f);
     Color junkColor = new Color(55f/255f, 42f/255f, 57f/255f);
 
@@ -30,7 +29,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] healthyEnemiesPrefabs;
     public GameObject[] junkEnemiesPrefabs;
     public int minEnemies = 4;
-    public int maxEnemies = 12;
+    public int maxEnemies = 8;
     public int numOfEnemies;
     public int numOfRemainingEnemies;
     public float secondsBetweenSpawn = 2;
@@ -45,7 +44,6 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         isHealthy = false;
-        cameraFollow = Camera.main.GetComponent<FollowPlayer>();
 
         startIndex = Random.Range(0, 16);
         currentIndex = startIndex;
@@ -92,8 +90,6 @@ public class GameManager : MonoBehaviour
         }
         player.transform.position = roomGameObjects[startIndex].transform.position;
         Camera.main.transform.position = roomGameObjects[startIndex].transform.position + new Vector3(0, 0, -10);
-        Vector2 newBoundary = (new Vector2((58f/3f) * (startIndex % 4), 0)) +  new Vector2(0, -(58f / 3f)) * (startIndex / 4);
-        cameraFollow.setNewBoundary(newBoundary , newBoundary);
         currentIndex = startIndex;
 
         // Initialise the rest of the rooms
@@ -129,6 +125,7 @@ public class GameManager : MonoBehaviour
         // Trigger start Room event
         rooms[startIndex].isEntered = true;
         OpenDoors(startIndex);
+        isHealthy = ((startIndex % 4) % 2) != ((startIndex / 4) % 2);
     }
 
     // Update is called once per frame
@@ -139,6 +136,7 @@ public class GameManager : MonoBehaviour
 
     public void OnRoomEnter(int roomIndex)
     {
+        Camera.main.transform.position = roomGameObjects[roomIndex].transform.position + new Vector3(0, 0, -10);
         isHealthy = !isHealthy;
         if (isHealthy)
         {
@@ -169,14 +167,14 @@ public class GameManager : MonoBehaviour
 
     IEnumerator SpawnEnemies(int numOfEnemies)
     {
-        float minSpawnX = roomGameObjects[currentIndex].transform.position.x - 7;
-        float minSpawnY = roomGameObjects[currentIndex].transform.position.y - 7;
-        float maxSpawnX = roomGameObjects[currentIndex].transform.position.x + 7;
-        float maxSpawnY = roomGameObjects[currentIndex].transform.position.y + 7;
+        float minSpawnX = roomGameObjects[currentIndex].transform.position.x - 5;
+        float minSpawnY = roomGameObjects[currentIndex].transform.position.y - 5;
+        float maxSpawnX = roomGameObjects[currentIndex].transform.position.x + 5;
+        float maxSpawnY = roomGameObjects[currentIndex].transform.position.y + 5;
         while (numOfEnemies > 0)
         {
             yield return new WaitForSecondsRealtime(secondsBetweenSpawn);
-            int enemiesThisWave = Random.Range(1, 4);
+            int enemiesThisWave = Random.Range(1, 3);
             for (int i = 0; i < enemiesThisWave; i++)
             {
                 // Generate spawn Position
