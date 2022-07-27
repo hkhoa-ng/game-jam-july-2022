@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afd35674cfd47d34ea64db152fa03285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
+  moveSpeed: 4
   health: 200
   spriteRenderer: {fileID: 0}
 --- !u!114 &5830931922315185889
@@ -186,4 +186,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyExplosionPrefab: {fileID: 5226678693580649413, guid: e3406d71f0832cd4cbbdf0f1e30a8cf3, type: 3}
-  distanceTillExplode: 2.5
+  distanceTillExplode: 2

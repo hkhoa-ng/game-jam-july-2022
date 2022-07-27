@@ -178,7 +178,7 @@ public class BossAI : MonoBehaviour
 
         for (int i = 0; i < 42; i++) {
             float angle = -20 + randomAngle - i * 8.75f;
-            if (i > 11 || i < 9) {
+            if (((i > 11 && i < 29) || i < 9 || i > 31) ) {
                 GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
                 Rigidbody2D bulletRB = bullet.GetComponent<Rigidbody2D>();
                 bulletRB.rotation = angle;
@@ -235,7 +235,7 @@ public class BossAI : MonoBehaviour
             transform.position = Vector2.MoveTowards(transform.position, playerPos.position, chaseSpeed * Time.deltaTime);
         }
         if (currentState == BOSS_IDLE) {
-            transform.position = Vector2.MoveTowards(transform.position, spawnPos, chaseSpeed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, spawnPos, chaseSpeed * 2 * Time.deltaTime);
         }
         if (health <= 0) {
             Destroy(gameObject);
@@ -253,7 +253,7 @@ public class BossAI : MonoBehaviour
         {
             if (health > 0)
             {
-                health--;
+                health -= collision.gameObject.GetComponent<Bullet>().damage;
             }
             if (health <= 0)
             {

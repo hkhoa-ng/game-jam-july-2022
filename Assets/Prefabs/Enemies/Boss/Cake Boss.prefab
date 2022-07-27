@@ -109,6 +109,7 @@ MonoBehaviour:
   shootWaveNum: 30
   alertTime: 1
   chargeNum: 5
+  spawnPos: {x: 0, y: 0, z: 0}
   minSpawnX: -5
   maxSpawnX: 5
   minSpawnY: -5
@@ -121,7 +122,7 @@ MonoBehaviour:
   - {fileID: 7506672003005204441, guid: dd87236f6286f7f4692fe46964e9fb28, type: 3}
   - {fileID: 3908852741839873596, guid: 719387ea4ca4a654097b1d90a3d95dde, type: 3}
   - {fileID: 3323294563495467696, guid: 17e331c66d98dae479aeaf527bec5c3a, type: 3}
-  maxhealth: 200
+  maxhealth: 300
 --- !u!95 &6248587437085847341
 Animator:
   serializedVersion: 3

@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int endIndex;
     [SerializeField] private int mainPathLength;
 
-    private int minPathLength = 6;
+    private int minPathLength = 8;
     private int maxPathLength = 10;
 
     // 0: Left, 1: Right, 2: Up, 3: Down 
@@ -44,10 +44,16 @@ public class GameManager : MonoBehaviour
     private Vector3 positionToSpawnEnemy;
     public float alertTime = 0.5f;
 
+    // Power-up Prefabs
+    int waveTillPowerUp;
+    public GameObject[] gunsAndPowerUpPrefabs;
+    public GameObject[] powerupPrefabs;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        waveTillPowerUp = 3;
         isHealthy = false;
 
         startIndex = Random.Range(0, 16);
@@ -103,22 +109,22 @@ public class GameManager : MonoBehaviour
             if (!rooms[i].isInitialised)
             {
                 int rand; 
-                rand = Random.Range(0,6); // Chance of open is 1/6
+                rand = Random.Range(0,5); // Chance of open is 1/5
                 if (rand == 0 && rooms[i].portalLeft != null)
                 {
                     rooms[i].portalLeft.GetComponent<PortalTransition>().isOpenable = true;
                 }
-                rand = Random.Range(0, 6);
+                rand = Random.Range(0, 5);
                 if (rand == 0 && rooms[i].portalRight != null)
                 {
                     rooms[i].portalRight.GetComponent<PortalTransition>().isOpenable = true;
                 }
-                rand = Random.Range(0, 6);
+                rand = Random.Range(0, 5);
                 if (rand == 0 && rooms[i].portalTop != null)
                 {
                     rooms[i].portalTop.GetComponent<PortalTransition>().isOpenable = true;
                 }
-                rand = Random.Range(0, 6);
+                rand = Random.Range(0, 5);
                 if (rand == 0 && rooms[i].portalBottom != null)
                 {
                     rooms[i].portalBottom.GetComponent<PortalTransition>().isOpenable = true;
@@ -161,8 +167,22 @@ public class GameManager : MonoBehaviour
             CloseDoors(roomIndex);
             if (roomIndex != endIndex)
             {
-                numOfEnemies = Random.Range(minEnemies, maxEnemies);
-                StartCoroutine(SpawnEnemies(numOfEnemies));
+                int random = Random.Range(0, 5); // 20% to be a treasure room
+                if (random == 0 || waveTillPowerUp <= 0)
+                {
+                    int randomIndex = Random.Range(0, gunsAndPowerUpPrefabs.Length);
+                    Instantiate(gunsAndPowerUpPrefabs[randomIndex], rooms[roomIndex].transform.position, Quaternion.identity);
+                    OpenDoors(roomIndex);
+                    waveTillPowerUp = 3;
+                    rooms[roomIndex].isEntered = true;
+
+                }
+                else // Spawn normal wave
+                {
+                    numOfEnemies = Random.Range(minEnemies, maxEnemies);
+                    StartCoroutine(SpawnEnemies(numOfEnemies));
+                    waveTillPowerUp--;
+                }
             }
             else
             {
@@ -191,7 +211,6 @@ public class GameManager : MonoBehaviour
         float maxSpawnY = roomGameObjects[currentIndex].transform.position.y + 5;
         while (numOfEnemies > 0)
         {
-            yield return new WaitForSecondsRealtime(secondsBetweenSpawn);
             int enemiesThisWave = Random.Range(1, 3);
             for (int i = 0; i < enemiesThisWave; i++)
             {
@@ -223,6 +242,7 @@ public class GameManager : MonoBehaviour
             numOfEnemies -= enemiesThisWave;
             yield return new WaitForSeconds(alertTime);
             hasSpawned = true;
+            yield return new WaitForSecondsRealtime(secondsBetweenSpawn);
         }
         StartCoroutine(CheckRoom());
     }
@@ -233,7 +253,7 @@ public class GameManager : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(1);
-            numOfRemainingEnemies = GameObject.FindGameObjectsWithTag("Boss").Length;
+            numOfRemainingEnemies = GameObject.FindGameObjectsWithTag("Boss").Length + GameObject.FindGameObjectsWithTag("Enemy").Length;
             if (numOfRemainingEnemies == 0 && hasSpawned)
             {
                 OpenDoors(currentIndex);
@@ -251,6 +271,13 @@ public class GameManager : MonoBehaviour
             numOfRemainingEnemies = GameObject.FindGameObjectsWithTag("Enemy").Length;
             if (numOfRemainingEnemies == 0 && hasSpawned)
             {
+                if (Random.Range(0, 2) == 0)
+                {
+                    // Spawn a power up as reward
+                    int randomIndex = Random.Range(0, powerupPrefabs.Length);
+                    Instantiate(powerupPrefabs[randomIndex], rooms[currentIndex].transform.position, Quaternion.identity);
+                }
+
                 OpenDoors(currentIndex);
                 rooms[currentIndex].isEntered = true;
                 yield break;

@@ -5,6 +5,9 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public GameObject explodePrefab;
+    public float damage;
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         
@@ -16,5 +19,13 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         }
         Instantiate(explodePrefab, transform.position, Quaternion.identity);
+    }
+
+    public void setDamage(float newDamage)
+    {
+        if (newDamage > 0)
+        {
+            damage = newDamage;
+        } 
     }
 }
