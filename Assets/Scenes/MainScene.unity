@@ -95046,7 +95046,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1395636040
 GameObject:
@@ -95624,7 +95624,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1997989622
 GameObject:
@@ -96364,6 +96364,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 47804390404278022, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1784399893351560910, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3141059555400199834, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}
+      propertyPath: timeBetweenBulletInAShot
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 3152183613072618606, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}
       propertyPath: m_Name
       value: Player
@@ -96433,4 +96445,10 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    - target: {fileID: 3152183613984074682, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}
+      propertyPath: m_Name
+      value: Pistol
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6192865948804451808, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}
