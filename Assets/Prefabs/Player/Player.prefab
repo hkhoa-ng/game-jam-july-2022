@@ -240,7 +240,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3728070176497901344, guid: 1dbb762dfa2fa0349be682c6372a3536, type: 3}
       propertyPath: spread
-      value: 30
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3728070176497901344, guid: 1dbb762dfa2fa0349be682c6372a3536, type: 3}
       propertyPath: reloadTime
