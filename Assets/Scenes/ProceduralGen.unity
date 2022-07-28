@@ -166,8 +166,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7aaf686efa281e3418f4552b8bbcb7d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   roomHeight: 0
   roomWidth: 0
+=======
+>>>>>>> bf3b30533db3c930da0f48240e17d3fadf95c00a
   borderWidth: 3
   roomSizeWorldUnits: {x: 50, y: 50}
   worldUnitsInOneGridCell: 2
@@ -195,10 +198,13 @@ MonoBehaviour:
   - {fileID: 3562929053161909595, guid: 94a72d8ce474dc4428317028f2f13edc, type: 3}
   portals:
   - {fileID: 5129469426092904584, guid: cc728edb8e876b84faf452701c970a09, type: 3}
+<<<<<<< HEAD
   playerSpawned: 0
   portalSpawned: 0
   enemyToSpawn: 0
   powerUpToSpawn: 0
+=======
+>>>>>>> bf3b30533db3c930da0f48240e17d3fadf95c00a
   playerPos: {x: 0, y: 0}
 --- !u!1 &2143080160
 GameObject:

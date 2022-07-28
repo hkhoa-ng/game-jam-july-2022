@@ -11,13 +11,13 @@ public class Bullet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         
-        if (collision.gameObject.CompareTag("Walls") 
+        if (collision.gameObject.CompareTag("Wall") 
             || collision.gameObject.CompareTag("Enemy") 
             || collision.gameObject.CompareTag("EnemyBullet")
             || collision.gameObject.CompareTag("Boss"))
         {
-            Destroy(gameObject);
         }
+        Destroy(gameObject);
         Instantiate(explodePrefab, transform.position, Quaternion.identity);
     }
 

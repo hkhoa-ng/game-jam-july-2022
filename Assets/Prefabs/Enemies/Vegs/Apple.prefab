@@ -186,4 +186,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyExplosionPrefab: {fileID: 5226678693580649413, guid: e3406d71f0832cd4cbbdf0f1e30a8cf3, type: 3}
-  distanceTillExplode: 2
+  distanceTillExplode: 2.5
