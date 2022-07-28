@@ -10,8 +10,10 @@ public class BossAI : MonoBehaviour
     const string BOSS_SUMMON = "BossSummon";
     const string BOSS_CHARGE = "BossCharge";
     private string[] attackStates = {"circle", "chase", "follow", "summon", "spiral", "charge"};
+    // private string[] attackStates = {"circle"};
 
     private Animator animator;
+    public GameObject spriteAnimator;
     private SpriteRenderer spriteRenderer;
     private string currentState;
     private Transform playerPos;
@@ -57,7 +59,7 @@ public class BossAI : MonoBehaviour
 
     private void Awake() {
         spawnPos = transform.position;
-        animator = GetComponent<Animator>();
+        animator = spriteAnimator.GetComponent<Animator>();
         playerPos = GameObject.FindGameObjectWithTag("Player").transform;
         startPos = this.gameObject.transform;
         spriteRenderer = animator.GetComponent<SpriteRenderer>();
