@@ -17,8 +17,8 @@ public class Bullet : MonoBehaviour
             || collision.gameObject.CompareTag("Boss"))
         {
             Destroy(gameObject);
-            Instantiate(explodePrefab, transform.position, Quaternion.identity);
         }
+        Instantiate(explodePrefab, transform.position, Quaternion.identity);
     }
 
     public void setDamage(float newDamage)
