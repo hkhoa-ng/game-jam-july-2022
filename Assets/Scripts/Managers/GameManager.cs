@@ -24,19 +24,13 @@ public class GameManager : MonoBehaviour
         stageRemainTillBoss = stageTillBoss;
     }
     void Update() {
-        if (Input.GetKeyDown(KeyCode.R)) {
-             SceneManager.LoadScene( SceneManager.GetActiveScene().buildIndex ) ;
-        }
-        if (Input.GetKeyDown(KeyCode.Space) && stageRemainTillBoss > 0) {
-            SwitchStageTheme();
-            UpdateStageRemaining();
+        if (Input.GetKeyDown(KeyCode.Space)) {
             SceneManager.LoadScene("Scenes/MainScene");
-        } else if (stageRemainTillBoss == 0) {
-            UpdateStageRemaining();
-            SceneManager.LoadScene("Scenes/BossScene");
         }
+        
         if (Input.GetKeyDown(KeyCode.Escape)) {
             SceneManager.LoadScene("Scenes/Menu") ;
+            stageRemainTillBoss = stageTillBoss;
         }
     }
     void SwitchStageTheme() {
@@ -44,5 +38,15 @@ public class GameManager : MonoBehaviour
     }
     void UpdateStageRemaining() {
         stageRemainTillBoss--;
+    }
+    
+    public void NextStage() {
+        if (stageRemainTillBoss > 0) {
+            SwitchStageTheme();
+            UpdateStageRemaining();
+            SceneManager.LoadScene("Scenes/MainScene");
+        } else if (stageRemainTillBoss == 0) {
+            SceneManager.LoadScene("Scenes/BossScene");
+        }
     }
 }

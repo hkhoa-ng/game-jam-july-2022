@@ -9,8 +9,7 @@ public class Bullet : MonoBehaviour
     {
         
         if (collision.gameObject.CompareTag("Wall") 
-            || collision.gameObject.CompareTag("Enemy") 
-            || collision.gameObject.CompareTag("EnemyBullet")
+            || collision.gameObject.CompareTag("Enemy")
             || collision.gameObject.CompareTag("Boss"))
         {
         }

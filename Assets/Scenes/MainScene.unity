@@ -205,7 +205,7 @@ MonoBehaviour:
   chanceWalkerDestoy: 0.01
   maxWalkers: 5
   percentToFill: 0.2
-  enemyNum: 10
+  enemyNum: 1
   powerUpNum: 1
   verticalObj: {fileID: 3412943863195253560, guid: d8a379b96fb0ea24d8358447cb398f64, type: 3}
   playerObj: {fileID: 3152183613072618606, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}

@@ -8,7 +8,7 @@ public class Mushroom : MonoBehaviour
     public float smokeSpawnInterval = 4f;
 
     void SpawnSmoke() {
-        Instantiate(poisonSmokePrefab, transform.position, new Quaternion(0, 0, 0, 0), this.transform);
+        Instantiate(poisonSmokePrefab, transform.position, new Quaternion(0, 0, 0, 0));
         
     }
     // Start is called before the first frame update
