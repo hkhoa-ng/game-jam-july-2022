@@ -175,7 +175,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.1225743, y: -0.052112177}
   serializedVersion: 2
-  m_Radius: 0.48563153
+  m_Radius: 0.36
 --- !u!1 &3152183613465430115
 GameObject:
   m_ObjectHideFlags: 0
@@ -316,10 +316,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 65578358753052532, guid: c910c977425a2b04f9bcc761fe0dbc1c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3728070176497901344, guid: c910c977425a2b04f9bcc761fe0dbc1c, type: 3}
+      propertyPath: magazineSize
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3728070176497901344, guid: c910c977425a2b04f9bcc761fe0dbc1c, type: 3}
+      propertyPath: bulletsPerTap
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3728070176497901344, guid: c910c977425a2b04f9bcc761fe0dbc1c, type: 3}
+      propertyPath: allowButtonHold
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3728070176497901344, guid: c910c977425a2b04f9bcc761fe0dbc1c, type: 3}
       propertyPath: timeBetweenShots
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3728070176497901344, guid: c910c977425a2b04f9bcc761fe0dbc1c, type: 3}
+      propertyPath: timeBetweenShooting
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3728070176497901344, guid: c910c977425a2b04f9bcc761fe0dbc1c, type: 3}
+      propertyPath: timeBetweenBulletInAShot
       value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6054581898156138601, guid: c910c977425a2b04f9bcc761fe0dbc1c, type: 3}
