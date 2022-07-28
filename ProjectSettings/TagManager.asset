@@ -11,8 +11,6 @@ TagManager:
   - PlayerBullet
   - Boss
   - PowerUp
-  - Floor
-  - Portal
   layers:
   - Default
   - TransparentFX

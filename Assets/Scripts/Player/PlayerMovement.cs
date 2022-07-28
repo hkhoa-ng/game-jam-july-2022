@@ -63,7 +63,6 @@ public class PlayerMovement : MonoBehaviour
         {
             gunSystem[i].SetActive(false);
         }
-        cam = Camera.main;
     }
     
     // Start is called before the first frame update
