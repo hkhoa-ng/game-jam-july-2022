@@ -338,7 +338,15 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3728070176497901344, guid: c910c977425a2b04f9bcc761fe0dbc1c, type: 3}
+      propertyPath: damage
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3728070176497901344, guid: c910c977425a2b04f9bcc761fe0dbc1c, type: 3}
       propertyPath: timeBetweenShots
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3728070176497901344, guid: c910c977425a2b04f9bcc761fe0dbc1c, type: 3}
+      propertyPath: timeBetweenBulletInAShot
       value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6054581898156138601, guid: c910c977425a2b04f9bcc761fe0dbc1c, type: 3}
