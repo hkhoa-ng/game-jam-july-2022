@@ -10,10 +10,8 @@ public class BossAI : MonoBehaviour
     const string BOSS_SUMMON = "BossSummon";
     const string BOSS_CHARGE = "BossCharge";
     private string[] attackStates = {"circle", "chase", "follow", "summon", "spiral", "charge"};
-    // private string[] attackStates = {"circle"};
 
     private Animator animator;
-    public GameObject spriteAnimator;
     private SpriteRenderer spriteRenderer;
     private string currentState;
     private Transform playerPos;
@@ -34,7 +32,6 @@ public class BossAI : MonoBehaviour
     public float alertTime = 1f;
     public int chargeNum = 4;
 
-    public Vector3 spawnPos;
     public float minSpawnX;
     public float maxSpawnX;
     public float minSpawnY;
@@ -58,8 +55,7 @@ public class BossAI : MonoBehaviour
     }
 
     private void Awake() {
-        spawnPos = transform.position;
-        animator = spriteAnimator.GetComponent<Animator>();
+        animator = GetComponent<Animator>();
         playerPos = GameObject.FindGameObjectWithTag("Player").transform;
         startPos = this.gameObject.transform;
         spriteRenderer = animator.GetComponent<SpriteRenderer>();
@@ -180,7 +176,7 @@ public class BossAI : MonoBehaviour
 
         for (int i = 0; i < 42; i++) {
             float angle = -20 + randomAngle - i * 8.75f;
-            if (((i > 11 && i < 29) || i < 9 || i > 31) ) {
+            if (i > 11 || i < 9) {
                 GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
                 Rigidbody2D bulletRB = bullet.GetComponent<Rigidbody2D>();
                 bulletRB.rotation = angle;
@@ -224,7 +220,7 @@ public class BossAI : MonoBehaviour
 
     private void Update() {
         if (currentState == BOSS_CHASE) {
-            Vector3 targetDir = playerPos.position - transform.position;
+            Vector3 targetDir = playerPos.position - animator.transform.position;
             Vector2 moveDir = new Vector2(targetDir.x, targetDir.y).normalized;
 
             // Rotate the sprite accordingly to move direction (left-right)
@@ -237,7 +233,7 @@ public class BossAI : MonoBehaviour
             transform.position = Vector2.MoveTowards(transform.position, playerPos.position, chaseSpeed * Time.deltaTime);
         }
         if (currentState == BOSS_IDLE) {
-            transform.position = Vector2.MoveTowards(transform.position, spawnPos, chaseSpeed * 2 * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, new Vector3(0, 0, 0), chaseSpeed * Time.deltaTime);
         }
         if (health <= 0) {
             Destroy(gameObject);
@@ -249,24 +245,19 @@ public class BossAI : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D collision) 
+    void OnCollisionEnter2D(Collision2D collision) 
     {
         if (collision.gameObject.CompareTag("PlayerBullet"))
         {
             if (health > 0)
             {
-                health -= collision.gameObject.GetComponent<Bullet>().damage;
+                health--;
             }
             if (health <= 0)
             {
                 Instantiate(explosion, transform.position, Quaternion.identity);
                 Destroy(gameObject);
             }
-        }
-
-        if (collision.gameObject.CompareTag("Player"))
-        {
-
         }
     }
 }

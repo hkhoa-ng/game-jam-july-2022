@@ -123,22 +123,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   cam: {fileID: 0}
-  gunIndex: 0
-  gunSystem:
-  - {fileID: 2410329307847123345}
-  - {fileID: 47804390404278022}
-  - {fileID: 1784399893351560910}
   gunSprite: {fileID: 3152183613984074684}
   gun: {fileID: 3152183613465430116}
-  maxHealth: 10
-  health: 0
-  damageModifier: 0
-  knockbackForce: 2000
-  moveDir: {x: 0, y: 0}
-  targetDir: {x: 0, y: 0, z: 0}
-  invincibleSeconds: 1
-  healthText: {fileID: 0}
-  bulletText: {fileID: 0}
 --- !u!114 &3152183613072618612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,7 +175,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.1225743, y: -0.052112177}
   serializedVersion: 2
-  m_Radius: 0.48563153
+  m_Radius: 0.36
 --- !u!1 &3152183613465430115
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,7 +226,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3728070176497901344, guid: 1dbb762dfa2fa0349be682c6372a3536, type: 3}
       propertyPath: spread
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3728070176497901344, guid: 1dbb762dfa2fa0349be682c6372a3536, type: 3}
       propertyPath: reloadTime
@@ -312,11 +298,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1dbb762dfa2fa0349be682c6372a3536, type: 3}
---- !u!1 &47804390404278022 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 65578358753052532, guid: 1dbb762dfa2fa0349be682c6372a3536, type: 3}
-  m_PrefabInstance: {fileID: 18347539907313778}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6072854327472873499 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6054581898156138601, guid: 1dbb762dfa2fa0349be682c6372a3536, type: 3}
@@ -335,14 +316,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 65578358753052532, guid: c910c977425a2b04f9bcc761fe0dbc1c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3728070176497901344, guid: c910c977425a2b04f9bcc761fe0dbc1c, type: 3}
-      propertyPath: damage
-      value: 2
+      propertyPath: magazineSize
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3728070176497901344, guid: c910c977425a2b04f9bcc761fe0dbc1c, type: 3}
+      propertyPath: bulletsPerTap
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3728070176497901344, guid: c910c977425a2b04f9bcc761fe0dbc1c, type: 3}
+      propertyPath: allowButtonHold
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3728070176497901344, guid: c910c977425a2b04f9bcc761fe0dbc1c, type: 3}
       propertyPath: timeBetweenShots
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3728070176497901344, guid: c910c977425a2b04f9bcc761fe0dbc1c, type: 3}
+      propertyPath: timeBetweenShooting
       value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 3728070176497901344, guid: c910c977425a2b04f9bcc761fe0dbc1c, type: 3}
@@ -395,11 +388,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c910c977425a2b04f9bcc761fe0dbc1c, type: 3}
---- !u!1 &1784399893351560910 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 65578358753052532, guid: c910c977425a2b04f9bcc761fe0dbc1c, type: 3}
-  m_PrefabInstance: {fileID: 1741640801405579706}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5489253788088816083 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6054581898156138601, guid: c910c977425a2b04f9bcc761fe0dbc1c, type: 3}
@@ -418,7 +406,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 65578358753052532, guid: c91eb635baab93845a7598f9622a0eb3, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6054581898156138601, guid: c91eb635baab93845a7598f9622a0eb3, type: 3}
       propertyPath: m_RootOrder
@@ -466,11 +454,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c91eb635baab93845a7598f9622a0eb3, type: 3}
---- !u!1 &2410329307847123345 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 65578358753052532, guid: c91eb635baab93845a7598f9622a0eb3, type: 3}
-  m_PrefabInstance: {fileID: 2421756373979965157}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8475207971931309708 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6054581898156138601, guid: c91eb635baab93845a7598f9622a0eb3, type: 3}

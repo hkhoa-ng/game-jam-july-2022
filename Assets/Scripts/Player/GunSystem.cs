@@ -12,7 +12,6 @@ public class GunSystem : MonoBehaviour
     public int bulletsLeft, bulletsShot;
     public SpriteRenderer gunSprite;
     private Camera cam;
-    private PlayerMovement playerController;
 
     //bools 
     bool shooting, readyToShoot, reloading;
@@ -28,7 +27,6 @@ public class GunSystem : MonoBehaviour
 
     private void Awake()
     {
-        playerController = GameObject.Find("Player").GetComponent<PlayerMovement>();
         bulletsLeft = magazineSize;
         readyToShoot = true;
         cam = Camera.main;
@@ -70,8 +68,6 @@ public class GunSystem : MonoBehaviour
         float shotAngle = aimAngle + Random.Range(-spread, spread);
 
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        // Adding damage powerup
-        bullet.GetComponent<Bullet>().damage = damage + playerController.damageModifier;
         Rigidbody2D bulletRigidBody = bullet.GetComponent<Rigidbody2D>();
         // bulletRigidBody.AddForce((firePoint.right + spreadValue) * projectileForce, ForceMode2D.Impulse);
 

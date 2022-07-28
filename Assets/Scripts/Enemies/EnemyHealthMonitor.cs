@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyHealthMonitor : MonoBehaviour
 {
-    public float health = 6;
+    public int health = 3;
     public ParticleSystem explosion;
     // Start is called before the first frame update
     void Start()
@@ -12,9 +12,9 @@ public class EnemyHealthMonitor : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D collision) {
+    private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.tag == "PlayerBullet") {
-            health -= collision.gameObject.GetComponent<Bullet>().damage;
+            health -= 1;
             Destroy(collision.gameObject);
         }
     }
