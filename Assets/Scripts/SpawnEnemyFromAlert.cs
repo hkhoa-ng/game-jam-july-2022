@@ -14,7 +14,14 @@ public class SpawnEnemyFromAlert : MonoBehaviour
     }
 
     void SpawnAnEnemy() {
-        Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
+        GameObject enemy = Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
+        if (enemyPrefab.CompareTag("Boss"))
+        {
+            enemy.GetComponent<BossAI>().minSpawnX = spawnPos.x - 5;
+            enemy.GetComponent<BossAI>().minSpawnY = spawnPos.y - 5;
+            enemy.GetComponent<BossAI>().maxSpawnX = spawnPos.x + 5;
+            enemy.GetComponent<BossAI>().maxSpawnY = spawnPos.y + 5;
+         }
         Destroy(this.gameObject);
     }
     // Update is called once per frame

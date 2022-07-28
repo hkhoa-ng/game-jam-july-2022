@@ -41,7 +41,7 @@ public class EnemyFollowsPlayer : MonoBehaviour
         }
     }
 
-    void FixedUpdate() {
+    void FixedUpdate() { 
         MoveTowardPlayer();
     }
 
@@ -49,6 +49,11 @@ public class EnemyFollowsPlayer : MonoBehaviour
         if (collision.gameObject.tag == "Water") {
             health -= 1;
             Destroy(collision.gameObject);
+        }
+
+        if (collision.gameObject.CompareTag("Walls"))
+        {
+
         }
     }
 

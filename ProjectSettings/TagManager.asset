@@ -10,8 +10,7 @@ TagManager:
   - EnemyBullet
   - PlayerBullet
   - Boss
-  - Floor
-  - Portal
+  - PowerUp
   layers:
   - Default
   - TransparentFX
@@ -27,7 +26,7 @@ TagManager:
   - Oil
   - EnemyBullet
   - PoisonSmoke
-  - 
+  - Boss
   - 
   - 
   - 

@@ -41,10 +41,18 @@ public class EnemyMovesRandomly : MonoBehaviour
         }
     }
     private void OnCollisionEnter2D(Collision2D other) {
-        Vector2 wallNormal = other.contacts[0].normal;
-        Vector2 inDir = new Vector2(lastVelocity.x, lastVelocity.y).normalized;
-        direction = Vector2.Reflect(inDir, wallNormal).normalized;
-        rb.velocity = direction * moveSpeed;
+        if (other.gameObject.CompareTag("Walls")) {
+            
+        }
+        if (other.gameObject.tag == "Water") {
+            health -= 1;
+            Destroy(other.gameObject);
+        } else {
+            Vector2 wallNormal = other.contacts[0].normal;
+            Vector2 inDir = new Vector2(lastVelocity.x, lastVelocity.y).normalized;
+            direction = Vector2.Reflect(inDir, wallNormal).normalized;
+            rb.velocity = direction * moveSpeed;
+        }
     }
     private void Update() {
         if (health <= 0) {
