@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LevelGenerator : MonoBehaviour {
-	enum gridSpace {empty, floor, wall, vertical};
+	enum gridSpace {empty, floor, wall, vertical, border};
 	public Transform environmentParent;
 	gridSpace[,] grid;
 	int roomHeight, roomWidth;
@@ -23,8 +23,8 @@ public class LevelGenerator : MonoBehaviour {
 
 	public int enemyNum, powerUpNum;
 	public GameObject verticalObj, playerObj;
-	public GameObject[] wallObjs, floorObjs;
-	private GameObject wallToSpawn, floorToSpawn;
+	public GameObject[] wallObjs, floorObjs, borderObjs;
+	private GameObject wallToSpawn, floorToSpawn, borderToSpawn;
 	public float enemySpawnChance, powerUpSpawnChance, minDistanceToPlayer, distanceToPlayer;
 	public GameObject[] enemies, powerUps, portals, enemiesToSpawn;
 	private bool playerSpawned = false, portalSpawned = false;
@@ -36,10 +36,12 @@ public class LevelGenerator : MonoBehaviour {
 			enemiesToSpawn = new GameObject[] {enemies[0], enemies[1], enemies[2]};
 			wallToSpawn = wallObjs[0];
 			floorToSpawn = floorObjs[0];
+			borderToSpawn = borderObjs[0];
 		} else {
 			enemiesToSpawn = new GameObject[] {enemies[3], enemies[4], enemies[5]};
 			wallToSpawn = wallObjs[1];
 			floorToSpawn = floorObjs[1];
+			borderToSpawn = borderObjs[1];
 		}
 	}
 	void Start () {
@@ -235,7 +237,11 @@ public class LevelGenerator : MonoBehaviour {
 			for (int y = 0; y < roomHeight; y++){
 				switch(grid[x,y]){
 					case gridSpace.empty:
-						Spawn(x,y, wallToSpawn, true);
+						if (x == 0 || x == roomWidth - 1 || y == 0 || y == roomHeight - 1) {
+							Spawn(x, y, borderToSpawn, true);
+						} else {
+							Spawn(x,y, wallToSpawn, true);
+						}
 						break;
 					case gridSpace.floor:
 						SpawnOnFloor(x, y);

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7713256316985051771}
   - component: {fileID: 2345362661296097807}
   m_Layer: 8
-  m_Name: Border
+  m_Name: BorderGreen
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -109,7 +109,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 0.9, y: 0.9}
-  m_EdgeRadius: 0.05
+  m_EdgeRadius: 0.55
 --- !u!114 &2345362661296097807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,4 +124,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explodePrefab: {fileID: 6369110436241389153, guid: 329ec9d3481c12a4bb2eb41e6db3a84b, type: 3}
   floorObj: {fileID: 8576541124475299437, guid: b6acdc45d57adac4982021f4c1fa5176, type: 3}
-  health: 2
+  health: 10000
