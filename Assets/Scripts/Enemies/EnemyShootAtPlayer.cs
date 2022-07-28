@@ -14,7 +14,7 @@ public class EnemyShootAtPlayer : MonoBehaviour
         Vector3 targetDir = player.position - transform.position;
         Vector2 shootDir = new Vector2(targetDir.x, targetDir.y).normalized;
         float angle = Mathf.Atan2(shootDir.y, shootDir.x) * Mathf.Rad2Deg;
-        GameObject bullet = Instantiate(enemyBulletPrefab, transform.position, Quaternion.identity);
+        GameObject bullet = Instantiate(enemyBulletPrefab, transform.position, Quaternion.identity, this.transform);
         Rigidbody2D bulletRB = bullet.GetComponent<Rigidbody2D>();
         bulletRB.rotation = angle;
         bulletRB.AddForce(shootDir * bulletSpeed, ForceMode2D.Impulse);

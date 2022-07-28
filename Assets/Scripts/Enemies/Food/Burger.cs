@@ -8,7 +8,7 @@ public class Burger : MonoBehaviour
     private Transform burgerTransform;
 
     void SpawnOil() {
-        Instantiate(oilSpillPrefab, transform.position, new Quaternion(0, 0, 0, 0));
+        Instantiate(oilSpillPrefab, transform.position, new Quaternion(0, 0, 0, 0), this.transform);
         
     }
     void Awake() {

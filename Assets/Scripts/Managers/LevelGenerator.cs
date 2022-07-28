@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelGenerator : MonoBehaviour {
 	enum gridSpace {empty, floor, wall, vertical};
+	public Transform environmentParent;
 	gridSpace[,] grid;
 	int roomHeight, roomWidth;
 	public int borderWidth;
@@ -22,7 +23,6 @@ public class LevelGenerator : MonoBehaviour {
 
 	public int enemyNum, powerUpNum;
 	public GameObject wallObj, floorObj, verticalObj, playerObj;
-	// public GameObject player;
 	public float enemySpawnChance, powerUpSpawnChance, minDistanceToPlayer, distanceToPlayer;
 	public GameObject[] enemies, powerUps, portals;
 	private bool playerSpawned = false, portalSpawned = false;
@@ -30,7 +30,6 @@ public class LevelGenerator : MonoBehaviour {
 	public Vector2 playerPos;
 
 	void Start () {
-		// player.layer = LayerMask.NameToLayer("IgnoreCollision");
 		StartGeneration();
 	}
 	void StartGeneration() {
@@ -41,24 +40,6 @@ public class LevelGenerator : MonoBehaviour {
 		CreateWalls();
 		RemoveSingleWalls();
 		SpawnLevel();
-		// player.layer = LayerMask.NameToLayer("Player");
-	}
-	void Update() {
-		if (Input.GetKeyDown(KeyCode.R)) {
-			playerSpawned = false;
-			// player.layer = LayerMask.NameToLayer("IgnoreCollision");
-			GameObject[] allFloors = GameObject.FindGameObjectsWithTag("Floor");
-			GameObject[] allWalls = GameObject.FindGameObjectsWithTag("Wall");
-			GameObject[] allPortals = GameObject.FindGameObjectsWithTag("Portal");
-			GameObject[] allEnemies = GameObject.FindGameObjectsWithTag("Enemy");
-			GameObject[] player = GameObject.FindGameObjectsWithTag("Player");
-			foreach (GameObject o in allFloors) Destroy(o);
-			foreach (GameObject o in allWalls) Destroy(o);
-			foreach (GameObject o in allPortals) Destroy(o);
-			foreach (GameObject o in allEnemies) Destroy(o);
-			foreach (GameObject o in player) Destroy(o);
-			StartGeneration();
-		}
 	}
 	void Setup(){
 		//find grid size
@@ -203,7 +184,7 @@ public class LevelGenerator : MonoBehaviour {
 	}
 	void SpawnOnFloor(float x, float y) {
 		
-		Spawn(x,y,floorObj);
+		Spawn(x,y,floorObj, true);
 
 		distanceToPlayer = Vector2.Distance(new Vector2(x, y), playerPos);
 		if (!playerSpawned) {
@@ -213,20 +194,20 @@ public class LevelGenerator : MonoBehaviour {
 			Spawn(x, y, playerObj);
 		}
 		if (!portalSpawned && distanceToPlayer > minDistanceToPlayer * 1.5f) {
-			Spawn(x, y, portals[0]);
+			Spawn(x, y, portals[0], true);
 			portalSpawned = true;
 			return;
 		}
 		if (Random.value < enemySpawnChance && enemyToSpawn > 0 && distanceToPlayer > minDistanceToPlayer) {
 			int randomIndex = Random.Range(0, enemies.Length);
-			Spawn(x, y, enemies[randomIndex]);
+			Spawn(x, y, enemies[randomIndex], true);
 			enemyToSpawn--;
 			enemySpawnChance = 0.000f;
 			return;
 		}
 		if (Random.value < powerUpSpawnChance && powerUpToSpawn > 0 && distanceToPlayer > minDistanceToPlayer * 1.5f) {
 			int randomIndex = Random.Range(0, powerUps.Length);
-			Spawn(x, y, powerUps[randomIndex]);
+			Spawn(x, y, powerUps[randomIndex], true);
 			powerUpToSpawn--;
 			powerUpSpawnChance = 0.000f;
 			return;
@@ -241,19 +222,13 @@ public class LevelGenerator : MonoBehaviour {
 			for (int y = 0; y < roomHeight; y++){
 				switch(grid[x,y]){
 					case gridSpace.empty:
-						Spawn(x,y,wallObj);
+						Spawn(x,y,wallObj, true);
 						break;
 					case gridSpace.floor:
-						// if (!playerSpawned) {
-						// 	playerSpawned = true;
-						// 	playerPos = new Vector2(x, y);
-						// 	player.GetComponent<Transform>().position = new Vector3(playerPos.x, playerPos.y, 0);
-						// }
-						// Spawn(x,y,floorObj);
 						SpawnOnFloor(x, y);
 						break;
 					case gridSpace.wall:
-						Spawn(x,y,wallObj);
+						Spawn(x,y,wallObj, true);
 						break;
 				}
 			}
@@ -283,11 +258,15 @@ public class LevelGenerator : MonoBehaviour {
 		}
 		return count;
 	}
-	void Spawn(float x, float y, GameObject toSpawn){
+	void Spawn(float x, float y, GameObject toSpawn, bool isChild = false){
 		//find the position to spawn
 		Vector2 offset = roomSizeWorldUnits / 2.0f;
 		Vector2 spawnPos = new Vector2(x,y) * worldUnitsInOneGridCell - offset;
 		//spawn object
-		GameObject spawnedObj = Instantiate(toSpawn, spawnPos, Quaternion.identity);
+		if (isChild) {
+			Instantiate(toSpawn, spawnPos, Quaternion.identity, environmentParent);
+		} else {
+			Instantiate(toSpawn, spawnPos, Quaternion.identity);
+		}
 	}
 }
