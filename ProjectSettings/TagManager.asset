@@ -10,6 +10,8 @@ TagManager:
   - EnemyBullet
   - PlayerBullet
   - Boss
+  - Floor
+  - Portal
   layers:
   - Default
   - TransparentFX

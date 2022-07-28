@@ -32,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
     void Awake() {
         animator = GetComponent<Animator>();
         playerSprite = GetComponent<SpriteRenderer>();
+        cam = Camera.main;
     }
     
     // Start is called before the first frame update

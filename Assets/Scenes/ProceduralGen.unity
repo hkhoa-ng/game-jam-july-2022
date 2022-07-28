@@ -166,31 +166,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7aaf686efa281e3418f4552b8bbcb7d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomSizeWorldUnits: {x: 25, y: 25}
-  worldUnitsInOneGridCell: 1
+  borderWidth: 3
+  roomSizeWorldUnits: {x: 50, y: 50}
+  worldUnitsInOneGridCell: 2
   chanceWalkerChangeDir: 0.3
-  chanceWalkerSpawn: 0.01
+  chanceWalkerSpawn: 0.1
   chanceWalkerDestoy: 0.01
   maxWalkers: 5
-  percentToFill: 0.5
-  enemyNum: 8
+  percentToFill: 0.2
+  enemyNum: 10
   powerUpNum: 1
   wallObj: {fileID: 3412943863195253560, guid: 9d12cd16ae6c59e44974afc4c9bf5fe2, type: 3}
   floorObj: {fileID: 8576541124475299437, guid: b6acdc45d57adac4982021f4c1fa5176, type: 3}
-  player: {fileID: 3103733707578093243, guid: c675e560c76d5e34498abfe5fcdef65f, type: 3}
+  verticalObj: {fileID: 3412943863195253560, guid: d8a379b96fb0ea24d8358447cb398f64, type: 3}
+  playerObj: {fileID: 3152183613072618606, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}
   enemySpawnChance: 0
   powerUpSpawnChance: 0
   minDistanceToPlayer: 10
   distanceToPlayer: 0
   enemies:
-  - {fileID: 3617740694813921467, guid: 4f2fbd908fca0e4418f95d1d55e4186d, type: 3}
-  - {fileID: 3617740694813921467, guid: 4f2fbd908fca0e4418f95d1d55e4186d, type: 3}
-  - {fileID: 3617740694813921467, guid: 4f2fbd908fca0e4418f95d1d55e4186d, type: 3}
+  - {fileID: 1978994070486630212, guid: e8b80b8524df1f344b8570283908d40d, type: 3}
+  - {fileID: 4003897596806903819, guid: 6fb723e6c11e7864bbbf3f8129a60e72, type: 3}
+  - {fileID: 1657113415593929491, guid: 0917ca3cf5600af4a9a2ad49760bcac2, type: 3}
   powerUps:
   - {fileID: 3562929053161909595, guid: 94a72d8ce474dc4428317028f2f13edc, type: 3}
   - {fileID: 3562929053161909595, guid: 94a72d8ce474dc4428317028f2f13edc, type: 3}
   portals:
-  - {fileID: 3835947390740286954, guid: e7458683962da9f44892ca01e14ba40d, type: 3}
+  - {fileID: 5129469426092904584, guid: cc728edb8e876b84faf452701c970a09, type: 3}
   playerPos: {x: 0, y: 0}
 --- !u!1 &2143080160
 GameObject:
@@ -204,6 +206,7 @@ GameObject:
   - component: {fileID: 2143080162}
   - component: {fileID: 2143080161}
   - component: {fileID: 2143080164}
+  - component: {fileID: 2143080165}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -288,7 +291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a160d838ff8b4b4693ac20007e008c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AssetsPPU: 24
+  m_AssetsPPU: 36
   m_RefResolutionX: 500
   m_RefResolutionY: 500
   m_UpscaleRT: 0
@@ -296,3 +299,18 @@ MonoBehaviour:
   m_CropFrameX: 0
   m_CropFrameY: 0
   m_StretchFill: 0
+--- !u!114 &2143080165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2143080160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 553a1b5c0d2e09d439f6d20d5646208c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  offset: {x: 0, y: 0, z: -10}
+  damping: 0.3
