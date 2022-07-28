@@ -95368,6 +95368,7 @@ MonoBehaviour:
   bossPrefab: {fileID: 6248587437085847337, guid: d87d36b0b4bf6a5439d138b891ea3a06, type: 3}
   alertPrefab: {fileID: 3103733707578093243, guid: c675e560c76d5e34498abfe5fcdef65f, type: 3}
   alertTime: 1
+  maxWaveTillPowerup: 2
   gunsAndPowerUpPrefabs:
   - {fileID: 8257433211254810893, guid: 634bd3f744ac3ea469f9dfc8bb17b4cb, type: 3}
   - {fileID: 3666695072749487636, guid: 1dcdcb4355060e1499864e7d619dd82c, type: 3}
@@ -95628,10 +95629,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 100
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 24
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 500, y: 500}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -96825,6 +96826,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3141059555400199834, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}
+      propertyPath: damage
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3141059555400199834, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}
       propertyPath: timeBetweenBulletInAShot
       value: 0.1
       objectReference: {fileID: 0}
@@ -96931,6 +96936,18 @@ PrefabInstance:
     - target: {fileID: 3152183613984074682, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3746408778355908434, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}
+      propertyPath: reloadTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3746408778355908434, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}
+      propertyPath: bulletsPerTap
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3746408778355908434, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}
+      propertyPath: timeBetweenShooting
+      value: 0.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}
