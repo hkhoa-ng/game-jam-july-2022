@@ -15,6 +15,7 @@ public class SmoothCameraFollow : MonoBehaviour
 
     void Awake() {
         cam = Camera.main;
+        DontDestroyOnLoad(this.gameObject);
     }
 
     void FixedUpdate() 

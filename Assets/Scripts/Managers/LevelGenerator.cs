@@ -22,13 +22,26 @@ public class LevelGenerator : MonoBehaviour {
 	public float percentToFill = 0.2f; 
 
 	public int enemyNum, powerUpNum;
-	public GameObject wallObj, floorObj, verticalObj, playerObj;
+	public GameObject verticalObj, playerObj;
+	public GameObject[] wallObjs, floorObjs;
+	private GameObject wallToSpawn, floorToSpawn;
 	public float enemySpawnChance, powerUpSpawnChance, minDistanceToPlayer, distanceToPlayer;
-	public GameObject[] enemies, powerUps, portals;
+	public GameObject[] enemies, powerUps, portals, enemiesToSpawn;
 	private bool playerSpawned = false, portalSpawned = false;
 	private int enemyToSpawn, powerUpToSpawn;
 	public Vector2 playerPos;
 
+	void Awake() {
+		if (GameManager.Instance.isVeg) {
+			enemiesToSpawn = new GameObject[] {enemies[0], enemies[1], enemies[2]};
+			wallToSpawn = wallObjs[0];
+			floorToSpawn = floorObjs[0];
+		} else {
+			enemiesToSpawn = new GameObject[] {enemies[3], enemies[4], enemies[5]};
+			wallToSpawn = wallObjs[1];
+			floorToSpawn = floorObjs[1];
+		}
+	}
 	void Start () {
 		StartGeneration();
 	}
@@ -184,7 +197,7 @@ public class LevelGenerator : MonoBehaviour {
 	}
 	void SpawnOnFloor(float x, float y) {
 		
-		Spawn(x,y,floorObj, true);
+		Spawn(x, y, floorToSpawn, true);
 
 		distanceToPlayer = Vector2.Distance(new Vector2(x, y), playerPos);
 		if (!playerSpawned) {
@@ -199,8 +212,8 @@ public class LevelGenerator : MonoBehaviour {
 			return;
 		}
 		if (Random.value < enemySpawnChance && enemyToSpawn > 0 && distanceToPlayer > minDistanceToPlayer) {
-			int randomIndex = Random.Range(0, enemies.Length);
-			Spawn(x, y, enemies[randomIndex], true);
+			int randomIndex = Random.Range(0, enemiesToSpawn.Length);
+			Spawn(x, y, enemiesToSpawn[randomIndex], true);
 			enemyToSpawn--;
 			enemySpawnChance = 0.000f;
 			return;
@@ -222,13 +235,13 @@ public class LevelGenerator : MonoBehaviour {
 			for (int y = 0; y < roomHeight; y++){
 				switch(grid[x,y]){
 					case gridSpace.empty:
-						Spawn(x,y,wallObj, true);
+						Spawn(x,y, wallToSpawn, true);
 						break;
 					case gridSpace.floor:
 						SpawnOnFloor(x, y);
 						break;
 					case gridSpace.wall:
-						Spawn(x,y,wallObj, true);
+						Spawn(x,y, wallToSpawn, true);
 						break;
 				}
 			}
