@@ -66,36 +66,46 @@ public class GameManager : MonoBehaviour
             rooms[i] = roomGameObjects[i].GetComponent<Room>();
         }
 
+        int maxTry = 4;
         // Initialise main path
         for (int i = 0; i < mainPathLength; i++)
         {
             direction = Random.Range(0, 4);
             if (direction == 0 && rooms[currentIndex].portalLeft != null && !rooms[currentIndex - 1].isInitialised)
             {
+                maxTry = 4;
                 rooms[currentIndex].portalLeft.GetComponent<PortalTransition>().isOpenable = true;
                 rooms[currentIndex].isInitialised = true;
                 currentIndex -= 1;
             }
             else if (direction == 1 && rooms[currentIndex].portalRight != null && !rooms[currentIndex + 1].isInitialised)
             {
+                maxTry = 4;
                 rooms[currentIndex].portalRight.GetComponent<PortalTransition>().isOpenable = true;
                 rooms[currentIndex].isInitialised = true;
                 currentIndex += 1;
             }
             else if (direction == 2 && rooms[currentIndex].portalTop != null && !rooms[currentIndex - 4].isInitialised)
             {
+                maxTry = 4;
                 rooms[currentIndex].portalTop.GetComponent<PortalTransition>().isOpenable = true;
                 rooms[currentIndex].isInitialised = true;
                 currentIndex -= 4;
             }
             else if (direction == 3 && rooms[currentIndex].portalBottom != null && !rooms[currentIndex + 4].isInitialised)
             {
+                maxTry = 4;
                 rooms[currentIndex].portalBottom.GetComponent<PortalTransition>().isOpenable = true;
                 rooms[currentIndex].isInitialised = true;
                 currentIndex += 4;
             }
             else
             {
+                if (maxTry > 0)
+                {
+                    maxTry--;
+                    i--;
+                }
             }
             if (i == mainPathLength - 1) endIndex = currentIndex;
         }

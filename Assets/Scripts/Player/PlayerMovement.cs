@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
 
     private const string PLAYER_IDLE = "PlayerIdle";
     private const string PLAYER_RUN = "PlayerRun";
+    private const string PLAYER_HURT = "PlayerHurt";
     private Animator animator;
     private bool isRunning = false;
     private string currentState;
@@ -37,21 +38,26 @@ public class PlayerMovement : MonoBehaviour
     public Vector2 moveDir;
     public Vector3 targetDir;
 
+    // Invincible frame
+    private bool isHurting;
+    [SerializeField] private float invincibleSeconds = 1;
 
     // Text UI
     public TextMeshProUGUI healthText;
     public TextMeshProUGUI bulletText;
 
-    void ChangeAnimationState(string newState) {
+    void ChangeAnimationState(string newState)
+    {
         if (currentState == newState) return;
         animator.Play(newState);
         currentState = newState;
     }
 
-    void Awake() {
+    void Awake()
+    {
         animator = GetComponent<Animator>();
         playerSprite = GetComponent<SpriteRenderer>();
-        
+
         int gunIndex = 0;
         gunSystem[gunIndex].SetActive(true);
         gunSprite = gunSystem[gunIndex].GetComponentInChildren<SpriteRenderer>();
@@ -60,10 +66,11 @@ public class PlayerMovement : MonoBehaviour
             gunSystem[i].SetActive(false);
         }
     }
-    
+
     // Start is called before the first frame update
     void Start()
     {
+        isHurting = false;
         health = maxHealth;
         damageModifier = 0;
         rigidBody = GetComponent<Rigidbody2D>();
@@ -95,25 +102,36 @@ public class PlayerMovement : MonoBehaviour
         gun.eulerAngles = new Vector3(0, 0, angle);
 
         // Rotate the player's sprite
-        if (angle > 90 || angle < -90) {
+        if (angle > 90 || angle < -90)
+        {
             playerSprite.flipX = true;
             gunSprite.flipY = true;
-        } else {
+        }
+        else
+        {
             playerSprite.flipX = false;
             gunSprite.flipY = false;
         }
 
         // Update animation
-        if (isRunning) {
+        if (isHurting)
+        {
+            ChangeAnimationState(PLAYER_HURT);
+        }
+        else if (isRunning)
+        {
             ChangeAnimationState(PLAYER_RUN);
-        } else {
+        }
+        else
+        {
             ChangeAnimationState(PLAYER_IDLE);
         }
     }
 
     public void changeGun(int newGunIndex)
     {
-        if (newGunIndex < gunSystem.Length && newGunIndex >= 0) {
+        if (newGunIndex < gunSystem.Length && newGunIndex >= 0)
+        {
             gunSystem[gunIndex].SetActive(false);
             gunSystem[newGunIndex].SetActive(true);
             gunIndex = newGunIndex;
@@ -132,11 +150,13 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy") 
-            || collision.gameObject.CompareTag("Boss") 
-            || collision.gameObject.CompareTag("EnemyBullet") )
+        if ((collision.gameObject.CompareTag("Enemy")
+            || collision.gameObject.CompareTag("Boss")
+            || collision.gameObject.CompareTag("EnemyBullet")) && !isHurting)
         {
             health -= 1;
+            isHurting = true;
+            StartCoroutine(Hurting());
             Vector3 targetDir = transform.position - collision.gameObject.transform.position;
             moveDir = new Vector2(targetDir.x, targetDir.y).normalized;
 
@@ -146,19 +166,23 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy")
-    || collision.gameObject.CompareTag("Boss")
-    || collision.gameObject.CompareTag("EnemyBullet"))
+        if ((collision.gameObject.CompareTag("Enemy")
+            || collision.gameObject.CompareTag("Boss")
+            || collision.gameObject.CompareTag("EnemyBullet")) && !isHurting)
         {
             health -= 1;
-            ContactPoint2D contactPoint = collision.GetContact(0);
+            isHurting = true;
+            StartCoroutine(Hurting());
             Vector3 targetDir = transform.position - collision.gameObject.transform.position;
             moveDir = new Vector2(targetDir.x, targetDir.y).normalized;
 
-
-
-
             rigidBody.AddForce(moveDir * knockbackForce, ForceMode2D.Force);
         }
+    }
+
+    IEnumerator Hurting()
+    {
+        yield return new WaitForSeconds(invincibleSeconds);
+        isHurting = false;
     }
 }
