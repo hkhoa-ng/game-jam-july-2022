@@ -46,7 +46,6 @@ public class GameManager : MonoBehaviour
 
     // Power-up Prefabs
     int waveTillPowerUp;
-    [SerializeField] private int maxWaveTillPowerup = 2;
     public GameObject[] gunsAndPowerUpPrefabs;
     public GameObject[] powerupPrefabs;
 
@@ -54,7 +53,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        waveTillPowerUp = maxWaveTillPowerup;
+        waveTillPowerUp = 3;
         isHealthy = false;
 
         startIndex = Random.Range(0, 16);
@@ -107,6 +106,8 @@ public class GameManager : MonoBehaviour
         // Initialise the rest of the rooms
         for (int i = 0; i < 16; i++)
         {
+            if (!rooms[i].isInitialised)
+            {
                 int rand; 
                 rand = Random.Range(0,5); // Chance of open is 1/5
                 if (rand == 0 && rooms[i].portalLeft != null)
@@ -128,7 +129,8 @@ public class GameManager : MonoBehaviour
                 {
                     rooms[i].portalBottom.GetComponent<PortalTransition>().isOpenable = true;
                 }
-            rooms[i].isInitialised = true;
+                rooms[i].isInitialised = true;
+            }
         }
 
         // Trigger start Room event
@@ -171,7 +173,7 @@ public class GameManager : MonoBehaviour
                     int randomIndex = Random.Range(0, gunsAndPowerUpPrefabs.Length);
                     Instantiate(gunsAndPowerUpPrefabs[randomIndex], rooms[roomIndex].transform.position, Quaternion.identity);
                     OpenDoors(roomIndex);
-                    waveTillPowerUp = maxWaveTillPowerup;
+                    waveTillPowerUp = 3;
                     rooms[roomIndex].isEntered = true;
 
                 }

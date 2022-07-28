@@ -23,7 +23,6 @@ public class PlayerMovement : MonoBehaviour
 
     private const string PLAYER_IDLE = "PlayerIdle";
     private const string PLAYER_RUN = "PlayerRun";
-    private const string PLAYER_HURT = "PlayerHurt";
     private Animator animator;
     private bool isRunning = false;
     private string currentState;
@@ -38,9 +37,6 @@ public class PlayerMovement : MonoBehaviour
     public Vector2 moveDir;
     public Vector3 targetDir;
 
-    // Invincible frame
-    private bool isHurting;
-    [SerializeField] private float invincibleSeconds = 1;
 
     // Text UI
     public TextMeshProUGUI healthText;
@@ -68,7 +64,6 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        isHurting = false;
         health = maxHealth;
         damageModifier = 0;
         rigidBody = GetComponent<Rigidbody2D>();
@@ -109,11 +104,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Update animation
-        if (isHurting)
-        {
-            ChangeAnimationState(PLAYER_HURT);
-        }
-        else if (isRunning) {
+        if (isRunning) {
             ChangeAnimationState(PLAYER_RUN);
         } else {
             ChangeAnimationState(PLAYER_IDLE);
@@ -141,14 +132,11 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if ((collision.gameObject.CompareTag("Enemy") 
+        if (collision.gameObject.CompareTag("Enemy") 
             || collision.gameObject.CompareTag("Boss") 
-            || collision.gameObject.CompareTag("EnemyBullet") ) 
-            && (!isHurting))
+            || collision.gameObject.CompareTag("EnemyBullet") )
         {
             health -= 1;
-            isHurting = true;
-            StartCoroutine(Hurting());
             Vector3 targetDir = transform.position - collision.gameObject.transform.position;
             moveDir = new Vector2(targetDir.x, targetDir.y).normalized;
 
@@ -158,24 +146,19 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if ((collision.gameObject.CompareTag("Enemy")
+        if (collision.gameObject.CompareTag("Enemy")
     || collision.gameObject.CompareTag("Boss")
-    || collision.gameObject.CompareTag("EnemyBullet")) && !isHurting)
+    || collision.gameObject.CompareTag("EnemyBullet"))
         {
             health -= 1;
-            isHurting = true;
-            StartCoroutine(Hurting());
             ContactPoint2D contactPoint = collision.GetContact(0);
             Vector3 targetDir = transform.position - collision.gameObject.transform.position;
             moveDir = new Vector2(targetDir.x, targetDir.y).normalized;
+
+
+
+
             rigidBody.AddForce(moveDir * knockbackForce, ForceMode2D.Force);
         }
-    }
-
-    IEnumerator Hurting()
-    {
-        yield return new WaitForSeconds(invincibleSeconds);
-        isHurting = false;
-
     }
 }
