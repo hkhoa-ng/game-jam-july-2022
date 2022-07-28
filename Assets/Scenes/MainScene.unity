@@ -93999,7 +93999,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &835010529
 Transform:
   m_ObjectHideFlags: 0
@@ -96838,11 +96838,11 @@ PrefabInstance:
     - target: {fileID: 3152183613072618607, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}
       propertyPath: gunSystem.Array.data[0]
       value: 
-      objectReference: {fileID: 3152183614166631331}
+      objectReference: {fileID: 3152183614166631329}
     - target: {fileID: 3152183613072618607, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}
       propertyPath: gunSystem.Array.data[1]
       value: 
-      objectReference: {fileID: 3152183614166631329}
+      objectReference: {fileID: 3152183614166631331}
     - target: {fileID: 3152183613072618607, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}
       propertyPath: gunSystem.Array.data[2]
       value: 
