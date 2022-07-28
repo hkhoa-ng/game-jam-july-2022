@@ -218,7 +218,7 @@ public class LevelGenerator : MonoBehaviour {
 			enemySpawnChance = 0.000f;
 			return;
 		}
-		if (Random.value < powerUpSpawnChance && powerUpToSpawn > 0 && distanceToPlayer > minDistanceToPlayer * 1.5f) {
+		if (Random.value < powerUpSpawnChance && powerUpToSpawn > 0 && distanceToPlayer > minDistanceToPlayer * 1f) {
 			int randomIndex = Random.Range(0, powerUps.Length);
 			Spawn(x, y, powerUps[randomIndex], true);
 			powerUpToSpawn--;
@@ -227,7 +227,7 @@ public class LevelGenerator : MonoBehaviour {
 		}
 
 		powerUpSpawnChance += 0.01f;
-		enemySpawnChance += 0.01f;
+		enemySpawnChance += 0.05f;
 		
 	}
 	void SpawnLevel(){

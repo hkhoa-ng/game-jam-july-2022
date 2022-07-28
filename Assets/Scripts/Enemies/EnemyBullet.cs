@@ -13,6 +13,6 @@ public class EnemyBullet : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision) {
         Destroy(gameObject);
-        Instantiate(explosion, transform.position, Quaternion.identity, this.transform);
+        Instantiate(explosion, transform.position, Quaternion.identity);
     }
 }

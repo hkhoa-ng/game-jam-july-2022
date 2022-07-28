@@ -11,7 +11,7 @@ public class BossAI : MonoBehaviour
     const string BOSS_CHARGE = "BossCharge";
     private string[] attackStates = {"circle", "chase", "follow", "summon", "spiral", "charge"};
 
-    private Animator animator;
+    public Animator animator;
     private SpriteRenderer spriteRenderer;
     private string currentState;
     private Transform playerPos;
@@ -55,13 +55,15 @@ public class BossAI : MonoBehaviour
     }
 
     private void Awake() {
-        animator = GetComponent<Animator>();
-        playerPos = GameObject.FindGameObjectWithTag("Player").transform;
         startPos = this.gameObject.transform;
         spriteRenderer = animator.GetComponent<SpriteRenderer>();
         health = maxhealth;
 
         Invoke(nameof(IdleState), 1f);
+    }
+
+    private void Start() {
+        playerPos = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     private void IdleState() {
