@@ -49,10 +49,16 @@ public class GameManager : MonoBehaviour
     public GameObject[] gunsAndPowerUpPrefabs;
     public GameObject[] powerupPrefabs;
 
+    // BG Music
+    public AudioSource normalBGM;
+    public AudioSource bossBGM;
+    public AudioSource winSFX;
 
     // Start is called before the first frame update
     void Start()
     {
+        normalBGM.Play();
+        bossBGM.Stop();
         waveTillPowerUp = 3;
         isHealthy = false;
 
@@ -202,6 +208,8 @@ public class GameManager : MonoBehaviour
             }
             else
             {
+                normalBGM.Stop();
+                bossBGM.Play();
                 Vector3 bossSpawnPos = rooms[roomIndex].transform.position;
                 GameObject alert = Instantiate(alertPrefab, bossSpawnPos, Quaternion.identity);
                 alert.GetComponent<SpawnEnemyFromAlert>().enemyPrefab = bossPrefab;
@@ -272,6 +280,7 @@ public class GameManager : MonoBehaviour
             numOfRemainingEnemies = GameObject.FindGameObjectsWithTag("Boss").Length + GameObject.FindGameObjectsWithTag("Enemy").Length;
             if (numOfRemainingEnemies == 0 && hasSpawned)
             {
+                winSFX.Play();
                 OpenDoors(currentIndex);
                 rooms[currentIndex].isEntered = true;
                 yield return new WaitForSeconds(2);

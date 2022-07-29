@@ -11,6 +11,7 @@ public class Gun : MonoBehaviour
     private bool inCollider;
     private GameObject player;
 
+    public AudioSource switchSFX;
 
     private void Update()
     {
@@ -18,6 +19,7 @@ public class Gun : MonoBehaviour
         {
             int currentGun;
             currentGun = player.GetComponent<PlayerMovement>().gunIndex;
+            switchSFX.Play();
             player.GetComponent<PlayerMovement>().changeGun(index);
             Instantiate(gunPrefabs[currentGun], transform.position, Quaternion.identity);
             Destroy(gameObject);

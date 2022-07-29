@@ -50,6 +50,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float instructionTimer;
     public TextMeshProUGUI instructionText;
 
+    // SFX
+    public AudioSource hurtSFX;
+
     void ChangeAnimationState(string newState)
     {
         if (currentState == newState) return;
@@ -161,9 +164,11 @@ public class PlayerMovement : MonoBehaviour
             || collision.gameObject.CompareTag("Boss")
             || collision.gameObject.CompareTag("EnemyBullet"))
         {
+            hurtSFX.Play();
             health -= 1;
             Vector3 targetDir = transform.position - collision.gameObject.transform.position;
             moveDir = new Vector2(targetDir.x, targetDir.y).normalized;
+            
 
             rigidBody.AddForce(moveDir * knockbackForce, ForceMode2D.Force);
         }
@@ -176,6 +181,7 @@ public class PlayerMovement : MonoBehaviour
     || collision.gameObject.CompareTag("EnemyBullet")) && !isInvincible) 
         {
             health -= 1;
+            hurtSFX.Play();
             isInvincible = true;
             StartCoroutine(CountdownInvincible());
             ContactPoint2D contactPoint = collision.GetContact(0);

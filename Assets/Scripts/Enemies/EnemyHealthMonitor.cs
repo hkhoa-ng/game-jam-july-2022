@@ -6,6 +6,7 @@ public class EnemyHealthMonitor : MonoBehaviour
 {
     public float health = 6;
     public ParticleSystem explosion;
+    public AudioSource hurtSFX;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +24,7 @@ public class EnemyHealthMonitor : MonoBehaviour
     void Update()
     {
         if (health <= 0) {
+            hurtSFX.Play();
             Destroy(gameObject);
             Instantiate(explosion, transform.position, Quaternion.identity);
         }

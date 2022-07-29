@@ -18,6 +18,9 @@ public class PortalTransition : MonoBehaviour
     // GameManager
     private GameManager gameManager;
 
+    // SFX
+    public AudioSource transitionSFX;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -55,6 +58,7 @@ public class PortalTransition : MonoBehaviour
             if ((collision.gameObject.transform.position.x < transform.position.x && playerChange.y == 0) ||
                 (collision.gameObject.transform.position.y < transform.position.y && playerChange.x == 0))
             {
+                transitionSFX.Play();
                 collision.transform.position += playerChange;
                 // Trigger room event
                 if (playerChange.x == 0)
@@ -73,6 +77,7 @@ public class PortalTransition : MonoBehaviour
             {
                 collision.transform.position -= playerChange;
                 // Trigger Room event
+                transitionSFX.Play();
                 if (playerChange.x == 0)
                 {
                     gameManager.currentIndex += 4;

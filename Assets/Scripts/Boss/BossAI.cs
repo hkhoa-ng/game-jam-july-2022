@@ -51,8 +51,11 @@ public class BossAI : MonoBehaviour
     public float maxhealth = 100f;
     private float health;
 
+    public AudioSource stateChangeSFX;
+
     private void ChangeAnimationState(string newState) {
         if (currentState == newState) return;
+        stateChangeSFX.Play();
         animator.Play(newState);
         currentState = newState;
     }

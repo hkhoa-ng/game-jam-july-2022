@@ -26,6 +26,7 @@ public class GunSystem : MonoBehaviour
     // public CamShake camShake;
     // public float camShakeMagnitude, camShakeDuration;
 
+
     private void Awake()
     {
         playerController = GameObject.Find("Player").GetComponent<PlayerMovement>();

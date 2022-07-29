@@ -7,7 +7,7 @@ public class Bullet : MonoBehaviour
     public GameObject explodePrefab;
     public float damage;
 
-
+    public AudioSource hitSFX;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         
@@ -16,6 +16,7 @@ public class Bullet : MonoBehaviour
             || collision.gameObject.CompareTag("EnemyBullet")
             || collision.gameObject.CompareTag("Boss"))
         {
+            hitSFX.Play();
             Destroy(gameObject);
         }
         Instantiate(explodePrefab, transform.position, Quaternion.identity);
