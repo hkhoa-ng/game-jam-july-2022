@@ -2,8 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 public class GameManager : MonoBehaviour
 {
+    public TextMeshProUGUI lieText;
+
     public GameObject[] roomGameObjects;
     public Room[] rooms = new Room[16];
 
@@ -60,6 +63,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        lieText.gameObject.SetActive(false);
+
         screenshake = gameObject.GetComponent<ScreenShake>();
 
         normalBGM.Play();
@@ -286,6 +291,7 @@ public class GameManager : MonoBehaviour
             numOfRemainingEnemies = GameObject.FindGameObjectsWithTag("Boss").Length + GameObject.FindGameObjectsWithTag("Enemy").Length;
             if (numOfRemainingEnemies == 0 && hasSpawned)
             {
+                lieText.gameObject.SetActive(true);
                 winSFX.Play();
                 OpenDoors(currentIndex);
                 rooms[currentIndex].isEntered = true;

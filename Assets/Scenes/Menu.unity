@@ -525,7 +525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 1
+  m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 24
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 500, y: 500}
@@ -615,7 +615,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press Space To Play
+  m_text: by Khoa and Huy
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4753eb796204e214abdf3974e51f2124, type: 2}
   m_sharedMaterial: {fileID: -1089359964419509993, guid: 4753eb796204e214abdf3974e51f2124, type: 2}
