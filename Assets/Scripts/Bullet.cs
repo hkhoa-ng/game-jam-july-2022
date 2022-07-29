@@ -13,11 +13,9 @@ public class Bullet : MonoBehaviour
         
         if (collision.gameObject.CompareTag("Walls") 
             || collision.gameObject.CompareTag("Enemy") 
-            || collision.gameObject.CompareTag("EnemyBullet")
             || collision.gameObject.CompareTag("Boss"))
         {
-            hitSFX.Play();
-            Destroy(gameObject);
+            StartCoroutine(Destroy());
         }
         Instantiate(explodePrefab, transform.position, Quaternion.identity);
     }
@@ -28,5 +26,11 @@ public class Bullet : MonoBehaviour
         {
             damage = newDamage;
         } 
+    }
+
+    IEnumerator Destroy()
+    {
+        yield return new WaitForSeconds(0.1f);
+        Destroy(gameObject);
     }
 }

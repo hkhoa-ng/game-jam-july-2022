@@ -19,10 +19,9 @@ public class Gun : MonoBehaviour
         {
             int currentGun;
             currentGun = player.GetComponent<PlayerMovement>().gunIndex;
-            switchSFX.Play();
             player.GetComponent<PlayerMovement>().changeGun(index);
             Instantiate(gunPrefabs[currentGun], transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            StartCoroutine(Destroy());
         }
     }
 
@@ -41,5 +40,12 @@ public class Gun : MonoBehaviour
         {
             inCollider = false;
         }
+    }
+
+    IEnumerator Destroy()
+    {
+        switchSFX.Play();
+        yield return new WaitForSeconds(0.1f);
+        Destroy(gameObject);
     }
 }

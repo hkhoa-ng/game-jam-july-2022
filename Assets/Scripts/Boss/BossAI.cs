@@ -53,6 +53,9 @@ public class BossAI : MonoBehaviour
 
     public AudioSource stateChangeSFX;
 
+    //Screen Shake
+    private ScreenShake screenshake;
+
     private void ChangeAnimationState(string newState) {
         if (currentState == newState) return;
         stateChangeSFX.Play();
@@ -61,6 +64,7 @@ public class BossAI : MonoBehaviour
     }
 
     private void Awake() {
+        screenshake = GameObject.Find("GameManager").GetComponent<ScreenShake>();
         spawnPos = transform.position;
         animator = spriteAnimator.GetComponent<Animator>();
         playerPos = GameObject.FindGameObjectWithTag("Player").transform;
@@ -146,6 +150,7 @@ public class BossAI : MonoBehaviour
     }
 
     private void SpawnBulletSpiral() {
+        screenshake.StartShake(0.1f, 0.5f); 
         Vector2 shootDir = Random.insideUnitCircle.normalized;
         float mainAngle = Mathf.Atan2(shootDir.y, shootDir.x) * Mathf.Rad2Deg;
 
@@ -164,6 +169,7 @@ public class BossAI : MonoBehaviour
     }
 
     private void SpawnBulletAtPlayer() {
+        screenshake.StartShake(0.1f, 0.5f);
         Vector3 targetDir = playerPos.position - transform.position;
         float offset = Random.Range(-1, 1);
         Vector2 bulletShootDir = new Vector2(targetDir.x + offset, targetDir.y + offset).normalized;
@@ -178,7 +184,7 @@ public class BossAI : MonoBehaviour
         // Vector2 shootDir = Random.insideUnitCircle.normalized;
         // float mainAngle = Mathf.Atan2(shootDir.y, shootDir.x) * Mathf.Rad2Deg;
         // float perpendicularAngle = mainAngle + 90f;
-
+        screenshake.StartShake(0.1f, 0.5f);
         float randomAngle = Random.Range(-45, 45);
 
         for (int i = 0; i < 42; i++) {

@@ -10,9 +10,15 @@ public class HealthUp : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player")) {
-            pickupSFX.Play();
             collision.gameObject.GetComponent<PlayerMovement>().SetHealth(healthUp);
-            Destroy(gameObject);
+            StartCoroutine(Destroy());
         }
+    }
+
+    IEnumerator Destroy()
+    {
+        pickupSFX.Play();
+        yield return new WaitForSeconds(0.1f);
+        Destroy(gameObject);
     }
 }

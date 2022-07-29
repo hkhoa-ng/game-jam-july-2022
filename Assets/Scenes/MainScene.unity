@@ -98756,7 +98756,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 27c3bf5e336091b43b9ba042f4e303c7, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -101007,6 +101007,7 @@ GameObject:
   - component: {fileID: 1384345475}
   - component: {fileID: 1384345474}
   - component: {fileID: 1384345473}
+  - component: {fileID: 1384345476}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -101089,8 +101090,8 @@ MonoBehaviour:
   powerupPrefabs:
   - {fileID: 3835947390740286954, guid: e7458683962da9f44892ca01e14ba40d, type: 3}
   - {fileID: 3562929053161909595, guid: 94a72d8ce474dc4428317028f2f13edc, type: 3}
-  normalBGM: {fileID: 0}
-  bossBGM: {fileID: 0}
+  normalBGM: {fileID: 1384345475}
+  bossBGM: {fileID: 1384345474}
   winSFX: {fileID: 1384345473}
 --- !u!4 &1384345472
 Transform:
@@ -101212,15 +101213,15 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_audioClip: {fileID: 8300000, guid: 7d859f0104b63414baef1ae749287abd, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 200
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -101308,15 +101309,15 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 1df6503fd47cfcd4088694d51065901b, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 200
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -101394,6 +101395,46 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1384345476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1384345470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c2cf161daf1c204898d30810b1cae37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCam: {fileID: 1503301441}
+  strengthModifier: 0
+  shakeDuration: 0
+  animCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  start: 0
 --- !u!1 &1395636040
 GameObject:
   m_ObjectHideFlags: 0
@@ -102811,6 +102852,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1308025785612745157, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}
+      propertyPath: camShakeDuration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1308025785612745157, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}
+      propertyPath: camShakeMagnitude
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 3141059555400199834, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}
       propertyPath: damage
       value: 1
@@ -102818,6 +102867,14 @@ PrefabInstance:
     - target: {fileID: 3141059555400199834, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}
       propertyPath: bulletsPerTap
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3141059555400199834, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}
+      propertyPath: camShakeDuration
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3141059555400199834, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}
+      propertyPath: camShakeMagnitude
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 3152183613072618606, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}
       propertyPath: m_Name
@@ -102890,6 +102947,18 @@ PrefabInstance:
     - target: {fileID: 3152183613072618611, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3746408778355908434, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}
+      propertyPath: bulletsPerTap
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3746408778355908434, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}
+      propertyPath: camShakeDuration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3746408778355908434, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}
+      propertyPath: camShakeMagnitude
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}

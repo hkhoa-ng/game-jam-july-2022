@@ -14,7 +14,6 @@ public class EnemyBullet : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D collision) {
-        explosion.Play();
         Destroy(gameObject);
         Instantiate(explosion, transform.position, Quaternion.identity);
     }

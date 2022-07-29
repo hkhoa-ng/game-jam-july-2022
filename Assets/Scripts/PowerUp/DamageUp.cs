@@ -11,9 +11,15 @@ public class DamageUp : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            pickupSFX.Play();
             collision.gameObject.GetComponent<PlayerMovement>().damageModifier += damageUp;
-            Destroy(gameObject);
+            StartCoroutine(Destroy());
         }
+    }
+
+    IEnumerator Destroy()
+    {
+        pickupSFX.Play();
+        yield return new WaitForSeconds(0.1f);
+        Destroy(gameObject);
     }
 }

@@ -24,9 +24,16 @@ public class EnemyHealthMonitor : MonoBehaviour
     void Update()
     {
         if (health <= 0) {
-            hurtSFX.Play();
-            Destroy(gameObject);
-            Instantiate(explosion, transform.position, Quaternion.identity);
+            StartCoroutine(Destroy());
+            health = 100;
         }
+    }
+
+    IEnumerator Destroy()
+    {
+        hurtSFX.Play();
+        Instantiate(explosion, transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(0.1f);
+        Destroy(gameObject);
     }
 }

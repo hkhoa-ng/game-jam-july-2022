@@ -7,7 +7,9 @@ public class Apple : MonoBehaviour
     public GameObject enemyExplosionPrefab;
     public float distanceTillExplode = 5f;
     private Transform player;
-    
+
+    public AudioSource explosionSFX;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -25,10 +27,18 @@ public class Apple : MonoBehaviour
     }
 
     void SelfDestruct() {
-        Destroy(this.gameObject);
+
+        StartCoroutine(Destroy());
         SpawnExplosion();
         SpawnExplosion();
         // SpawnExplosion();
+    }
+
+    IEnumerator Destroy()
+    {
+        explosionSFX.Play();
+        yield return new WaitForSeconds(0.1f);
+        Destroy(this.gameObject);
     }
 
     void SpawnExplosion() {

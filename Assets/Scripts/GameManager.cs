@@ -54,9 +54,14 @@ public class GameManager : MonoBehaviour
     public AudioSource bossBGM;
     public AudioSource winSFX;
 
+    // Screen shake
+    private ScreenShake screenshake;
+
     // Start is called before the first frame update
     void Start()
     {
+        screenshake = gameObject.GetComponent<ScreenShake>();
+
         normalBGM.Play();
         bossBGM.Stop();
         waveTillPowerUp = 3;
@@ -208,6 +213,7 @@ public class GameManager : MonoBehaviour
             }
             else
             {
+                screenshake.StartShake(0.5f, 1);
                 normalBGM.Stop();
                 bossBGM.Play();
                 Vector3 bossSpawnPos = rooms[roomIndex].transform.position;

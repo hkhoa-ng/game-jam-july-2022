@@ -23,8 +23,8 @@ public class GunSystem : MonoBehaviour
     //Graphics
     public ParticleSystem muzzleFlash;
     public GameObject bulletPrefab;
-    // public CamShake camShake;
-    // public float camShakeMagnitude, camShakeDuration;
+    public ScreenShake camShake;
+    public float camShakeMagnitude, camShakeDuration;
 
 
     private void Awake()
@@ -33,6 +33,7 @@ public class GunSystem : MonoBehaviour
         bulletsLeft = magazineSize;
         readyToShoot = true;
         cam = Camera.main;
+        camShake = GameObject.Find("GameManager").GetComponent<ScreenShake>();
     }
     private void Update()
     {
@@ -65,6 +66,7 @@ public class GunSystem : MonoBehaviour
     }
     private void Shoot()
     {
+        camShake.StartShake(camShakeMagnitude, camShakeDuration);
         readyToShoot = false;
         Vector3 shotDir = firePoint.right;
         float aimAngle = Mathf.Atan2(shotDir.y, shotDir.x) * Mathf.Rad2Deg;
