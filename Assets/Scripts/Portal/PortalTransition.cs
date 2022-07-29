@@ -8,6 +8,10 @@ public class PortalTransition : MonoBehaviour
     public bool isOpenable;
     public GameObject sprite;
 
+    // Indicator for boss room portal
+    public GameObject bossRoomMarker;
+    public bool isBossRoom;
+
     // New Boundary offsets
     [SerializeField] private Vector3 playerChange;
 
@@ -17,6 +21,9 @@ public class PortalTransition : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        isBossRoom = false;
+        bossRoomMarker.SetActive(false);
+        
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         isActive = false;
         isOpenable = false;
@@ -29,6 +36,10 @@ public class PortalTransition : MonoBehaviour
         if (isActive)
         {
             sprite.SetActive(false);
+            if (isBossRoom)
+            {
+                bossRoomMarker.SetActive(true);
+            }
         }
         else
         {

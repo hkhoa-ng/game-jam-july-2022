@@ -28,8 +28,8 @@ public class GameManager : MonoBehaviour
     // Enemies Prefabs
     public GameObject[] healthyEnemiesPrefabs;
     public GameObject[] junkEnemiesPrefabs;
-    public int minEnemies = 4;
-    public int maxEnemies = 8;
+    public int minEnemies = 6;
+    public int maxEnemies = 12;
     public int numOfEnemies;
     public int numOfRemainingEnemies;
     public float secondsBetweenSpawn = 2;
@@ -107,7 +107,10 @@ public class GameManager : MonoBehaviour
                     i--;
                 }
             }
-            if (i == mainPathLength - 1) endIndex = currentIndex;
+            if (i == mainPathLength - 1)
+            {
+                endIndex = currentIndex;
+            }
         }
         player.transform.position = roomGameObjects[startIndex].transform.position;
         Camera.main.transform.position = roomGameObjects[startIndex].transform.position + new Vector3(0, 0, -10);
@@ -142,6 +145,9 @@ public class GameManager : MonoBehaviour
                 rooms[i].isInitialised = true;
             }
         }
+        
+        // Mark all the portals to the boss room
+        SetUpMarkers();
 
         // Trigger start Room event
         rooms[startIndex].isEntered = true;
@@ -221,7 +227,7 @@ public class GameManager : MonoBehaviour
         float maxSpawnY = roomGameObjects[currentIndex].transform.position.y + 5;
         while (numOfEnemies > 0)
         {
-            int enemiesThisWave = Random.Range(1, 3);
+            int enemiesThisWave = Random.Range(1, 5);
             for (int i = 0; i < enemiesThisWave; i++)
             {
                 // Generate spawn Position
@@ -268,6 +274,7 @@ public class GameManager : MonoBehaviour
             {
                 OpenDoors(currentIndex);
                 rooms[currentIndex].isEntered = true;
+                yield return new WaitForSeconds(2);
                 SceneManager.LoadScene(3);
                 yield break;
             }
@@ -335,6 +342,26 @@ public class GameManager : MonoBehaviour
         if (rooms[roomIndex].portalTop != null)
         {
             rooms[roomIndex].portalTop.GetComponent<PortalTransition>().isActive = false;
+        }
+    }
+
+    private void SetUpMarkers()
+    {
+        if (rooms[endIndex].portalLeft != null && rooms[endIndex].portalLeft.GetComponent<PortalTransition>().isOpenable)
+        {
+            rooms[endIndex].portalLeft.GetComponent<PortalTransition>().isBossRoom = true;
+        }
+        if (rooms[endIndex].portalRight != null && rooms[endIndex].portalRight.GetComponent<PortalTransition>().isOpenable)
+        {
+            rooms[endIndex].portalRight.GetComponent<PortalTransition>().isBossRoom = true;
+        }
+        if (rooms[endIndex].portalBottom != null && rooms[endIndex].portalBottom.GetComponent<PortalTransition>().isOpenable)
+        {
+            rooms[endIndex].portalBottom.GetComponent<PortalTransition>().isBossRoom = true;
+        }
+        if (rooms[endIndex].portalTop != null && rooms[endIndex].portalTop.GetComponent<PortalTransition>().isOpenable)
+        {
+            rooms[endIndex].portalTop.GetComponent<PortalTransition>().isBossRoom = true;
         }
     }
 }
