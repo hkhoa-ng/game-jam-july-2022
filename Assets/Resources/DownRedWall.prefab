@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7713256316985051771}
   - component: {fileID: 2345362661296097807}
   m_Layer: 8
-  m_Name: GreenWall
+  m_Name: DownRedWall
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 8e1d664c547daf64bbecb5ff9da5f27d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: eee2dcb46af17844ca58f21b297602c2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -124,7 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileAboveIsWall: 0
   tileAbovePos: {x: 0, y: 0}
-  wallDownSprite: {fileID: 21300000, guid: ba1ad25ca3388a54e928807bba605302, type: 3}
+  wallDownSprite: {fileID: 21300000, guid: eee2dcb46af17844ca58f21b297602c2, type: 3}
   explodePrefab: {fileID: 6369110436241389153, guid: 329ec9d3481c12a4bb2eb41e6db3a84b, type: 3}
   floorObj: {fileID: 8576541124475299437, guid: b6acdc45d57adac4982021f4c1fa5176, type: 3}
   health: 2

@@ -122,6 +122,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb8cf878809790f47b06b14fc952a79d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tileAboveIsWall: 0
+  tileAbovePos: {x: 0, y: 0}
+  wallDownSprite: {fileID: 21300000, guid: eee2dcb46af17844ca58f21b297602c2, type: 3}
   explodePrefab: {fileID: 6369110436241389153, guid: 329ec9d3481c12a4bb2eb41e6db3a84b, type: 3}
   floorObj: {fileID: 8576541124475299437, guid: b6acdc45d57adac4982021f4c1fa5176, type: 3}
   health: 2

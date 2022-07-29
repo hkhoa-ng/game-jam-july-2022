@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LevelGenerator : MonoBehaviour {
-	enum gridSpace {empty, floor, wall, vertical, border};
+	public enum gridSpace {empty, floor, wall, wallDown, wallLeft, wallRight, border};
 	public Transform environmentParent;
 	gridSpace[,] grid;
 	int roomHeight, roomWidth;
@@ -22,9 +22,9 @@ public class LevelGenerator : MonoBehaviour {
 	public float percentToFill = 0.2f; 
 
 	public int enemyNum, powerUpNum;
-	public GameObject verticalObj, playerObj;
-	public GameObject[] wallObjs, floorObjs, borderObjs;
-	private GameObject wallToSpawn, floorToSpawn, borderToSpawn;
+	public GameObject playerObj;
+	public GameObject[] wallObjs, floorObjs, borderObjs, specialDownWalls, specialLeftWalls, specialRightWalls;
+	private GameObject wallToSpawn, floorToSpawn, borderToSpawn, downWallToSpawn, leftWallToSpawn, rightWallToSpawn;
 	public float enemySpawnChance, powerUpSpawnChance, minDistanceToPlayer, distanceToPlayer;
 	public GameObject[] enemies, powerUps, portals, enemiesToSpawn;
 	private bool playerSpawned = false, portalSpawned = false;
@@ -37,11 +37,17 @@ public class LevelGenerator : MonoBehaviour {
 			wallToSpawn = wallObjs[0];
 			floorToSpawn = floorObjs[0];
 			borderToSpawn = borderObjs[0];
+			downWallToSpawn = specialDownWalls[0];
+			leftWallToSpawn = specialLeftWalls[0];
+			rightWallToSpawn = specialRightWalls[0];
 		} else {
 			enemiesToSpawn = new GameObject[] {enemies[3], enemies[4], enemies[5]};
 			wallToSpawn = wallObjs[1];
 			floorToSpawn = floorObjs[1];
 			borderToSpawn = borderObjs[1];
+			downWallToSpawn = specialDownWalls[1];
+			leftWallToSpawn = specialLeftWalls[1];
+			rightWallToSpawn = specialRightWalls[1];
 		}
 	}
 	void Start () {
@@ -53,7 +59,9 @@ public class LevelGenerator : MonoBehaviour {
 		Setup();
 		CreateFloors();
 		CreateWalls();
+		FillGap();
 		RemoveSingleWalls();
+		CreateSpecialWalls();
 		SpawnLevel();
 	}
 	void Setup(){
@@ -88,7 +96,7 @@ public class LevelGenerator : MonoBehaviour {
 			//create floor at position of every walker
 			foreach (walker myWalker in walkers){
 				grid[(int)myWalker.pos.x,(int)myWalker.pos.y] = gridSpace.floor;
-				// grid[(int)myWalker.pos.x + 1,(int)myWalker.pos.y + 1] = gridSpace.floor;
+				grid[(int)myWalker.pos.x + 1,(int)myWalker.pos.y + 1] = gridSpace.floor;
 				// grid[(int)myWalker.pos.x - 1,(int)myWalker.pos.y - 1] = gridSpace.floor;
 			}
 			//chance: destroy walker
@@ -161,6 +169,38 @@ public class LevelGenerator : MonoBehaviour {
 					if (grid[x-1,y] == gridSpace.empty){
 						grid[x-1,y] = gridSpace.wall;
 					}
+				}
+			}
+		}
+	}
+
+	void FillGap() {
+		for (int x = 1; x < roomWidth-1; x++){
+			for (int y = 1; y < roomHeight-1; y++){
+				if (grid[x,y] == gridSpace.empty){
+					grid[x,y] = gridSpace.wall;
+				}
+			}
+		}
+	}
+
+	void CreateSpecialWalls() {
+		for (int x = 1; x < roomWidth-2; x++){
+			for (int y = 1; y < roomHeight-2; y++) {
+				if (grid[x,y] == gridSpace.wall) {
+						if (grid[x,y-1] == gridSpace.floor &&
+								grid[x,y+1] == gridSpace.wall) {
+									grid[x,y] = gridSpace.wallDown;
+									continue;
+								}
+						if (grid[x,y-1] == gridSpace.floor &&
+								grid[x,y+1] == gridSpace.floor &&
+								((grid[x+1,y] == gridSpace.wall || grid[x-1,y] == gridSpace.wall) ||
+								 (grid[x+1,y] == gridSpace.wallDown || grid[x-1,y] == gridSpace.wallDown))) {
+									grid[x,y] = gridSpace.wallDown;
+									continue;
+								}
+					// }
 				}
 			}
 		}
@@ -240,14 +280,34 @@ public class LevelGenerator : MonoBehaviour {
 						if (x == 0 || x == roomWidth - 1 || y == 0 || y == roomHeight - 1) {
 							Spawn(x, y, borderToSpawn, true);
 						} else {
-							Spawn(x,y, wallToSpawn, true);
+							// Spawn(x,y, wallToSpawn, true);
 						}
 						break;
 					case gridSpace.floor:
 						SpawnOnFloor(x, y);
 						break;
 					case gridSpace.wall:
-						Spawn(x,y, wallToSpawn, true);
+						// Spawn(x,y, wallToSpawn, true);
+						Wall newWall = Spawn(x,y, wallToSpawn, true).GetComponent<Wall>();
+						Vector2 offset = roomSizeWorldUnits / 2.0f;
+						Vector2 abovePos = new Vector2(x,y+1) * worldUnitsInOneGridCell - offset;
+						newWall.tileAbovePos = abovePos;
+						if (grid[x,y+1] == gridSpace.wall) {
+							newWall.tileAboveIsWall = true;
+						} else {
+							newWall.tileAboveIsWall = false;
+						}
+						break;
+					case gridSpace.wallDown:
+						Wall newWallDown = Spawn(x,y, downWallToSpawn, true).GetComponent<Wall>();
+						Vector2 offsetDown = roomSizeWorldUnits / 2.0f;
+						Vector2 abovePosDown = new Vector2(x,y+1) * worldUnitsInOneGridCell - offsetDown;
+						newWallDown.tileAbovePos = abovePosDown;
+						if (grid[x,y+1] == gridSpace.wall) {
+							newWallDown.tileAboveIsWall = true;
+						} else {
+							newWallDown.tileAboveIsWall = false;
+						}
 						break;
 				}
 			}
@@ -277,15 +337,15 @@ public class LevelGenerator : MonoBehaviour {
 		}
 		return count;
 	}
-	void Spawn(float x, float y, GameObject toSpawn, bool isChild = false){
+	GameObject Spawn(float x, float y, GameObject toSpawn, bool isChild = false){
 		//find the position to spawn
 		Vector2 offset = roomSizeWorldUnits / 2.0f;
 		Vector2 spawnPos = new Vector2(x,y) * worldUnitsInOneGridCell - offset;
 		//spawn object
 		if (isChild) {
-			Instantiate(toSpawn, spawnPos, Quaternion.identity, environmentParent);
+			return Instantiate(toSpawn, spawnPos, Quaternion.identity, environmentParent);
 		} else {
-			Instantiate(toSpawn, spawnPos, Quaternion.identity);
+			return Instantiate(toSpawn, spawnPos, Quaternion.identity);
 		}
 	}
 }

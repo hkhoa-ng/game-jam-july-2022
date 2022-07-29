@@ -205,9 +205,8 @@ MonoBehaviour:
   chanceWalkerDestoy: 0.01
   maxWalkers: 5
   percentToFill: 0.2
-  enemyNum: 15
+  enemyNum: 0
   powerUpNum: 1
-  verticalObj: {fileID: 3412943863195253560, guid: d8a379b96fb0ea24d8358447cb398f64, type: 3}
   playerObj: {fileID: 3152183613072618606, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}
   wallObjs:
   - {fileID: 3412943863195253560, guid: 9d12cd16ae6c59e44974afc4c9bf5fe2, type: 3}
@@ -218,6 +217,15 @@ MonoBehaviour:
   borderObjs:
   - {fileID: 3412943863195253560, guid: d8a379b96fb0ea24d8358447cb398f64, type: 3}
   - {fileID: 3412943863195253560, guid: f36547595f2b43b46930c62ac7455972, type: 3}
+  specialDownWalls:
+  - {fileID: 3412943863195253560, guid: f8c260faee7df674f91773741786d9b6, type: 3}
+  - {fileID: 3412943863195253560, guid: ffdef0aa4306e6e43a2aea8f5a1e3cbe, type: 3}
+  specialLeftWalls:
+  - {fileID: 3412943863195253560, guid: 8ca8dd5c02f7600439681cd7fccacfde, type: 3}
+  - {fileID: 3412943863195253560, guid: 7b9f46bc5d5145045b625da2f450dfd5, type: 3}
+  specialRightWalls:
+  - {fileID: 3412943863195253560, guid: a54c8b66e457e3e4587cc07c6aef6a98, type: 3}
+  - {fileID: 3412943863195253560, guid: f827e84c74c7fff43ad0dfbb65b6bd0b, type: 3}
   enemySpawnChance: 0
   powerUpSpawnChance: 0
   minDistanceToPlayer: 10
