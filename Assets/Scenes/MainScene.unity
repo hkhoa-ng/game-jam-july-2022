@@ -101869,7 +101869,7 @@ Camera:
   m_GameObject: {fileID: 1503301440}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0.21568628, g: 0.16470589, b: 0.22352941, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -101887,7 +101887,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8
+  orthographic size: 8.064516
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -101899,7 +101899,7 @@ Camera:
   m_HDR: 1
   m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
+  m_ForceIntoRT: 1
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
@@ -101940,11 +101940,11 @@ MonoBehaviour:
   m_AssetsPPU: 31
   m_RefResolutionX: 500
   m_RefResolutionY: 500
-  m_UpscaleRT: 0
-  m_PixelSnapping: 1
+  m_UpscaleRT: 1
+  m_PixelSnapping: 0
   m_CropFrameX: 1
-  m_CropFrameY: 0
-  m_StretchFill: 0
+  m_CropFrameY: 1
+  m_StretchFill: 1
 --- !u!1001 &1809608488
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -103095,6 +103095,22 @@ PrefabInstance:
     - target: {fileID: 3746408778355908434, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}
       propertyPath: camShakeMagnitude
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9171676934871896024, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}
+      propertyPath: m_text
+      value: 'WASD: Move
+
+        Left Mouse: SHoot
+
+        R: Reload'
+      objectReference: {fileID: 0}
+    - target: {fileID: 9171676934871896024, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 9171676934871896024, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}

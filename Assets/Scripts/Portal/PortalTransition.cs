@@ -22,14 +22,12 @@ public class PortalTransition : MonoBehaviour
     public AudioSource transitionSFX;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        isBossRoom = false;
         bossRoomMarker.SetActive(false);
         
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         isActive = false;
-        isOpenable = false;
         sprite.SetActive(true);
     }
 

@@ -7,7 +7,7 @@ public class EnemyShootAtPlayer : MonoBehaviour
     public GameObject enemyBulletPrefab;
     private Transform player;
     public float bulletSpeed = 2f;
-    public float shootInterval = 3f;
+    public float shootInterval;
 
     private void Shoot() {
         // Get the direction of the player to shoot toward them
@@ -22,6 +22,7 @@ public class EnemyShootAtPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        shootInterval = Random.Range(2f, 4f);
         player = GameObject.FindGameObjectWithTag("Player").transform;
         InvokeRepeating("Shoot", 1.5f, shootInterval);
     }

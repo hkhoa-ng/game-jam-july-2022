@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | Karik</title>
+  </head>
+  <body style="text-align: center">
+    <canvas id="unity-canvas" width=500 height=500 style="width: 500px; height: 500px; background: #231F20"></canvas>
+    <script src="Build/v1.1.loader.js"></script>
+    <script>
+      createUnityInstance(document.querySelector("#unity-canvas"), {
+        dataUrl: "Build/v1.1.data.br",
+        frameworkUrl: "Build/v1.1.framework.js.br",
+        codeUrl: "Build/v1.1.wasm.br",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "Huy n Khoa",
+        productName: "Karik",
+        productVersion: "1.1",
+        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+      });
+    </script>
+  </body>
+</html>

@@ -615,7 +615,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: by Khoa and Huy
+  m_text: Press Space To Start
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4753eb796204e214abdf3974e51f2124, type: 2}
   m_sharedMaterial: {fileID: -1089359964419509993, guid: 4753eb796204e214abdf3974e51f2124, type: 2}

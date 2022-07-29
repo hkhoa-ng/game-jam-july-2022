@@ -61,7 +61,7 @@ public class GameManager : MonoBehaviour
     private ScreenShake screenshake;
 
     // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         lieText.gameObject.SetActive(false);
 
@@ -137,8 +137,8 @@ public class GameManager : MonoBehaviour
         {
             if (!rooms[i].isInitialised)
             {
-                int rand; 
-                rand = Random.Range(0,5); // Chance of open is 1/5
+                int rand;
+                rand = Random.Range(0, 5); // Chance of open is 1/5
                 if (rand == 0 && rooms[i].portalLeft != null)
                 {
                     rooms[i].portalLeft.GetComponent<PortalTransition>().isOpenable = true;
@@ -161,11 +161,15 @@ public class GameManager : MonoBehaviour
                 rooms[i].isInitialised = true;
             }
         }
-        
+
         // Mark all the portals to the boss room
         SetUpMarkers();
 
-        // Trigger start Room event
+    }
+
+    private void Start()
+    {
+    // Trigger start Room event
         rooms[startIndex].isEntered = true;
         OpenDoors(startIndex);
         isHealthy = ((startIndex % 4) % 2) != ((startIndex / 4) % 2);
