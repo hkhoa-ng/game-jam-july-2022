@@ -7,6 +7,7 @@ public class Apple : MonoBehaviour
     public GameObject enemyExplosionPrefab;
     public float distanceTillExplode = 5f;
     private Transform player;
+    private bool isExplode;
 
     public AudioSource explosionSFX;
 
@@ -20,7 +21,8 @@ public class Apple : MonoBehaviour
     {
         Vector3 playerDir3 = player.transform.position - this.transform.position; 
         float distanceToPlayer = (new Vector2(playerDir3.x, playerDir3.y)).magnitude;
-        if (distanceToPlayer <= distanceTillExplode) {
+        if (distanceToPlayer <= distanceTillExplode && !isExplode) {
+            isExplode = true;
             SelfDestruct();
         }
 
@@ -37,7 +39,7 @@ public class Apple : MonoBehaviour
     IEnumerator Destroy()
     {
         explosionSFX.Play();
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.2f);
         Destroy(this.gameObject);
     }
 

@@ -7,7 +7,6 @@ public class EnemyFollowsPlayer : MonoBehaviour
     private Transform player;
     private Rigidbody2D rb;
     public float moveSpeed = 1f;
-    public int health = 200;
     public SpriteRenderer spriteRenderer;
     // public ParticleSystem explosion;
     private void Awake() {
@@ -33,29 +32,13 @@ public class EnemyFollowsPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (health <= 0) {
-            Destroy(gameObject);
-            // GameEvents.Screenshake();
-            // Instantiate(explosion, transform.position, Quaternion.identity);
-            // GameEvents.EnemyDie();
-        }
+        
     }
 
     void FixedUpdate() { 
         MoveTowardPlayer();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision) {
-        if (collision.gameObject.tag == "Water") {
-            health -= 1;
-            Destroy(collision.gameObject);
-        }
-
-        if (collision.gameObject.CompareTag("Walls"))
-        {
-
-        }
-    }
 
     private void MoveTowardPlayer() {
         // Get the direction of the player to move toward them

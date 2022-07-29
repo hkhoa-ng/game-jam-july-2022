@@ -101256,7 +101256,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -103038,7 +103038,7 @@ PrefabInstance:
       objectReference: {fileID: 50417267}
     - target: {fileID: 3152183613072618607, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}
       propertyPath: instructionTimer
-      value: 4
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 3152183613072618611, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}
       propertyPath: m_RootOrder
@@ -103096,6 +103096,10 @@ PrefabInstance:
       propertyPath: camShakeMagnitude
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7257738742398480154, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 9171676934871896024, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}
       propertyPath: m_text
       value: 'WASD: Move
@@ -103103,6 +103107,14 @@ PrefabInstance:
         Left Mouse: SHoot
 
         R: Reload'
+      objectReference: {fileID: 0}
+    - target: {fileID: 9171676934871896024, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}
+      propertyPath: m_fontSize
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 9171676934871896024, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 9171676934871896024, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}
       propertyPath: m_VerticalAlignment

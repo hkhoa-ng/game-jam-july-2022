@@ -99,6 +99,12 @@ public class PlayerMovement : MonoBehaviour
 
         healthText.text = "Health: " + health;
         bulletText.text = "Bullet: " + gunSystem[gunIndex].GetComponent<GunSystem>().bulletsLeft;
+
+        if (health <= 0)
+        {
+            // Transition to death scene
+            StartCoroutine(Death());
+        }
     }
 
     private void FixedUpdate()
@@ -124,7 +130,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Update animation
-        if (isInvincible)
+        if (isInvincible || health <= 0)
         {
             ChangeAnimationState(PLAYER_HURT);
         }
@@ -178,17 +184,26 @@ public class PlayerMovement : MonoBehaviour
     {
         if ((collision.gameObject.CompareTag("Enemy")
     || collision.gameObject.CompareTag("Boss")
-    || collision.gameObject.CompareTag("EnemyBullet")) && !isInvincible) 
+    || collision.gameObject.CompareTag("EnemyBullet")))
         {
-            health -= 1;
-            hurtSFX.Play();
-            isInvincible = true;
-            StartCoroutine(CountdownInvincible());
-            ContactPoint2D contactPoint = collision.GetContact(0);
-            Vector3 targetDir = transform.position - collision.gameObject.transform.position;
-            moveDir = new Vector2(targetDir.x, targetDir.y).normalized;
+            if (!isInvincible)
+            {
+                health -= 1;
+                hurtSFX.Play();
+                isInvincible = true;
+                StartCoroutine(CountdownInvincible());
+                ContactPoint2D contactPoint = collision.GetContact(0);
+                Vector3 targetDir = transform.position - collision.gameObject.transform.position;
+                moveDir = new Vector2(targetDir.x, targetDir.y).normalized;
 
-            rigidBody.AddForce(moveDir * knockbackForce, ForceMode2D.Force);
+                rigidBody.AddForce(moveDir * knockbackForce, ForceMode2D.Force);
+
+            }
+            else
+            {
+
+            }
+
         }
     }
 
@@ -201,11 +216,12 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator CountdownInvincible()
     {
         yield return new WaitForSeconds(invincibleTime);
-        if (health <= 0)
-        {
-            // Transition to death scene
-            SceneManager.LoadScene(2);
-        }
         isInvincible = false;
+    }
+
+    IEnumerator Death()
+    {
+        yield return new WaitForSeconds(invincibleTime);
+        SceneManager.LoadScene(2);
     }
 }

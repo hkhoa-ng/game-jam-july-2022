@@ -62,4 +62,12 @@ public class EnemyMovesRandomly : MonoBehaviour
             // GameEvents.EnemyDie();
         }
     }
+
+    public void OnEnable()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        rb = GetComponent<Rigidbody2D>();
+        direction = new Vector3(Random.insideUnitCircle.x, Random.insideUnitCircle.y, 0).normalized;
+        rb.velocity = direction * moveSpeed;
+    }
 }
