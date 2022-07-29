@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public GameObject[] roomGameObjects;
@@ -268,6 +268,7 @@ public class GameManager : MonoBehaviour
             {
                 OpenDoors(currentIndex);
                 rooms[currentIndex].isEntered = true;
+                SceneManager.LoadScene(3);
                 yield break;
             }
         }

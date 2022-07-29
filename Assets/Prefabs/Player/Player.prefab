@@ -137,6 +137,7 @@ MonoBehaviour:
   knockbackForce: 2000
   moveDir: {x: 0, y: 0}
   targetDir: {x: 0, y: 0, z: 0}
+  invincibleTime: 1
   healthText: {fileID: 0}
   bulletText: {fileID: 0}
   instructionTimer: 5
@@ -490,7 +491,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3728070176497901344, guid: 1dbb762dfa2fa0349be682c6372a3536, type: 3}
       propertyPath: bulletsPerTap
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3728070176497901344, guid: 1dbb762dfa2fa0349be682c6372a3536, type: 3}
       propertyPath: allowButtonHold

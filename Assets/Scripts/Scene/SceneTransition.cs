@@ -18,7 +18,7 @@ public class SceneTransition : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(nextSceneIndex);
         }
     }
 }

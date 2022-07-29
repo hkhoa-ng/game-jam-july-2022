@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class PlayerMovement : MonoBehaviour
@@ -23,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
 
     private const string PLAYER_IDLE = "PlayerIdle";
     private const string PLAYER_RUN = "PlayerRun";
+    private const string PLAYER_HURT = "PlayerHurt";
     private Animator animator;
     private bool isRunning = false;
     private string currentState;
@@ -37,11 +39,14 @@ public class PlayerMovement : MonoBehaviour
     public Vector2 moveDir;
     public Vector3 targetDir;
 
+    // Invincible frame
+    public float invincibleTime = 1;
+    private bool isInvincible;
+
 
     // Text UI
     public TextMeshProUGUI healthText;
     public TextMeshProUGUI bulletText;
-    private bool shownInstruction;
     [SerializeField] private float instructionTimer;
     public TextMeshProUGUI instructionText;
 
@@ -73,8 +78,8 @@ public class PlayerMovement : MonoBehaviour
         damageModifier = 0;
         rigidBody = GetComponent<Rigidbody2D>();
         direction = Vector2.zero;
+        isInvincible = false;
 
-        shownInstruction = true;
         instructionText.gameObject.SetActive(true);
         StartCoroutine(CountDownInstruction());
     }
@@ -116,7 +121,11 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Update animation
-        if (isRunning)
+        if (isInvincible)
+        {
+            ChangeAnimationState(PLAYER_HURT);
+        }
+        else if (isRunning)
         {
             ChangeAnimationState(PLAYER_RUN);
         }
@@ -162,11 +171,13 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy")
+        if ((collision.gameObject.CompareTag("Enemy")
     || collision.gameObject.CompareTag("Boss")
-    || collision.gameObject.CompareTag("EnemyBullet"))
+    || collision.gameObject.CompareTag("EnemyBullet")) && !isInvincible) 
         {
             health -= 1;
+            isInvincible = true;
+            StartCoroutine(CountdownInvincible());
             ContactPoint2D contactPoint = collision.GetContact(0);
             Vector3 targetDir = transform.position - collision.gameObject.transform.position;
             moveDir = new Vector2(targetDir.x, targetDir.y).normalized;
@@ -178,7 +189,17 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator CountDownInstruction()
     {
         yield return new WaitForSeconds(instructionTimer);
-        shownInstruction = false;
         instructionText.gameObject.SetActive(false);
+    }
+
+    IEnumerator CountdownInvincible()
+    {
+        yield return new WaitForSeconds(invincibleTime);
+        if (health <= 0)
+        {
+            // Transition to death scene
+            SceneManager.LoadScene(2);
+        }
+        isInvincible = false;
     }
 }

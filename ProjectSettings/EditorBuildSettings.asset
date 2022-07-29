@@ -6,6 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Prefabs/Walls/Corner/Scenes/MainScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/Menu.unity
+    guid: 54cf94cfe24f98b4da519183597b549e
+  - enabled: 1
+    path: Assets/Scenes/MainScene.unity
+    guid: 2e46aada5c9cdd342906448e1e1d87f2
+  - enabled: 1
+    path: Assets/Scenes/LostScene.unity
+    guid: 8fce606e81aad474b99196346b0e48ed
+  - enabled: 1
+    path: Assets/Scenes/WinScene.unity
+    guid: 62d7c2baa676d684a945a5a3c315ab87
   m_configObjects: {}
