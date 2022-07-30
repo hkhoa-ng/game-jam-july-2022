@@ -122,6 +122,10 @@ public class GameManager : MonoBehaviour
                     maxTry--;
                     i--;
                 }
+                else
+                {
+                    maxTry = 4;
+                }
             }
             if (i == mainPathLength - 1)
             {

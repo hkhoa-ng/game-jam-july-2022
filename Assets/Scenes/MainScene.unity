@@ -103085,8 +103085,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3746408778355908434, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}
+      propertyPath: damage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3746408778355908434, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}
+      propertyPath: reloadTime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3746408778355908434, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}
+      propertyPath: magazineSize
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 3746408778355908434, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}
       propertyPath: bulletsPerTap
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3746408778355908434, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}
+      propertyPath: projectileForce
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3746408778355908434, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}
       propertyPath: camShakeDuration
@@ -103096,6 +103112,10 @@ PrefabInstance:
       propertyPath: camShakeMagnitude
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3746408778355908434, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}
+      propertyPath: timeBetweenShooting
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 7257738742398480154, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 2
@@ -103104,9 +103124,7 @@ PrefabInstance:
       propertyPath: m_text
       value: 'WASD: Move
 
-        Left Mouse: SHoot
-
-        R: Reload'
+        Left Mouse: SHoot'
       objectReference: {fileID: 0}
     - target: {fileID: 9171676934871896024, guid: 4c82fd2e153ee584197317f8cad3c785, type: 3}
       propertyPath: m_fontSize

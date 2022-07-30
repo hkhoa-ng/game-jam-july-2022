@@ -11,6 +11,8 @@ public class PortalTransition : MonoBehaviour
     // Indicator for boss room portal
     public GameObject bossRoomMarker;
     public bool isBossRoom;
+    private bool isPlayerIn;
+    private Collider2D collision;
 
     // New Boundary offsets
     [SerializeField] private Vector3 playerChange;
@@ -46,11 +48,8 @@ public class PortalTransition : MonoBehaviour
         {
             sprite.SetActive(true);
         }
-    }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player") && isActive)
+        if (isPlayerIn && isActive)
         {
             Rigidbody2D rigidbody = collision.gameObject.GetComponent<Rigidbody2D>();
             if ((collision.gameObject.transform.position.x < transform.position.x && playerChange.y == 0) ||
@@ -93,4 +92,22 @@ public class PortalTransition : MonoBehaviour
             }
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            this.collision = collision;
+            isPlayerIn = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            isPlayerIn = false;
+        }
+    }
+
 }
