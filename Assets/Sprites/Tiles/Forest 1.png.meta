@@ -603,7 +603,7 @@ TextureImporter:
       213: 6527503618992074491
     second: Forest 1_99
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -624,6 +624,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -662,6 +663,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -689,6 +691,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -2812,6 +2826,107 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Forest 1_39: -6677331597411970761
+      Forest 1_53: 1169787054115179180
+      Forest 1_71: 6116030071990705490
+      Forest 1_73: -938135326181364381
+      Forest 1_72: -417693698358412999
+      Forest 1_17: 8271993787555107024
+      Forest 1_96: -1171028131331878955
+      Forest 1_75: 6487001590171811553
+      Forest 1_85: 6125220787708350003
+      Forest 1_87: -6726499215389098035
+      Forest 1_34: -2503850081181341469
+      Forest 1_94: -5687692186580823938
+      Forest 1_16: -2052526492277893490
+      Forest 1_42: -5590724809158853103
+      Forest 1_9: 3901465442002704313
+      Forest 1_74: -7392309409255005973
+      Forest 1_55: 733514455515723473
+      Forest 1_7: -6660088977204609723
+      Forest 1_2: 2306772184850307056
+      Forest 1_6: 7374609201849435259
+      Forest 1_98: -3454967329692260371
+      Forest 1_66: -7293209368833757236
+      Forest 1_12: -8532458678755686530
+      Forest 1_44: -7330996635536264809
+      Forest 1_64: -2577711367998552133
+      Forest 1_61: -8190325566331770779
+      Forest 1_68: 5596687902517627109
+      Forest 1_84: -908486207862262664
+      Forest 1_11: -5305077397601423065
+      Forest 1_99: 6527503618992074491
+      Forest 1_97: -5623716463358053384
+      Forest 1_78: 8629870417655515114
+      Forest 1_48: 6041260375261488129
+      Forest 1_70: -8558223125476968402
+      Forest 1_40: 5643651771450278411
+      Forest 1_10: 438526461166995767
+      Forest 1_26: 832625582527427669
+      Forest 1_29: -3699987537897779874
+      Forest 1_28: -8336739689687765751
+      Forest 1_14: 884504430469194635
+      Forest 1_45: 1936751938590509549
+      Forest 1_83: -1113757194535892960
+      Forest 1_1: -7975659669832867001
+      Forest 1_95: 181656758334614088
+      Forest 1_0: -2783212183222831461
+      Forest 1_33: 2064826208777692482
+      Forest 1_30: 4519224883658914229
+      Forest 1_93: 7337427130659632060
+      Forest 1_13: -5594068402679350140
+      Forest 1_59: 5103227677980540687
+      Forest 1_18: -2605220929473436684
+      Forest 1_76: 4889227089148489546
+      Forest 1_80: -1690544807774851775
+      Forest 1_90: -2914013269231201149
+      Forest 1_47: 7888685850197735170
+      Forest 1_19: 5025066869359597905
+      Forest 1_23: -7448114869211272780
+      Forest 1_24: 4257889170155512773
+      Forest 1_56: -4122243381547888180
+      Forest 1_38: -5389255392046226772
+      Forest 1_65: 7543008790880351891
+      Forest 1_15: 2953880704179858621
+      Forest 1_86: 3342131393526101875
+      Forest 1_5: -5002049602795833457
+      Forest 1_62: 4937635850964398316
+      Forest 1_67: 7176692060533723686
+      Forest 1_32: -3434107593922743351
+      Forest 1_82: -6236193959894569698
+      Forest 1_49: -3312645028787393950
+      Forest 1_77: 3873510702138813886
+      Forest 1_63: -204647650659609735
+      Forest 1_57: 2154550561344049082
+      Forest 1_27: 1564198238447147081
+      Forest 1_35: 8298032854096350591
+      Forest 1_51: -8326436684374308413
+      Forest 1_46: 7072611930347478624
+      Forest 1_60: -1317966022248497690
+      Forest 1_50: -2240235045200328268
+      Forest 1_92: 7372250804557381154
+      Forest 1_89: -5548595851451706588
+      Forest 1_41: 4718894398632362838
+      Forest 1_36: -7135631082506852246
+      Forest 1_21: -5787455399983636483
+      Forest 1_81: -460875831314776635
+      Forest 1_69: -5682527434349103505
+      Forest 1_4: -2127682985190917807
+      Forest 1_8: 3636912401515244535
+      Forest 1_37: 6848166988797537476
+      Forest 1_3: 6570050510084592600
+      Forest 1_25: 8738532022005572109
+      Forest 1_43: -9053864589377027571
+      Forest 1_52: -5253709288158768231
+      Forest 1_88: 8180436410632621293
+      Forest 1_54: -2629506933677927626
+      Forest 1_79: -6749286941480643057
+      Forest 1_31: -394714309029149949
+      Forest 1_58: 6545490404149145759
+      Forest 1_91: 6165414746359037547
+      Forest 1_22: 445793263237919793
+      Forest 1_20: -6350088529186258393
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

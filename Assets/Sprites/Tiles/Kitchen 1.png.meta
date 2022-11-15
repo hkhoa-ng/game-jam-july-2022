@@ -603,7 +603,7 @@ TextureImporter:
       213: 8981218498597905994
     second: Kitchen 1_99
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -624,6 +624,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -662,6 +663,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -689,6 +691,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -2812,6 +2826,107 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Kitchen 1_54: -6444241334142355483
+      Kitchen 1_89: 8804913465540922934
+      Kitchen 1_1: 4505220657906984745
+      Kitchen 1_61: 168690180653326982
+      Kitchen 1_76: 7926910352241189094
+      Kitchen 1_31: 1031143317459906992
+      Kitchen 1_56: -8127618580823322111
+      Kitchen 1_40: -8176425536596572819
+      Kitchen 1_5: 5271048338491295964
+      Kitchen 1_2: 6510339524583845909
+      Kitchen 1_66: 4165641295079771097
+      Kitchen 1_44: -2007974326797315332
+      Kitchen 1_68: -2280311842254309519
+      Kitchen 1_97: -8409671415939626545
+      Kitchen 1_6: -6332124773167839590
+      Kitchen 1_62: -2723086549584323214
+      Kitchen 1_11: 7590513297974203460
+      Kitchen 1_60: -5995351244363444970
+      Kitchen 1_25: -3867325436922476112
+      Kitchen 1_59: -3469884822777767724
+      Kitchen 1_71: -6347727324662556472
+      Kitchen 1_38: -4872268428883880777
+      Kitchen 1_39: 6802240566161336823
+      Kitchen 1_90: 2616934404825218580
+      Kitchen 1_65: -2728017562493721367
+      Kitchen 1_94: -1887931365287035870
+      Kitchen 1_3: -5315030243275784276
+      Kitchen 1_17: 7953752543986310366
+      Kitchen 1_48: -3970935198957395806
+      Kitchen 1_80: -4127820746527205803
+      Kitchen 1_70: -2469971068987705988
+      Kitchen 1_86: -7047725574917642161
+      Kitchen 1_22: -1219524857416985634
+      Kitchen 1_15: 3111852399475086117
+      Kitchen 1_23: 7425239008028788795
+      Kitchen 1_87: -4891717003301892147
+      Kitchen 1_51: -5744063357036443701
+      Kitchen 1_88: -9001484626920104591
+      Kitchen 1_75: 1565779414850391616
+      Kitchen 1_85: 3942951383481720118
+      Kitchen 1_10: 5071683503769409876
+      Kitchen 1_49: 3370031093847355868
+      Kitchen 1_24: 2397611691604824173
+      Kitchen 1_19: 3377361091560932145
+      Kitchen 1_92: 838512312770264614
+      Kitchen 1_8: 6905013106932296332
+      Kitchen 1_47: -5463262368924799315
+      Kitchen 1_69: 2924876820008932452
+      Kitchen 1_73: -6440945653394723340
+      Kitchen 1_64: -2415584133775936334
+      Kitchen 1_42: 7643796079550491110
+      Kitchen 1_43: 4476136041581359027
+      Kitchen 1_36: 8923746327802608044
+      Kitchen 1_21: 1676053823542744626
+      Kitchen 1_98: 1705886686209882757
+      Kitchen 1_0: 7841233272457465837
+      Kitchen 1_55: 1277495145865853351
+      Kitchen 1_58: -5234388187022100687
+      Kitchen 1_96: 6568705173456907617
+      Kitchen 1_14: 494991779009210687
+      Kitchen 1_18: 1875045715771528100
+      Kitchen 1_93: -4146544439899890325
+      Kitchen 1_99: 8981218498597905994
+      Kitchen 1_9: -1053044347779844076
+      Kitchen 1_30: -6929119449369441090
+      Kitchen 1_45: 1256084668575898192
+      Kitchen 1_91: 8746953641266422994
+      Kitchen 1_37: -929768348108425735
+      Kitchen 1_16: -3322093222511601933
+      Kitchen 1_52: -5510832802689185822
+      Kitchen 1_35: 1077936244305153260
+      Kitchen 1_83: -4203776905246244835
+      Kitchen 1_4: -974097715692431447
+      Kitchen 1_33: 5404869533130805714
+      Kitchen 1_77: 3380550638466027578
+      Kitchen 1_46: -7857671091083263125
+      Kitchen 1_12: 3761708655417415048
+      Kitchen 1_13: -8897404630060982467
+      Kitchen 1_79: 477881375950500962
+      Kitchen 1_7: -5871665361822310454
+      Kitchen 1_53: -3020550610519215202
+      Kitchen 1_81: 6097600907060639997
+      Kitchen 1_57: -417836326949600165
+      Kitchen 1_95: -1930874772406131060
+      Kitchen 1_32: -6509247501095690701
+      Kitchen 1_67: -1511037311931830783
+      Kitchen 1_84: -7123047091470424901
+      Kitchen 1_82: 8307962887424815516
+      Kitchen 1_20: 287724252656309271
+      Kitchen 1_29: -7778759978147914019
+      Kitchen 1_34: 4654967807671597411
+      Kitchen 1_78: -3985768480205216979
+      Kitchen 1_26: 6616999792861326511
+      Kitchen 1_72: 3551600646151691447
+      Kitchen 1_28: -6585990282296047207
+      Kitchen 1_50: 21084974004713280
+      Kitchen 1_41: 5493892238340746589
+      Kitchen 1_63: 1916079623836919259
+      Kitchen 1_74: 6415272355151502907
+      Kitchen 1_27: -1119754817297419053
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -63,7 +63,7 @@ TextureImporter:
       213: 3579542158824060778
     second: wall-door_19
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -84,6 +84,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -122,6 +123,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -149,6 +151,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -592,6 +606,27 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      wall-door_11: 1785122663481514900
+      wall-door_2: -1765539255440089222
+      wall-door_8: 6683763507576109319
+      wall-door_12: 8907156669144398436
+      wall-door_1: -2968010774078691735
+      wall-door_9: 5774079026240195249
+      wall-door_14: -2529684039704417673
+      wall-door_0: -3698145232176420011
+      wall-door_15: 3763371405107169312
+      wall-door_5: -4742243411785513550
+      wall-door_17: -7915656416472667470
+      wall-door_13: 2873867685436067913
+      wall-door_16: -8349837001208579383
+      wall-door_3: 3413410445955258355
+      wall-door_7: -8447067560110024124
+      wall-door_6: -3223367536562445337
+      wall-door_4: -6163061180628137335
+      wall-door_18: 2227564828488037432
+      wall-door_19: 3579542158824060778
+      wall-door_10: 3847661206616964076
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
